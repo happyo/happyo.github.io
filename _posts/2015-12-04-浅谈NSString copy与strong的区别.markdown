@@ -56,7 +56,7 @@ NSLog(@"Change string: %@, %p;", strChange, strChange);
 
 ![result](http://cl.ly/2g061W2K0P04/Image%202016-01-12%20at%204.06.49%20%E4%B8%8B%E5%8D%88.png)
 
-可见，**当赋值类型是不可变的`NSString`时，不管是`copy`还是`strong`，都是将其指针直接赋值过去。*`NSString`发生变化，其指针会发生变化，不会对属性造成影响。
+可见，**当赋值类型是不可变的`NSString`时，不管是`copy`还是`strong`，都是将其指针直接赋值过去。**`NSString`发生变化，其指针会发生变化，不会对属性造成影响。
 
 将`strChange`的类型改为`NSMutableString`，然后对其修改。
 

@@ -6,10 +6,10 @@ categories: jekyll update
 ---
 >数据持久化即数据的永久存储。在iOS中，是将数据保存成文件，存储到程序的沙盒中。
 
-###沙盒
-* 概念：每个ios应用都有自己的应用沙盒，应用沙盒就是文件系统目录，与其他应用放入文件 系统隔离，ios系统不允许访问其他应用的应用沙盒，但在ios8中已经开放访问（extension）
+##**沙盒**
+* 每个 iOS 应用都有自己的应用沙盒，应用沙盒就是文件系统目录，与其他应用放入文件 系统隔离，iOS 系统不允许访问其他应用的应用沙盒，但在 ios8 中已经开放访问（extension）
 
-* extension是ios8新开放的一种对几个固定系统区域的拓展机制，它可以在一定程度上弥补ios的沙盒机制对应用间的通信限制
+* extension 是 iOS8 新开放的一种对几个固定系统区域的拓展机制，它可以在一定程度上弥补 iOS 的沙盒机制对应用间的通信限制
 
 * 应用沙盒一般包括以下几个文件目录:
 
@@ -22,62 +22,225 @@ Library
 tmp
 {% endhighlight %}
 
-###目录简介及获取
+##**目录简介及获取**
 * **沙盒根目录获取**: 获取如下
 {% highlight objective-c %}
 NSString *homePath = NSHomeDirectory();
 NSLog(@"%@", homePath);
 {% endhighlight %}
+<br/>
 
 * **.app文件**: 这里面存放的是应用程序的源文件，包括资源文件和可执行文件。
 {% highlight objective-c %}
 NSString *appPath = [[NSBundle mainBundle] bundlePath];
 NSLog(@"%@", appPath);
 {% endhighlight %}
+<br/>
 
-* **Documents**: 保存应用运行时生成的需要持久化的数据，iTunes 会自动备份该目录。
+* **Documents**: 保存应用运行时生成的需要持久化的数据，`iTunes` 会自动备份该目录。
 {% highlight objective-c %}
 NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
 NSLog(@"%@", documentPath);
 {% endhighlight %}
+<br/>
 
-* **tmp**: 保存应用运行时所需的临时数据，使用完毕后再将对应的文件从该目录删除，应用没有运行时，系统也可能会自动清理该目录下的文件，iTunes 不会同步该目录，iPhone 重启时该目录下的文件会丢失。
+* **tmp**: 保存应用运行时所需的临时数据，使用完毕后再将对应的文件从该目录删除，应用没有运行时，系统也可能会自动清理该目录下的文件，`iTunes` 不会同步该目录，iPhone 重启时该目录下的文件会丢失。
 {% highlight objective-c %}
 NSString *tmpPath = NSTemporaryDirectory();
 NSLog(@"%@", tmpPath);
 {% endhighlight %}
+<br/>
 
-* **Library**: 存储程序的默认设置和其他状态信息，iTunes 会自动备份该目录。
+* **Library**: 存储程序的默认设置和其他状态信息，`iTunes `会自动备份该目录。
 {% highlight objective-c %}
 NSString *libraryPath = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject;
 NSLog(@"%@", libraryPath);
 {% endhighlight %}
+<br/>
 
-* **Library/Caches**: 存放缓存文件，iTunes不会备份此目录，此目录下文件不会在应用退出时删除，一般存放体积比较大，不是很重要的资源
+* **Library/Caches**: 存放缓存文件，`iTunes`不会备份此目录，此目录下文件不会在应用退出时删除，一般存放体积比较大，不是很重要的资源
 {% highlight objective-c %}
 NSString *cachesPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
 NSLog(@"%@", cachesPath);
 {% endhighlight %}
+<br/>
 
-* **Library/Preferences**: 保存应用的所有偏好设置，iOS 的 Setting（设置）会在该目录中查找应用的设置信息，iTunes会自动备份该目录。
+* **Library/Preferences**: 保存应用的所有偏好设置，iOS 的 `Setting（设置）`会在该目录中查找应用的设置信息，iTunes会自动备份该目录。
 {% highlight objective-c %}
 NSString *preferencesPath = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject;
 preferencesPath = [preferencesPath stringByAppendingPathComponent:@"Preferences"];
 NSLog(@"%@", preferencesPath);
 {% endhighlight %}
+<br/>
 
-####了解了沙盒的基本概念后就可以进行数据持久化啦，iOS 的数据持久化方式一般有以下 5 种
+##**了解了沙盒的基本概念后就可以进行数据持久化啦，iOS 的数据持久化方式一般有以下 5 种**
 1. plist（属性列表）
 2. preferences (NSUserDefaults)
 3. NSKeyedArchiver (归档)
 4. SQLite 3
 5. CoreData
 
-###plist
+<br/>
+
+##**plist（属性列表）**
+属性列表文件是一种 `XML` 文件，`Foundation` 框架中的一些对象可以与属性列表文件互相转换，可转换的类型如下：
+
+{% highlight objective-c %}
+NSArray;
+NSMutableArray;
+NSDictionary;
+NSMutableDictionary;
+NSData;
+NSMutableData;
+NSString;
+NSMutableString;
+NSNumber;
+{% endhighlight %}
+
+<br/>
+
+####存储和使用
+{% highlight objective-c %}
+// 获取存储文件的路径
+NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+NSString *fileName = [documentPath stringByAppendingPathComponent:@"storage.plist"];
+
+// 存储
+NSArray *array = @[@"hello", @"world"];
+[array writeToFile:fileName atomically:YES];
+
+// 读取
+NSArray *result = [NSArray arrayWithContentsOfFile:fileName];
+NSLog(@"result :%@", result);
+
+// 当存入的数组含有 null 的时候写文件会失败
+NSArray *modifyArray = @[@"hello", [NSNull null]];
+[modifyArray writeToFile:fileName atomically:YES];
+
+// 结果发现取出来的还是第一次存的数组
+NSArray *modifyResult = [NSArray arrayWithContentsOfFile:fileName];
+NSLog(@"modify result :%@", modifyResult);
+{% endhighlight %}
+
+<br/>
+
+####**运行结果**
+![plistResult](http://cl.ly/241B0p0t0g0o/Image%202016-01-18%20at%207.50.49%20%E4%B8%8B%E5%8D%88.png)
+
+<br/>
+
+####**注意**
+
+* 只有上面提到的特定类型才能用 plist 进行存储
+* `writeToFile: atomically:` 的`atomically`参数表示是否使用辅助文件。如果为 `YES`，则先写入到一个辅助文件，然后将辅助文件重新命名为目标文件，如果为 `NO`，则直接写入目标文件。
+* 当需要存的对象里面包含`NULL`时，存文件会失败。（很多情况下是服务端返回的数据包含 `null`，然后转化成对象存会失败）
 
 
+<br/>
+
+##**preferences (NSUserDefaults)**
+`NSUserDefaults`是一个单例，在整个程序中只有一个实例对象，他可以用于数据的永久保存，而且简单实用。
+{% highlight objective-c %}
+// 获取 NSUserDefaults 的单例对象
+NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+
+// 存储
+[userDefaults setObject:@"happyo" forKey:@"name"];
+[userDefaults setBool:YES forKey:@"isMale"];
+[userDefaults setInteger:25 forKey:@"age"];
+
+// 立即同步
+[userDefaults synchronize];
+
+// 读取
+NSString *nameStr = [userDefaults objectForKey:@"name"];
+BOOL isMale = [userDefaults boolForKey:@"isMale"];
+NSInteger age = [userDefaults integerForKey:@"age"];
+
+NSLog(@"name : %@, isMale :%d, age :%ld", nameStr, isMale, age);
+{% endhighlight %}
+ 
+<br/>
+
+####**结果如下**
+
+![preferencesResult](http://cl.ly/273C1L3t020W/Image%202016-01-18%20at%209.18.02%20%E4%B8%8B%E5%8D%88.png)
+
+####**注意**
+
+* 偏好设置是专门用来保存应用程序的配置信息的，一般不要在偏好设置中保存其他数据。
+* 如果没有调用`synchronize`方法，系统会根据 I/O 情况不定时刻地保存到文件中。所以如果需要立即写入文件的就必须调用`synchronize`方法。 
+* 偏好设置会将所有数据保存到同一个文件中。即 `preference` 目录下的一个以此应用包名来命名的 plist 文件。
+
+<br/>
+
+##**NSKeyedArchiver (归档)**
+对象归档是一种序列化方式。为了便于数据传输，先将归档序列化成一个文件，然后通过返归档将数据恢复到对象中。
+对一个对象进行完整归档需要满足的条件为：该对象的类必须实现`NSCoding`协议，而且每个成员变量应该是基本数据类型或者都是实现了`NSCoding`协议的某个类的实例。
+
+创建一个`Car`类，使其实现`NSCoding`协议
+{% highlight objective-c %}
+.h
+@interface Car : NSObject <NSCoding>
+
+@property (nonatomic, copy) NSString *name;
+
+@property (nonatomic, assign) NSInteger speed;
+
+@end
+
+.m
+@implementation Car
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.name forKey:@"name"];
+    [aCoder encodeInteger:self.speed forKey:@"speed"];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self.name = [aDecoder decodeObjectForKey:@"name"];
+    self.speed = [aDecoder decodeIntegerForKey:@"speed"];
+    
+    return self;
+}
+
+@end
+{% endhighlight %}
+
+对其进行归档和解档
+{% highlight objective-c %}
+// 创建对象
+Car *car = [[Car alloc] init];
+car.name = @"Aventador";
+car.speed = 300;
+
+// 获得存储路径
+NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+NSString *fileName = [documentPath stringByAppendingString:@"car.data"];
+
+// 归档
+[NSKeyedArchiver archiveRootObject:car toFile:fileName];
+
+// 解档
+Car *unarchiveCar = [NSKeyedUnarchiver unarchiveObjectWithFile:fileName];
+
+NSLog(@"car :%@ , speed :%ld", unarchiveCar.name, unarchiveCar.speed);
+{% endhighlight %}
+
+####**注意**
+* 对象必须实现`NSCoding`协议
+* 存储的文件后缀为 `.data`
+* 有继承关系时，要先调用父类的归解档方法
+
+<br/>
+
+##**SQLite 3**
 
 
-####相关文章
+<br/>
+
+####**相关文章**
 * [iOS沙盒机制介绍](http://www.jianshu.com/p/2944233ebac4)
 * [我要永远地记住你！（iOS中几种数据持久化方案）](http://www.jianshu.com/p/7616cbd72845)

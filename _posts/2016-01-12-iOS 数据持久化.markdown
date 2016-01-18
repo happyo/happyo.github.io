@@ -1,0 +1,83 @@
+---
+layout: post
+title:  "iOS 数据持久化"
+date:   2016-01-18 16:10:54 +0800
+categories: jekyll update
+---
+>数据持久化即数据的永久存储。在iOS中，是将数据保存成文件，存储到程序的沙盒中。
+
+###沙盒
+* 概念：每个ios应用都有自己的应用沙盒，应用沙盒就是文件系统目录，与其他应用放入文件 系统隔离，ios系统不允许访问其他应用的应用沙盒，但在ios8中已经开放访问（extension）
+
+* extension是ios8新开放的一种对几个固定系统区域的拓展机制，它可以在一定程度上弥补ios的沙盒机制对应用间的通信限制
+
+* 应用沙盒一般包括以下几个文件目录:
+
+{% highlight objective-c %}
+.app
+Documents
+Library  
+---Caches
+---Preferences
+tmp
+{% endhighlight %}
+
+###目录简介及获取
+* **沙盒根目录获取**: 获取如下
+{% highlight objective-c %}
+NSString *homePath = NSHomeDirectory();
+NSLog(@"%@", homePath);
+{% endhighlight %}
+
+* **.app文件**: 这里面存放的是应用程序的源文件，包括资源文件和可执行文件。
+{% highlight objective-c %}
+NSString *appPath = [[NSBundle mainBundle] bundlePath];
+NSLog(@"%@", appPath);
+{% endhighlight %}
+
+* **Documents**: 保存应用运行时生成的需要持久化的数据，iTunes 会自动备份该目录。
+{% highlight objective-c %}
+NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+NSLog(@"%@", documentPath);
+{% endhighlight %}
+
+* **tmp**: 保存应用运行时所需的临时数据，使用完毕后再将对应的文件从该目录删除，应用没有运行时，系统也可能会自动清理该目录下的文件，iTunes 不会同步该目录，iPhone 重启时该目录下的文件会丢失。
+{% highlight objective-c %}
+NSString *tmpPath = NSTemporaryDirectory();
+NSLog(@"%@", tmpPath);
+{% endhighlight %}
+
+* **Library**: 存储程序的默认设置和其他状态信息，iTunes 会自动备份该目录。
+{% highlight objective-c %}
+NSString *libraryPath = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject;
+NSLog(@"%@", libraryPath);
+{% endhighlight %}
+
+* **Library/Caches**: 存放缓存文件，iTunes不会备份此目录，此目录下文件不会在应用退出时删除，一般存放体积比较大，不是很重要的资源
+{% highlight objective-c %}
+NSString *cachesPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
+NSLog(@"%@", cachesPath);
+{% endhighlight %}
+
+* **Library/Preferences**: 保存应用的所有偏好设置，iOS 的 Setting（设置）会在该目录中查找应用的设置信息，iTunes会自动备份该目录。
+{% highlight objective-c %}
+NSString *preferencesPath = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject;
+preferencesPath = [preferencesPath stringByAppendingPathComponent:@"Preferences"];
+NSLog(@"%@", preferencesPath);
+{% endhighlight %}
+
+####了解了沙盒的基本概念后就可以进行数据持久化啦，iOS 的数据持久化方式一般有以下 5 种
+1. plist（属性列表）
+2. preferences (NSUserDefaults)
+3. NSKeyedArchiver (归档)
+4. SQLite 3
+5. CoreData
+
+###plist
+
+
+
+
+####相关文章
+* [iOS沙盒机制介绍](http://www.jianshu.com/p/2944233ebac4)
+* [我要永远地记住你！（iOS中几种数据持久化方案）](http://www.jianshu.com/p/7616cbd72845)

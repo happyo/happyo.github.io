@@ -231,12 +231,19 @@ NSLog(@"car :%@ , speed :%ld", unarchiveCar.name, unarchiveCar.speed);
 
 ####**注意**
 * 对象必须实现`NSCoding`协议
-* 存储的文件后缀为 `.data`
+* 保存文件的扩展名可以任意指定
 * 有继承关系时，要先调用父类的归解档方法
 
 <br/>
 
 ##**SQLite 3**
+`SQLite`是无数据类型的数据库，就是字段不用指定类型。虽然`SQLite`可以忽略数据类型，但从编程的规范上讲，应该在`Create Table`语句中指定数据类型。因为数据类型可以告知这个字段的含义，便于别人阅读和理解。`SQLite`支持的常见数据类型如下：
+
+* INTEGER: 有符号的整数类型
+* REAL: 浮点类型
+* TEXT: 字符串类型，采用UTF-8和UTF-16字符编码
+* BLOB: 二进制大对象类型，能够存放任何二进制数据
+
 
 
 <br/>

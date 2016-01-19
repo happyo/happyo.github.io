@@ -5,8 +5,8 @@
     <description></description>
     <link>https://happyo.github.io/</link>
     <atom:link href="https://happyo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 18 Jan 2016 23:07:04 +0800</pubDate>
-    <lastBuildDate>Mon, 18 Jan 2016 23:07:04 +0800</lastBuildDate>
+    <pubDate>Tue, 19 Jan 2016 10:15:04 +0800</pubDate>
+    <lastBuildDate>Tue, 19 Jan 2016 10:15:04 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -258,13 +258,21 @@
 &lt;h4 id=&quot;section-7&quot;&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;对象必须实现&lt;code&gt;NSCoding&lt;/code&gt;协议&lt;/li&gt;
-  &lt;li&gt;存储的文件后缀为 &lt;code&gt;.data&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;保存文件的扩展名可以任意指定&lt;/li&gt;
   &lt;li&gt;有继承关系时，要先调用父类的归解档方法&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;sqlite-3&quot;&gt;&lt;strong&gt;SQLite 3&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;SQLite&lt;/code&gt;是无数据类型的数据库，就是字段不用指定类型。虽然&lt;code&gt;SQLite&lt;/code&gt;可以忽略数据类型，但从编程的规范上讲，应该在&lt;code&gt;Create Table&lt;/code&gt;语句中指定数据类型。因为数据类型可以告知这个字段的含义，便于别人阅读和理解。&lt;code&gt;SQLite&lt;/code&gt;支持的常见数据类型如下：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;INTEGER: 有符号的整数类型&lt;/li&gt;
+  &lt;li&gt;REAL: 浮点类型&lt;/li&gt;
+  &lt;li&gt;TEXT: 字符串类型，采用UTF-8和UTF-16字符编码&lt;/li&gt;
+  &lt;li&gt;BLOB: 二进制大对象类型，能够存放任何二进制数据&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 

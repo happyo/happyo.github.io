@@ -4,14 +4,14 @@ title:  "iOS 数据持久化"
 date:   2016-01-18 16:10:54 +0800
 categories: jekyll update
 ---
->数据持久化即数据的永久存储。在iOS中，是将数据保存成文件，存储到程序的沙盒中。
+>数据持久化即数据的永久存储。在 iOS 中，是将数据保存成文件，存储到程序的沙盒中。
 
 ##**沙盒**
-* 每个 iOS 应用都有自己的应用沙盒，应用沙盒就是文件系统目录，与其他应用放入文件 系统隔离，iOS 系统不允许访问其他应用的应用沙盒，但在 ios8 中已经开放访问（extension）
+* **每个 iOS 应用都有自己的应用沙盒，应用沙盒就是文件系统目录，与其他应用放入文件 系统隔离，iOS 系统不允许访问其他应用的应用沙盒，但在 ios8 中已经开放访问（extension）**
 
-* extension 是 iOS8 新开放的一种对几个固定系统区域的拓展机制，它可以在一定程度上弥补 iOS 的沙盒机制对应用间的通信限制
+* **extension 是 iOS8 新开放的一种对几个固定系统区域的拓展机制，它可以在一定程度上弥补 iOS 的沙盒机制对应用间的通信限制**
 
-* 应用沙盒一般包括以下几个文件目录:
+* **应用沙盒一般包括以下几个文件目录:**
 
 {% highlight objective-c %}
 .app
@@ -74,11 +74,11 @@ NSLog(@"%@", preferencesPath);
 <br/>
 
 ##**了解了沙盒的基本概念后就可以进行数据持久化啦，iOS 的数据持久化方式一般有以下 5 种**
-1. plist（属性列表）
-2. preferences (NSUserDefaults)
-3. NSKeyedArchiver (归档)
-4. SQLite 3
-5. CoreData
+1. **plist（属性列表）**
+2. **preferences (NSUserDefaults)**
+3. **NSKeyedArchiver (归档)**
+4. **SQLite 3**
+5. **CoreData**
 
 <br/>
 
@@ -131,9 +131,9 @@ NSLog(@"modify result :%@", modifyResult);
 
 ####**注意**
 
-* 只有上面提到的特定类型才能用 plist 进行存储
-* `writeToFile: atomically:` 的`atomically`参数表示是否使用辅助文件。如果为 `YES`，则先写入到一个辅助文件，然后将辅助文件重新命名为目标文件，如果为 `NO`，则直接写入目标文件。
-* 当需要存的对象里面包含`NULL`时，存文件会失败。（很多情况下是服务端返回的数据包含 `null`，然后转化成对象存会失败）
+* **只有上面提到的特定类型才能用 plist 进行存储**
+* **`writeToFile: atomically:` 的`atomically`参数表示是否使用辅助文件。如果为 `YES`，则先写入到一个辅助文件，然后将辅助文件重新命名为目标文件，如果为 `NO`，则直接写入目标文件。**
+* **当需要存的对象里面包含`NULL`时，存文件会失败。（很多情况下是服务端返回的数据包含 `null`，然后转化成对象存会失败）**
 
 
 <br/>
@@ -168,9 +168,9 @@ NSLog(@"name : %@, isMale :%d, age :%ld", nameStr, isMale, age);
 
 ####**注意**
 
-* 偏好设置是专门用来保存应用程序的配置信息的，一般不要在偏好设置中保存其他数据。
-* 如果没有调用`synchronize`方法，系统会根据 I/O 情况不定时刻地保存到文件中。所以如果需要立即写入文件的就必须调用`synchronize`方法。 
-* 偏好设置会将所有数据保存到同一个文件中。即 `preference` 目录下的一个以此应用包名来命名的 plist 文件。
+* **偏好设置是专门用来保存应用程序的配置信息的，一般不要在偏好设置中保存其他数据。**
+* **如果没有调用`synchronize`方法，系统会根据 I/O 情况不定时刻地保存到文件中。所以如果需要立即写入文件的就必须调用`synchronize`方法。 **
+* **偏好设置会将所有数据保存到同一个文件中。即 `preference` 目录下的一个以此应用包名来命名的 plist 文件。**
 
 <br/>
 
@@ -230,24 +230,121 @@ NSLog(@"car :%@ , speed :%ld", unarchiveCar.name, unarchiveCar.speed);
 {% endhighlight %}
 
 ####**注意**
-* 对象必须实现`NSCoding`协议
-* 保存文件的扩展名可以任意指定
-* 有继承关系时，要先调用父类的归解档方法
+* **对象必须实现`NSCoding`协议**
+* **保存文件的扩展名可以任意指定**
+* **有继承关系时，要先调用父类的归解档方法**
 
 <br/>
 
 ##**SQLite 3**
 `SQLite`是无数据类型的数据库，就是字段不用指定类型。虽然`SQLite`可以忽略数据类型，但从编程的规范上讲，应该在`Create Table`语句中指定数据类型。因为数据类型可以告知这个字段的含义，便于别人阅读和理解。`SQLite`支持的常见数据类型如下：
 
-* INTEGER: 有符号的整数类型
-* REAL: 浮点类型
-* TEXT: 字符串类型，采用UTF-8和UTF-16字符编码
-* BLOB: 二进制大对象类型，能够存放任何二进制数据
+* **INTEGER**: 有符号的整数类型
+* **REAL**: 浮点类型
+* **TEXT**: 字符串类型，采用UTF-8和UTF-16字符编码
+* **BLOB**: 二进制大对象类型，能够存放任何二进制数据
 
+####**首先添加类库**
+![addLibrary](http://cl.ly/3D1M0P373W38/Image%202016-01-19%20at%2010.52.22%20%E4%B8%8A%E5%8D%88.png)
 
+然后导入头文件
+{% highlight objective-c %}
+#import <sqlite3.h>
+{% endhighlight %}
+
+在使用`SQLite`之前，我们先熟悉下它提供的一些方法
+
+* **sqlite3_open**: 这个方法用于创建并且打开一个数据库文件。它提供了两个参数，第一个是数据库文件名，第二个是数据库句柄。如果文件不存在的话，他会先创建然后再打开，否则直接打开。
+* **sqlite_prepare_v2**: 这个方法的作用是，获得一个 string 类型的 SQL语句（查询语句），然后将其转化成可执行的语句。即检查 SQL语句的合法性。
+* **sqlite_step**: 在这个方法之前一般要执行预处理操作。当有数据返回时，它就会被调用。注意，不能在`sqlite_prepare_v2`之前调用它。
+* **sqlite_finalize**: 将预处理的语句删除掉
+* **sqlite_column_count**: 返回表里一共有多少列。
+* **sqlite_column_text**: 将指定的列数据变成`TEXT`类型返回。
+* **sqlite_column_name**: 返回列的名称
+* **sqlite_exec**: 它是对`[sqlite3_prepare_v2()]`, `[sqlite3_step()]`, 和 `[sqlite3_finalize()]`的一个封装，使我们执行 SQL的时候不用写太多的 c 代码。这个可以执行任意 SQL，例如插入，更新，删除，但一般查询的时候还是使用前3个方法。
+* **sqlite_errmsg**: 返回 SQLite 的错误描述
+* **sqlite_close**: 关闭数据库连接
+
+####**创建表**
+{% highlight objective-c %}
+// 获取文件路径名
+NSString *fileName = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject stringByAppendingString:@"person.sqlite"];
+
+// 打开数据库
+NSInteger openResult = sqlite3_open(fileName.UTF8String, &myDb);
+if (openResult == SQLITE_OK) {
+    NSLog(@"打开数据库成功");
+    
+    // 创建表 SQL
+    NSString *sqlCreateTable = @"CREATE TABLE IF NOT EXISTS person_info (ID INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INTEGER)";
+    char *errmsg = NULL;
+    
+    // 执行语句
+    sqlite3_exec(myDb, sqlCreateTable.UTF8String, NULL, NULL, &errmsg);
+    
+    if (errmsg) {
+        NSLog(@"建表失败： %s", errmsg);
+        return;
+    } else {
+        NSLog(@"建表成功");
+    }
+    
+} else {
+    NSLog(@"打开数据库失败");
+    sqlite3_close(myDb);
+    return;
+}
+{% endhighlight %}
+
+####**插入数据**
+{% highlight objective-c %}
+// 插入10条数据
+for (int i = 1; i < 10; i++) {
+    NSString *nameStr = [NSString stringWithFormat:@"happyo%i", i];
+    NSInteger age = i;
+    NSString *sqlInsertData = [NSString stringWithFormat:@"INSERT INTO person_info (name, age) VALUES ('%@', '%ld')",nameStr , age];
+    
+    // 执行语句
+    sqlite3_exec(myDb, sqlInsertData.UTF8String, NULL, NULL, &errmsg);
+    
+    if (errmsg) {
+        NSLog(@"插入失败： %s", errmsg);
+        return;
+    }
+}
+
+NSLog(@"插入成功");
+{% endhighlight %}
+
+####**查询**
+{% highlight objective-c %}
+// 查询数据
+NSString *sqlQuery = @"SELECT name, age FROM person_info";
+sqlite3_stmt *stmt;
+
+NSInteger queryResult = sqlite3_prepare_v2(myDb, sqlQuery.UTF8String, -1, &stmt, NULL);
+if (queryResult == SQLITE_OK) {
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        char *name = (char *)sqlite3_column_text(stmt, 0);
+        NSInteger age = sqlite3_column_int(stmt, 1);
+        
+        NSLog(@"name :%s , age :%ld", name, age);
+    }
+}
+
+sqlite3_finalize(stmt);
+{% endhighlight %}
+
+由于原生的 SQLite 方法都是 c 写的，比较难用。所以一般在开发过程中，我们都使用第三方开源库 `FMDB` 。关于`FMDB`，[这里](http://blog.devtang.com/blog/2012/04/22/use-fmdb/)有介绍使用的。
+
+<br/>
+
+##**CoreData**
+对于`CoreData`，有很多相关的文章。推荐一个，[Core Data Overview](https://www.objc.io/issues/4-core-data/core-data-overview/)，中文版[Core Data 概述](http://objccn.io/issue-4-1/)。
 
 <br/>
 
 ####**相关文章**
 * [iOS沙盒机制介绍](http://www.jianshu.com/p/2944233ebac4)
 * [我要永远地记住你！（iOS中几种数据持久化方案）](http://www.jianshu.com/p/7616cbd72845)
+* [SQLite 3 Functions Preview](http://www.appcoda.com/sqlite-database-ios-app-tutorial/)

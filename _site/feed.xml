@@ -5,26 +5,26 @@
     <description></description>
     <link>https://happyo.github.io/</link>
     <atom:link href="https://happyo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 19 Jan 2016 10:15:04 +0800</pubDate>
-    <lastBuildDate>Tue, 19 Jan 2016 10:15:04 +0800</lastBuildDate>
+    <pubDate>Tue, 19 Jan 2016 15:13:43 +0800</pubDate>
+    <lastBuildDate>Tue, 19 Jan 2016 15:13:43 +0800</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
         <title>iOS 数据持久化</title>
         <description>&lt;blockquote&gt;
-  &lt;p&gt;数据持久化即数据的永久存储。在iOS中，是将数据保存成文件，存储到程序的沙盒中。&lt;/p&gt;
+  &lt;p&gt;数据持久化即数据的永久存储。在 iOS 中，是将数据保存成文件，存储到程序的沙盒中。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;&lt;strong&gt;沙盒&lt;/strong&gt;&lt;/h2&gt;
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;每个 iOS 应用都有自己的应用沙盒，应用沙盒就是文件系统目录，与其他应用放入文件 系统隔离，iOS 系统不允许访问其他应用的应用沙盒，但在 ios8 中已经开放访问（extension）&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;每个 iOS 应用都有自己的应用沙盒，应用沙盒就是文件系统目录，与其他应用放入文件 系统隔离，iOS 系统不允许访问其他应用的应用沙盒，但在 ios8 中已经开放访问（extension）&lt;/strong&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;extension 是 iOS8 新开放的一种对几个固定系统区域的拓展机制，它可以在一定程度上弥补 iOS 的沙盒机制对应用间的通信限制&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;extension 是 iOS8 新开放的一种对几个固定系统区域的拓展机制，它可以在一定程度上弥补 iOS 的沙盒机制对应用间的通信限制&lt;/strong&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;应用沙盒一般包括以下几个文件目录:&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;应用沙盒一般包括以下几个文件目录:&lt;/strong&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -102,11 +102,11 @@
 
 &lt;h2 id=&quot;ios--5-&quot;&gt;&lt;strong&gt;了解了沙盒的基本概念后就可以进行数据持久化啦，iOS 的数据持久化方式一般有以下 5 种&lt;/strong&gt;&lt;/h2&gt;
 &lt;ol&gt;
-  &lt;li&gt;plist（属性列表）&lt;/li&gt;
-  &lt;li&gt;preferences (NSUserDefaults)&lt;/li&gt;
-  &lt;li&gt;NSKeyedArchiver (归档)&lt;/li&gt;
-  &lt;li&gt;SQLite 3&lt;/li&gt;
-  &lt;li&gt;CoreData&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;plist（属性列表）&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;preferences (NSUserDefaults)&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;NSKeyedArchiver (归档)&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SQLite 3&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CoreData&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -158,9 +158,9 @@
 &lt;h4 id=&quot;section-4&quot;&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;只有上面提到的特定类型才能用 plist 进行存储&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;writeToFile: atomically:&lt;/code&gt; 的&lt;code&gt;atomically&lt;/code&gt;参数表示是否使用辅助文件。如果为 &lt;code&gt;YES&lt;/code&gt;，则先写入到一个辅助文件，然后将辅助文件重新命名为目标文件，如果为 &lt;code&gt;NO&lt;/code&gt;，则直接写入目标文件。&lt;/li&gt;
-  &lt;li&gt;当需要存的对象里面包含&lt;code&gt;NULL&lt;/code&gt;时，存文件会失败。（很多情况下是服务端返回的数据包含 &lt;code&gt;null&lt;/code&gt;，然后转化成对象存会失败）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;只有上面提到的特定类型才能用 plist 进行存储&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code&gt;writeToFile: atomically:&lt;/code&gt; 的&lt;code&gt;atomically&lt;/code&gt;参数表示是否使用辅助文件。如果为 &lt;code&gt;YES&lt;/code&gt;，则先写入到一个辅助文件，然后将辅助文件重新命名为目标文件，如果为 &lt;code&gt;NO&lt;/code&gt;，则直接写入目标文件。&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;当需要存的对象里面包含&lt;code&gt;NULL&lt;/code&gt;时，存文件会失败。（很多情况下是服务端返回的数据包含 &lt;code&gt;null&lt;/code&gt;，然后转化成对象存会失败）&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -195,9 +195,9 @@
 &lt;h4 id=&quot;section-6&quot;&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/h4&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;偏好设置是专门用来保存应用程序的配置信息的，一般不要在偏好设置中保存其他数据。&lt;/li&gt;
-  &lt;li&gt;如果没有调用&lt;code&gt;synchronize&lt;/code&gt;方法，系统会根据 I/O 情况不定时刻地保存到文件中。所以如果需要立即写入文件的就必须调用&lt;code&gt;synchronize&lt;/code&gt;方法。&lt;/li&gt;
-  &lt;li&gt;偏好设置会将所有数据保存到同一个文件中。即 &lt;code&gt;preference&lt;/code&gt; 目录下的一个以此应用包名来命名的 plist 文件。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;偏好设置是专门用来保存应用程序的配置信息的，一般不要在偏好设置中保存其他数据。&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;**如果没有调用&lt;code&gt;synchronize&lt;/code&gt;方法，系统会根据 I/O 情况不定时刻地保存到文件中。所以如果需要立即写入文件的就必须调用&lt;code&gt;synchronize&lt;/code&gt;方法。 **&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;偏好设置会将所有数据保存到同一个文件中。即 &lt;code&gt;preference&lt;/code&gt; 目录下的一个以此应用包名来命名的 plist 文件。&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -257,9 +257,9 @@
 
 &lt;h4 id=&quot;section-7&quot;&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
-  &lt;li&gt;对象必须实现&lt;code&gt;NSCoding&lt;/code&gt;协议&lt;/li&gt;
-  &lt;li&gt;保存文件的扩展名可以任意指定&lt;/li&gt;
-  &lt;li&gt;有继承关系时，要先调用父类的归解档方法&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;对象必须实现&lt;code&gt;NSCoding&lt;/code&gt;协议&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;保存文件的扩展名可以任意指定&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;有继承关系时，要先调用父类的归解档方法&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -268,18 +268,115 @@
 &lt;p&gt;&lt;code&gt;SQLite&lt;/code&gt;是无数据类型的数据库，就是字段不用指定类型。虽然&lt;code&gt;SQLite&lt;/code&gt;可以忽略数据类型，但从编程的规范上讲，应该在&lt;code&gt;Create Table&lt;/code&gt;语句中指定数据类型。因为数据类型可以告知这个字段的含义，便于别人阅读和理解。&lt;code&gt;SQLite&lt;/code&gt;支持的常见数据类型如下：&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;INTEGER: 有符号的整数类型&lt;/li&gt;
-  &lt;li&gt;REAL: 浮点类型&lt;/li&gt;
-  &lt;li&gt;TEXT: 字符串类型，采用UTF-8和UTF-16字符编码&lt;/li&gt;
-  &lt;li&gt;BLOB: 二进制大对象类型，能够存放任何二进制数据&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;INTEGER&lt;/strong&gt;: 有符号的整数类型&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;REAL&lt;/strong&gt;: 浮点类型&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;TEXT&lt;/strong&gt;: 字符串类型，采用UTF-8和UTF-16字符编码&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;BLOB&lt;/strong&gt;: 二进制大对象类型，能够存放任何二进制数据&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h4 id=&quot;section-8&quot;&gt;&lt;strong&gt;首先添加类库&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;http://cl.ly/3D1M0P373W38/Image%202016-01-19%20at%2010.52.22%20%E4%B8%8A%E5%8D%88.png&quot; alt=&quot;addLibrary&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后导入头文件&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;cp&quot;&gt;#import &amp;lt;sqlite3.h&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;在使用&lt;code&gt;SQLite&lt;/code&gt;之前，我们先熟悉下它提供的一些方法&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;sqlite3_open&lt;/strong&gt;: 这个方法用于创建并且打开一个数据库文件。它提供了两个参数，第一个是数据库文件名，第二个是数据库句柄。如果文件不存在的话，他会先创建然后再打开，否则直接打开。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sqlite_prepare_v2&lt;/strong&gt;: 这个方法的作用是，获得一个 string 类型的 SQL语句（查询语句），然后将其转化成可执行的语句。即检查 SQL语句的合法性。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sqlite_step&lt;/strong&gt;: 在这个方法之前一般要执行预处理操作。当有数据返回时，它就会被调用。注意，不能在&lt;code&gt;sqlite_prepare_v2&lt;/code&gt;之前调用它。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sqlite_finalize&lt;/strong&gt;: 将预处理的语句删除掉&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sqlite_column_count&lt;/strong&gt;: 返回表里一共有多少列。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sqlite_column_text&lt;/strong&gt;: 将指定的列数据变成&lt;code&gt;TEXT&lt;/code&gt;类型返回。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sqlite_column_name&lt;/strong&gt;: 返回列的名称&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sqlite_exec&lt;/strong&gt;: 它是对&lt;code&gt;[sqlite3_prepare_v2()]&lt;/code&gt;, &lt;code&gt;[sqlite3_step()]&lt;/code&gt;, 和 &lt;code&gt;[sqlite3_finalize()]&lt;/code&gt;的一个封装，使我们执行 SQL的时候不用写太多的 c 代码。这个可以执行任意 SQL，例如插入，更新，删除，但一般查询的时候还是使用前3个方法。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sqlite_errmsg&lt;/strong&gt;: 返回 SQLite 的错误描述&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sqlite_close&lt;/strong&gt;: 关闭数据库连接&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;section-9&quot;&gt;&lt;strong&gt;创建表&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// 获取文件路径名&lt;/span&gt;
+&lt;span class=&quot;bp&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fileName&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSSearchPathForDirectoriesInDomains&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSDocumentDirectory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSUserDomainMask&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;YES&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;firstObject&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;stringByAppendingString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;person.sqlite&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// 打开数据库&lt;/span&gt;
+&lt;span class=&quot;bp&quot;&gt;NSInteger&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;openResult&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sqlite3_open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fileName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UTF8String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myDb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;openResult&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SQLITE_OK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;打开数据库成功&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    
+    &lt;span class=&quot;c1&quot;&gt;// 创建表 SQL&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sqlCreateTable&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;CREATE TABLE IF NOT EXISTS person_info (ID INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INTEGER)&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;errmsg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    
+    &lt;span class=&quot;c1&quot;&gt;// 执行语句&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sqlite3_exec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myDb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sqlCreateTable&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UTF8String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;errmsg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;errmsg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;建表失败： %s&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errmsg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;建表成功&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;打开数据库失败&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sqlite3_close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myDb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;section-10&quot;&gt;&lt;strong&gt;插入数据&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// 插入10条数据&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nameStr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;stringWithFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;happyo%i&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;NSInteger&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;bp&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sqlInsertData&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;nl&quot;&gt;stringWithFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;INSERT INTO person_info (name, age) VALUES (&amp;#39;%@&amp;#39;, &amp;#39;%ld&amp;#39;)&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nameStr&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+    
+    &lt;span class=&quot;c1&quot;&gt;// 执行语句&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sqlite3_exec&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myDb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sqlInsertData&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UTF8String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;errmsg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;errmsg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;插入失败： %s&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;errmsg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;插入成功&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;section-11&quot;&gt;&lt;strong&gt;查询&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// 查询数据&lt;/span&gt;
+&lt;span class=&quot;bp&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sqlQuery&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&amp;quot;SELECT name, age FROM person_info&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sqlite3_stmt&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stmt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;bp&quot;&gt;NSInteger&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;queryResult&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sqlite3_prepare_v2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;myDb&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sqlQuery&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;UTF8String&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stmt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;NULL&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;queryResult&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SQLITE_OK&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sqlite3_step&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stmt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;SQLITE_ROW&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sqlite3_column_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stmt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;NSInteger&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sqlite3_column_int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stmt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        
+        &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&amp;quot;name :%s , age :%ld&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;sqlite3_finalize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stmt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;由于原生的 SQLite 方法都是 c 写的，比较难用。所以一般在开发过程中，我们都使用第三方开源库 &lt;code&gt;FMDB&lt;/code&gt; 。关于&lt;code&gt;FMDB&lt;/code&gt;，&lt;a href=&quot;http://blog.devtang.com/blog/2012/04/22/use-fmdb/&quot;&gt;这里&lt;/a&gt;有介绍使用的。&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;section-8&quot;&gt;&lt;strong&gt;相关文章&lt;/strong&gt;&lt;/h4&gt;
+&lt;h2 id=&quot;coredata&quot;&gt;&lt;strong&gt;CoreData&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;对于&lt;code&gt;CoreData&lt;/code&gt;，有很多相关的文章。推荐一个，&lt;a href=&quot;https://www.objc.io/issues/4-core-data/core-data-overview/&quot;&gt;Core Data Overview&lt;/a&gt;，中文版&lt;a href=&quot;http://objccn.io/issue-4-1/&quot;&gt;Core Data 概述&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-12&quot;&gt;&lt;strong&gt;相关文章&lt;/strong&gt;&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/2944233ebac4&quot;&gt;iOS沙盒机制介绍&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/7616cbd72845&quot;&gt;我要永远地记住你！（iOS中几种数据持久化方案）&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.appcoda.com/sqlite-database-ios-app-tutorial/&quot;&gt;SQLite 3 Functions Preview&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
         <pubDate>Mon, 18 Jan 2016 16:10:54 +0800</pubDate>

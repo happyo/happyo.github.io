@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>iOS 数据持久化</title>
-  <meta name="description" content="  数据持久化即数据的永久存储。在iOS中，是将数据保存成文件，存储到程序的沙盒中。">
+  <meta name="description" content="  数据持久化即数据的永久存储。在 iOS 中，是将数据保存成文件，存储到程序的沙盒中。">
 
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="https://happyo.github.io/jekyll/update/2016/01/18/iOS-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96.html">
@@ -63,19 +63,19 @@
 
   <div class="post-content" itemprop="articleBody">
     <blockquote>
-  <p>数据持久化即数据的永久存储。在iOS中，是将数据保存成文件，存储到程序的沙盒中。</p>
+  <p>数据持久化即数据的永久存储。在 iOS 中，是将数据保存成文件，存储到程序的沙盒中。</p>
 </blockquote>
 
 <h2 id="section"><strong>沙盒</strong></h2>
 <ul>
   <li>
-    <p>每个 iOS 应用都有自己的应用沙盒，应用沙盒就是文件系统目录，与其他应用放入文件 系统隔离，iOS 系统不允许访问其他应用的应用沙盒，但在 ios8 中已经开放访问（extension）</p>
+    <p><strong>每个 iOS 应用都有自己的应用沙盒，应用沙盒就是文件系统目录，与其他应用放入文件 系统隔离，iOS 系统不允许访问其他应用的应用沙盒，但在 ios8 中已经开放访问（extension）</strong></p>
   </li>
   <li>
-    <p>extension 是 iOS8 新开放的一种对几个固定系统区域的拓展机制，它可以在一定程度上弥补 iOS 的沙盒机制对应用间的通信限制</p>
+    <p><strong>extension 是 iOS8 新开放的一种对几个固定系统区域的拓展机制，它可以在一定程度上弥补 iOS 的沙盒机制对应用间的通信限制</strong></p>
   </li>
   <li>
-    <p>应用沙盒一般包括以下几个文件目录:</p>
+    <p><strong>应用沙盒一般包括以下几个文件目录:</strong></p>
   </li>
 </ul>
 
@@ -153,11 +153,11 @@
 
 <h2 id="ios--5-"><strong>了解了沙盒的基本概念后就可以进行数据持久化啦，iOS 的数据持久化方式一般有以下 5 种</strong></h2>
 <ol>
-  <li>plist（属性列表）</li>
-  <li>preferences (NSUserDefaults)</li>
-  <li>NSKeyedArchiver (归档)</li>
-  <li>SQLite 3</li>
-  <li>CoreData</li>
+  <li><strong>plist（属性列表）</strong></li>
+  <li><strong>preferences (NSUserDefaults)</strong></li>
+  <li><strong>NSKeyedArchiver (归档)</strong></li>
+  <li><strong>SQLite 3</strong></li>
+  <li><strong>CoreData</strong></li>
 </ol>
 
 <p><br /></p>
@@ -209,9 +209,9 @@
 <h4 id="section-4"><strong>注意</strong></h4>
 
 <ul>
-  <li>只有上面提到的特定类型才能用 plist 进行存储</li>
-  <li><code>writeToFile: atomically:</code> 的<code>atomically</code>参数表示是否使用辅助文件。如果为 <code>YES</code>，则先写入到一个辅助文件，然后将辅助文件重新命名为目标文件，如果为 <code>NO</code>，则直接写入目标文件。</li>
-  <li>当需要存的对象里面包含<code>NULL</code>时，存文件会失败。（很多情况下是服务端返回的数据包含 <code>null</code>，然后转化成对象存会失败）</li>
+  <li><strong>只有上面提到的特定类型才能用 plist 进行存储</strong></li>
+  <li><strong><code>writeToFile: atomically:</code> 的<code>atomically</code>参数表示是否使用辅助文件。如果为 <code>YES</code>，则先写入到一个辅助文件，然后将辅助文件重新命名为目标文件，如果为 <code>NO</code>，则直接写入目标文件。</strong></li>
+  <li><strong>当需要存的对象里面包含<code>NULL</code>时，存文件会失败。（很多情况下是服务端返回的数据包含 <code>null</code>，然后转化成对象存会失败）</strong></li>
 </ul>
 
 <p><br /></p>
@@ -246,9 +246,9 @@
 <h4 id="section-6"><strong>注意</strong></h4>
 
 <ul>
-  <li>偏好设置是专门用来保存应用程序的配置信息的，一般不要在偏好设置中保存其他数据。</li>
-  <li>如果没有调用<code>synchronize</code>方法，系统会根据 I/O 情况不定时刻地保存到文件中。所以如果需要立即写入文件的就必须调用<code>synchronize</code>方法。</li>
-  <li>偏好设置会将所有数据保存到同一个文件中。即 <code>preference</code> 目录下的一个以此应用包名来命名的 plist 文件。</li>
+  <li><strong>偏好设置是专门用来保存应用程序的配置信息的，一般不要在偏好设置中保存其他数据。</strong></li>
+  <li>**如果没有调用<code>synchronize</code>方法，系统会根据 I/O 情况不定时刻地保存到文件中。所以如果需要立即写入文件的就必须调用<code>synchronize</code>方法。 **</li>
+  <li><strong>偏好设置会将所有数据保存到同一个文件中。即 <code>preference</code> 目录下的一个以此应用包名来命名的 plist 文件。</strong></li>
 </ul>
 
 <p><br /></p>
@@ -308,9 +308,9 @@
 
 <h4 id="section-7"><strong>注意</strong></h4>
 <ul>
-  <li>对象必须实现<code>NSCoding</code>协议</li>
-  <li>保存文件的扩展名可以任意指定</li>
-  <li>有继承关系时，要先调用父类的归解档方法</li>
+  <li><strong>对象必须实现<code>NSCoding</code>协议</strong></li>
+  <li><strong>保存文件的扩展名可以任意指定</strong></li>
+  <li><strong>有继承关系时，要先调用父类的归解档方法</strong></li>
 </ul>
 
 <p><br /></p>
@@ -319,18 +319,115 @@
 <p><code>SQLite</code>是无数据类型的数据库，就是字段不用指定类型。虽然<code>SQLite</code>可以忽略数据类型，但从编程的规范上讲，应该在<code>Create Table</code>语句中指定数据类型。因为数据类型可以告知这个字段的含义，便于别人阅读和理解。<code>SQLite</code>支持的常见数据类型如下：</p>
 
 <ul>
-  <li>INTEGER: 有符号的整数类型</li>
-  <li>REAL: 浮点类型</li>
-  <li>TEXT: 字符串类型，采用UTF-8和UTF-16字符编码</li>
-  <li>BLOB: 二进制大对象类型，能够存放任何二进制数据</li>
+  <li><strong>INTEGER</strong>: 有符号的整数类型</li>
+  <li><strong>REAL</strong>: 浮点类型</li>
+  <li><strong>TEXT</strong>: 字符串类型，采用UTF-8和UTF-16字符编码</li>
+  <li><strong>BLOB</strong>: 二进制大对象类型，能够存放任何二进制数据</li>
 </ul>
+
+<h4 id="section-8"><strong>首先添加类库</strong></h4>
+<p><img src="http://cl.ly/3D1M0P373W38/Image%202016-01-19%20at%2010.52.22%20%E4%B8%8A%E5%8D%88.png" alt="addLibrary" /></p>
+
+<p>然后导入头文件</p>
+
+<figure class="highlight"><pre><code class="language-objective-c" data-lang="objective-c"><span class="cp">#import &lt;sqlite3.h&gt;</span></code></pre></figure>
+
+<p>在使用<code>SQLite</code>之前，我们先熟悉下它提供的一些方法</p>
+
+<ul>
+  <li><strong>sqlite3_open</strong>: 这个方法用于创建并且打开一个数据库文件。它提供了两个参数，第一个是数据库文件名，第二个是数据库句柄。如果文件不存在的话，他会先创建然后再打开，否则直接打开。</li>
+  <li><strong>sqlite_prepare_v2</strong>: 这个方法的作用是，获得一个 string 类型的 SQL语句（查询语句），然后将其转化成可执行的语句。即检查 SQL语句的合法性。</li>
+  <li><strong>sqlite_step</strong>: 在这个方法之前一般要执行预处理操作。当有数据返回时，它就会被调用。注意，不能在<code>sqlite_prepare_v2</code>之前调用它。</li>
+  <li><strong>sqlite_finalize</strong>: 将预处理的语句删除掉</li>
+  <li><strong>sqlite_column_count</strong>: 返回表里一共有多少列。</li>
+  <li><strong>sqlite_column_text</strong>: 将指定的列数据变成<code>TEXT</code>类型返回。</li>
+  <li><strong>sqlite_column_name</strong>: 返回列的名称</li>
+  <li><strong>sqlite_exec</strong>: 它是对<code>[sqlite3_prepare_v2()]</code>, <code>[sqlite3_step()]</code>, 和 <code>[sqlite3_finalize()]</code>的一个封装，使我们执行 SQL的时候不用写太多的 c 代码。这个可以执行任意 SQL，例如插入，更新，删除，但一般查询的时候还是使用前3个方法。</li>
+  <li><strong>sqlite_errmsg</strong>: 返回 SQLite 的错误描述</li>
+  <li><strong>sqlite_close</strong>: 关闭数据库连接</li>
+</ul>
+
+<h4 id="section-9"><strong>创建表</strong></h4>
+
+<figure class="highlight"><pre><code class="language-objective-c" data-lang="objective-c"><span class="c1">// 获取文件路径名</span>
+<span class="bp">NSString</span> <span class="o">*</span><span class="n">fileName</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSDocumentDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">).</span><span class="n">firstObject</span> <span class="nl">stringByAppendingString</span><span class="p">:</span><span class="s">@&quot;person.sqlite&quot;</span><span class="p">];</span>
+
+<span class="c1">// 打开数据库</span>
+<span class="bp">NSInteger</span> <span class="n">openResult</span> <span class="o">=</span> <span class="n">sqlite3_open</span><span class="p">(</span><span class="n">fileName</span><span class="p">.</span><span class="n">UTF8String</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">myDb</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">openResult</span> <span class="o">==</span> <span class="n">SQLITE_OK</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;打开数据库成功&quot;</span><span class="p">);</span>
+    
+    <span class="c1">// 创建表 SQL</span>
+    <span class="bp">NSString</span> <span class="o">*</span><span class="n">sqlCreateTable</span> <span class="o">=</span> <span class="s">@&quot;CREATE TABLE IF NOT EXISTS person_info (ID INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INTEGER)&quot;</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">errmsg</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+    
+    <span class="c1">// 执行语句</span>
+    <span class="n">sqlite3_exec</span><span class="p">(</span><span class="n">myDb</span><span class="p">,</span> <span class="n">sqlCreateTable</span><span class="p">.</span><span class="n">UTF8String</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">errmsg</span><span class="p">);</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">errmsg</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;建表失败： %s&quot;</span><span class="p">,</span> <span class="n">errmsg</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;建表成功&quot;</span><span class="p">);</span>
+    <span class="p">}</span>
+    
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;打开数据库失败&quot;</span><span class="p">);</span>
+    <span class="n">sqlite3_close</span><span class="p">(</span><span class="n">myDb</span><span class="p">);</span>
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<h4 id="section-10"><strong>插入数据</strong></h4>
+
+<figure class="highlight"><pre><code class="language-objective-c" data-lang="objective-c"><span class="c1">// 插入10条数据</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="bp">NSString</span> <span class="o">*</span><span class="n">nameStr</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSString</span> <span class="nl">stringWithFormat</span><span class="p">:</span><span class="s">@&quot;happyo%i&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">];</span>
+    <span class="bp">NSInteger</span> <span class="n">age</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+    <span class="bp">NSString</span> <span class="o">*</span><span class="n">sqlInsertData</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSString</span> <span class="nl">stringWithFormat</span><span class="p">:</span><span class="s">@&quot;INSERT INTO person_info (name, age) VALUES (&#39;%@&#39;, &#39;%ld&#39;)&quot;</span><span class="p">,</span><span class="n">nameStr</span> <span class="p">,</span> <span class="n">age</span><span class="p">];</span>
+    
+    <span class="c1">// 执行语句</span>
+    <span class="n">sqlite3_exec</span><span class="p">(</span><span class="n">myDb</span><span class="p">,</span> <span class="n">sqlInsertData</span><span class="p">.</span><span class="n">UTF8String</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">errmsg</span><span class="p">);</span>
+    
+    <span class="k">if</span> <span class="p">(</span><span class="n">errmsg</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;插入失败： %s&quot;</span><span class="p">,</span> <span class="n">errmsg</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;插入成功&quot;</span><span class="p">);</span></code></pre></figure>
+
+<h4 id="section-11"><strong>查询</strong></h4>
+
+<figure class="highlight"><pre><code class="language-objective-c" data-lang="objective-c"><span class="c1">// 查询数据</span>
+<span class="bp">NSString</span> <span class="o">*</span><span class="n">sqlQuery</span> <span class="o">=</span> <span class="s">@&quot;SELECT name, age FROM person_info&quot;</span><span class="p">;</span>
+<span class="n">sqlite3_stmt</span> <span class="o">*</span><span class="n">stmt</span><span class="p">;</span>
+
+<span class="bp">NSInteger</span> <span class="n">queryResult</span> <span class="o">=</span> <span class="n">sqlite3_prepare_v2</span><span class="p">(</span><span class="n">myDb</span><span class="p">,</span> <span class="n">sqlQuery</span><span class="p">.</span><span class="n">UTF8String</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">stmt</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">queryResult</span> <span class="o">==</span> <span class="n">SQLITE_OK</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">sqlite3_step</span><span class="p">(</span><span class="n">stmt</span><span class="p">)</span> <span class="o">==</span> <span class="n">SQLITE_ROW</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">char</span> <span class="o">*</span><span class="n">name</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">sqlite3_column_text</span><span class="p">(</span><span class="n">stmt</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="bp">NSInteger</span> <span class="n">age</span> <span class="o">=</span> <span class="n">sqlite3_column_int</span><span class="p">(</span><span class="n">stmt</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+        
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;name :%s , age :%ld&quot;</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">sqlite3_finalize</span><span class="p">(</span><span class="n">stmt</span><span class="p">);</span></code></pre></figure>
+
+<p>由于原生的 SQLite 方法都是 c 写的，比较难用。所以一般在开发过程中，我们都使用第三方开源库 <code>FMDB</code> 。关于<code>FMDB</code>，<a href="http://blog.devtang.com/blog/2012/04/22/use-fmdb/">这里</a>有介绍使用的。</p>
 
 <p><br /></p>
 
-<h4 id="section-8"><strong>相关文章</strong></h4>
+<h2 id="coredata"><strong>CoreData</strong></h2>
+<p>对于<code>CoreData</code>，有很多相关的文章。推荐一个，<a href="https://www.objc.io/issues/4-core-data/core-data-overview/">Core Data Overview</a>，中文版<a href="http://objccn.io/issue-4-1/">Core Data 概述</a>。</p>
+
+<p><br /></p>
+
+<h4 id="section-12"><strong>相关文章</strong></h4>
 <ul>
   <li><a href="http://www.jianshu.com/p/2944233ebac4">iOS沙盒机制介绍</a></li>
   <li><a href="http://www.jianshu.com/p/7616cbd72845">我要永远地记住你！（iOS中几种数据持久化方案）</a></li>
+  <li><a href="http://www.appcoda.com/sqlite-database-ios-app-tutorial/">SQLite 3 Functions Preview</a></li>
 </ul>
 
   </div>

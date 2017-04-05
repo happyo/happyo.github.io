@@ -1,20 +1,25 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
-
 # Site settings
-title: happyo
+title: Clean Blog
+header-img: img/home-bg.jpg
 email: happyojones@gmail.com
-description: > # some description
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://happyo.github.io" # the base hostname & protocol for your site
-twitter_username: happyojones
-github_username:  happyo
+copyright_name: Your/Project/Corporate Name
+description: "Write your site description here. It will be used as your sites meta description as well!"
+baseurl: "/happyo"
+url: "http://yourdomain.com"
+twitter_username: SBootstrap
+github_username: happyo
+facebook_username:  StartBootstrap
+email_username:  happyojones@gmail.com
+
+# Google Analytics
+# To enable google analytics, uncomment below line with a valid Google Tracking ID
+# google_tracking_id:
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
+permalink: pretty
+paginate: 5
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
-highlighter: pygments
+gems: [jekyll-paginate, jekyll-feed]

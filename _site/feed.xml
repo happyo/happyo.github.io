@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/happyo/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/happyo/" rel="alternate" type="text/html" /><updated>2017-04-05T23:40:00+08:00</updated><id>http://localhost:4000/happyo/</id><title type="html">Clean Blog</title><subtitle>Write your site description here. It will be used as your sites meta description as well!</subtitle><entry><title type="html">iOS 数据持久化</title><link href="http://localhost:4000/happyo/2016/01/18/iOS-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" rel="alternate" type="text/html" title="iOS 数据持久化" /><published>2016-01-18T16:10:54+08:00</published><updated>2016-01-18T16:10:54+08:00</updated><id>http://localhost:4000/happyo/2016/01/18/iOS%20%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96</id><content type="html" xml:base="http://localhost:4000/happyo/2016/01/18/iOS-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/">&lt;blockquote&gt;
+  &lt;p&gt;数据持久化即数据的永久存储。在 iOS 中，是将数据保存成文件，存储到程序的沙盒中。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;沙盒&quot;&gt;&lt;strong&gt;沙盒&lt;/strong&gt;&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;每个 iOS 应用都有自己的应用沙盒，应用沙盒就是文件系统目录，与其他应用放入文件 系统隔离，iOS 系统不允许访问其他应用的应用沙盒，但在 ios8 中已经开放访问（extension）&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;extension 是 iOS8 新开放的一种对几个固定系统区域的拓展机制，它可以在一定程度上弥补 iOS 的沙盒机制对应用间的通信限制&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;应用沙盒一般包括以下几个文件目录:&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;.app
+Documents
+Library  
+---Caches
+---Preferences
+tmp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;目录简介及获取&quot;&gt;&lt;strong&gt;目录简介及获取&lt;/strong&gt;&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;沙盒根目录获取&lt;/strong&gt;: 获取如下
+    &lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;NSString *homePath = NSHomeDirectory();
+NSLog(@&quot;%@&quot;, homePath);
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;.app文件&lt;/strong&gt;: 这里面存放的是应用程序的源文件，包括资源文件和可执行文件。
+    &lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;NSString *appPath = [[NSBundle mainBundle] bundlePath];
+NSLog(@&quot;%@&quot;, appPath);
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Documents&lt;/strong&gt;: 保存应用运行时生成的需要持久化的数据，&lt;code class=&quot;highlighter-rouge&quot;&gt;iTunes&lt;/code&gt; 会自动备份该目录。
+    &lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+NSLog(@&quot;%@&quot;, documentPath);
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;tmp&lt;/strong&gt;: 保存应用运行时所需的临时数据，使用完毕后再将对应的文件从该目录删除，应用没有运行时，系统也可能会自动清理该目录下的文件，&lt;code class=&quot;highlighter-rouge&quot;&gt;iTunes&lt;/code&gt; 不会同步该目录，iPhone 重启时该目录下的文件会丢失。
+    &lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;NSString *tmpPath = NSTemporaryDirectory();
+NSLog(@&quot;%@&quot;, tmpPath);
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Library&lt;/strong&gt;: 存储程序的默认设置和其他状态信息，&lt;code class=&quot;highlighter-rouge&quot;&gt;iTunes &lt;/code&gt;会自动备份该目录。
+    &lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;NSString *libraryPath = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject;
+NSLog(@&quot;%@&quot;, libraryPath);
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Library/Caches&lt;/strong&gt;: 存放缓存文件，&lt;code class=&quot;highlighter-rouge&quot;&gt;iTunes&lt;/code&gt;不会备份此目录，此目录下文件不会在应用退出时删除，一般存放体积比较大，不是很重要的资源
+    &lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;NSString *cachesPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
+NSLog(@&quot;%@&quot;, cachesPath);
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Library/Preferences&lt;/strong&gt;: 保存应用的所有偏好设置，iOS 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;Setting（设置）&lt;/code&gt;会在该目录中查找应用的设置信息，iTunes会自动备份该目录。
+    &lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;NSString *preferencesPath = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject;
+preferencesPath = [preferencesPath stringByAppendingPathComponent:@&quot;Preferences&quot;];
+NSLog(@&quot;%@&quot;, preferencesPath);
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;了解了沙盒的基本概念后就可以进行数据持久化啦ios-的数据持久化方式一般有以下-5-种&quot;&gt;&lt;strong&gt;了解了沙盒的基本概念后就可以进行数据持久化啦，iOS 的数据持久化方式一般有以下 5 种&lt;/strong&gt;&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;plist（属性列表）&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;preferences (NSUserDefaults)&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;NSKeyedArchiver (归档)&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;SQLite 3&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;CoreData&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;plist属性列表&quot;&gt;&lt;strong&gt;plist（属性列表）&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;属性列表文件是一种 &lt;code class=&quot;highlighter-rouge&quot;&gt;XML&lt;/code&gt; 文件，&lt;code class=&quot;highlighter-rouge&quot;&gt;Foundation&lt;/code&gt; 框架中的一些对象可以与属性列表文件互相转换，可转换的类型如下：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;NSArray;
+NSMutableArray;
+NSDictionary;
+NSMutableDictionary;
+NSData;
+NSMutableData;
+NSString;
+NSMutableString;
+NSNumber;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;存储和使用&quot;&gt;存储和使用&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;// 获取存储文件的路径
+NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+NSString *fileName = [documentPath stringByAppendingPathComponent:@&quot;storage.plist&quot;];
+
+// 存储
+NSArray *array = @[@&quot;hello&quot;, @&quot;world&quot;];
+[array writeToFile:fileName atomically:YES];
+
+// 读取
+NSArray *result = [NSArray arrayWithContentsOfFile:fileName];
+NSLog(@&quot;result :%@&quot;, result);
+
+// 当存入的数组含有 null 的时候写文件会失败
+NSArray *modifyArray = @[@&quot;hello&quot;, [NSNull null]];
+[modifyArray writeToFile:fileName atomically:YES];
+
+// 结果发现取出来的还是第一次存的数组
+NSArray *modifyResult = [NSArray arrayWithContentsOfFile:fileName];
+NSLog(@&quot;modify result :%@&quot;, modifyResult);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;运行结果&quot;&gt;&lt;strong&gt;运行结果&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;http://cl.ly/241B0p0t0g0o/Image%202016-01-18%20at%207.50.49%20%E4%B8%8B%E5%8D%88.png&quot; alt=&quot;plistResult&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;注意&quot;&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;只有上面提到的特定类型才能用 plist 进行存储&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;writeToFile: atomically:&lt;/code&gt; 的&lt;code class=&quot;highlighter-rouge&quot;&gt;atomically&lt;/code&gt;参数表示是否使用辅助文件。如果为 &lt;code class=&quot;highlighter-rouge&quot;&gt;YES&lt;/code&gt;，则先写入到一个辅助文件，然后将辅助文件重新命名为目标文件，如果为 &lt;code class=&quot;highlighter-rouge&quot;&gt;NO&lt;/code&gt;，则直接写入目标文件。&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;当需要存的对象里面包含&lt;code class=&quot;highlighter-rouge&quot;&gt;NULL&lt;/code&gt;时，存文件会失败。（很多情况下是服务端返回的数据包含 &lt;code class=&quot;highlighter-rouge&quot;&gt;null&lt;/code&gt;，然后转化成对象存会失败）&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;preferences-nsuserdefaults&quot;&gt;&lt;strong&gt;preferences (NSUserDefaults)&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;NSUserDefaults&lt;/code&gt;是一个单例，在整个程序中只有一个实例对象，他可以用于数据的永久保存，而且简单实用。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;// 获取 NSUserDefaults 的单例对象
+NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+
+// 存储
+[userDefaults setObject:@&quot;happyo&quot; forKey:@&quot;name&quot;];
+[userDefaults setBool:YES forKey:@&quot;isMale&quot;];
+[userDefaults setInteger:25 forKey:@&quot;age&quot;];
+
+// 立即同步
+[userDefaults synchronize];
+
+// 读取
+NSString *nameStr = [userDefaults objectForKey:@&quot;name&quot;];
+BOOL isMale = [userDefaults boolForKey:@&quot;isMale&quot;];
+NSInteger age = [userDefaults integerForKey:@&quot;age&quot;];
+
+NSLog(@&quot;name : %@, isMale :%d, age :%ld&quot;, nameStr, isMale, age);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;结果如下&quot;&gt;&lt;strong&gt;结果如下&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://cl.ly/273C1L3t020W/Image%202016-01-18%20at%209.18.02%20%E4%B8%8B%E5%8D%88.png&quot; alt=&quot;preferencesResult&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;注意-1&quot;&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;偏好设置是专门用来保存应用程序的配置信息的，一般不要在偏好设置中保存其他数据。&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;**如果没有调用&lt;code class=&quot;highlighter-rouge&quot;&gt;synchronize&lt;/code&gt;方法，系统会根据 I/O 情况不定时刻地保存到文件中。所以如果需要立即写入文件的就必须调用&lt;code class=&quot;highlighter-rouge&quot;&gt;synchronize&lt;/code&gt;方法。 **&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;偏好设置会将所有数据保存到同一个文件中。即 &lt;code class=&quot;highlighter-rouge&quot;&gt;preference&lt;/code&gt; 目录下的一个以此应用包名来命名的 plist 文件。&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;nskeyedarchiver-归档&quot;&gt;&lt;strong&gt;NSKeyedArchiver (归档)&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;对象归档是一种序列化方式。为了便于数据传输，先将归档序列化成一个文件，然后通过返归档将数据恢复到对象中。
+对一个对象进行完整归档需要满足的条件为：该对象的类必须实现&lt;code class=&quot;highlighter-rouge&quot;&gt;NSCoding&lt;/code&gt;协议，而且每个成员变量应该是基本数据类型或者都是实现了&lt;code class=&quot;highlighter-rouge&quot;&gt;NSCoding&lt;/code&gt;协议的某个类的实例。&lt;/p&gt;
+
+&lt;p&gt;创建一个&lt;code class=&quot;highlighter-rouge&quot;&gt;Car&lt;/code&gt;类，使其实现&lt;code class=&quot;highlighter-rouge&quot;&gt;NSCoding&lt;/code&gt;协议&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;.h
+@interface Car : NSObject &amp;lt;NSCoding&amp;gt;
+
+@property (nonatomic, copy) NSString *name;
+
+@property (nonatomic, assign) NSInteger speed;
+
+@end
+
+.m
+@implementation Car
+
+- (void)encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.name forKey:@&quot;name&quot;];
+    [aCoder encodeInteger:self.speed forKey:@&quot;speed&quot;];
+}
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder
+{
+    self.name = [aDecoder decodeObjectForKey:@&quot;name&quot;];
+    self.speed = [aDecoder decodeIntegerForKey:@&quot;speed&quot;];
+
+    return self;
+}
+
+@end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;对其进行归档和解档&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;// 创建对象
+Car *car = [[Car alloc] init];
+car.name = @&quot;Aventador&quot;;
+car.speed = 300;
+
+// 获得存储路径
+NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+NSString *fileName = [documentPath stringByAppendingString:@&quot;car.data&quot;];
+
+// 归档
+[NSKeyedArchiver archiveRootObject:car toFile:fileName];
+
+// 解档
+Car *unarchiveCar = [NSKeyedUnarchiver unarchiveObjectWithFile:fileName];
+
+NSLog(@&quot;car :%@ , speed :%ld&quot;, unarchiveCar.name, unarchiveCar.speed);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;注意-2&quot;&gt;&lt;strong&gt;注意&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;对象必须实现&lt;code class=&quot;highlighter-rouge&quot;&gt;NSCoding&lt;/code&gt;协议&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;保存文件的扩展名可以任意指定&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;有继承关系时，要先调用父类的归解档方法&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;sqlite-3&quot;&gt;&lt;strong&gt;SQLite 3&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SQLite&lt;/code&gt;是无数据类型的数据库，就是字段不用指定类型。虽然&lt;code class=&quot;highlighter-rouge&quot;&gt;SQLite&lt;/code&gt;可以忽略数据类型，但从编程的规范上讲，应该在&lt;code class=&quot;highlighter-rouge&quot;&gt;Create Table&lt;/code&gt;语句中指定数据类型。因为数据类型可以告知这个字段的含义，便于别人阅读和理解。&lt;code class=&quot;highlighter-rouge&quot;&gt;SQLite&lt;/code&gt;支持的常见数据类型如下：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;INTEGER&lt;/strong&gt;: 有符号的整数类型&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;REAL&lt;/strong&gt;: 浮点类型&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;TEXT&lt;/strong&gt;: 字符串类型，采用UTF-8和UTF-16字符编码&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;BLOB&lt;/strong&gt;: 二进制大对象类型，能够存放任何二进制数据&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;首先添加类库&quot;&gt;&lt;strong&gt;首先添加类库&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;http://cl.ly/3D1M0P373W38/Image%202016-01-19%20at%2010.52.22%20%E4%B8%8A%E5%8D%88.png&quot; alt=&quot;addLibrary&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后导入头文件&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;#import &amp;lt;sqlite3.h&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在使用&lt;code class=&quot;highlighter-rouge&quot;&gt;SQLite&lt;/code&gt;之前，我们先熟悉下它提供的一些方法&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;sqlite3_open&lt;/strong&gt;: 这个方法用于创建并且打开一个数据库文件。它提供了两个参数，第一个是数据库文件名，第二个是数据库句柄。如果文件不存在的话，他会先创建然后再打开，否则直接打开。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sqlite_prepare_v2&lt;/strong&gt;: 这个方法的作用是，获得一个 string 类型的 SQL语句（查询语句），然后将其转化成可执行的语句。即检查 SQL语句的合法性。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sqlite_step&lt;/strong&gt;: 在这个方法之前一般要执行预处理操作。当有数据返回时，它就会被调用。注意，不能在&lt;code class=&quot;highlighter-rouge&quot;&gt;sqlite_prepare_v2&lt;/code&gt;之前调用它。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sqlite_finalize&lt;/strong&gt;: 将预处理的语句删除掉&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sqlite_column_count&lt;/strong&gt;: 返回表里一共有多少列。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sqlite_column_text&lt;/strong&gt;: 将指定的列数据变成&lt;code class=&quot;highlighter-rouge&quot;&gt;TEXT&lt;/code&gt;类型返回。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sqlite_column_name&lt;/strong&gt;: 返回列的名称&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sqlite_exec&lt;/strong&gt;: 它是对&lt;code class=&quot;highlighter-rouge&quot;&gt;[sqlite3_prepare_v2()]&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;[sqlite3_step()]&lt;/code&gt;, 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;[sqlite3_finalize()]&lt;/code&gt;的一个封装，使我们执行 SQL的时候不用写太多的 c 代码。这个可以执行任意 SQL，例如插入，更新，删除，但一般查询的时候还是使用前3个方法。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sqlite_errmsg&lt;/strong&gt;: 返回 SQLite 的错误描述&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;sqlite_close&lt;/strong&gt;: 关闭数据库连接&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;创建表&quot;&gt;&lt;strong&gt;创建表&lt;/strong&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;// 获取文件路径名
+NSString *fileName = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject stringByAppendingString:@&quot;person.sqlite&quot;];
+
+// 打开数据库
+NSInteger openResult = sqlite3_open(fileName.UTF8String, &amp;amp;myDb);
+if (openResult == SQLITE_OK) {
+    NSLog(@&quot;打开数据库成功&quot;);
+
+    // 创建表 SQL
+    NSString *sqlCreateTable = @&quot;CREATE TABLE IF NOT EXISTS person_info (ID INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INTEGER)&quot;;
+    char *errmsg = NULL;
+
+    // 执行语句
+    sqlite3_exec(myDb, sqlCreateTable.UTF8String, NULL, NULL, &amp;amp;errmsg);
+
+    if (errmsg) {
+        NSLog(@&quot;建表失败： %s&quot;, errmsg);
+        return;
+    } else {
+        NSLog(@&quot;建表成功&quot;);
+    }
+
+} else {
+    NSLog(@&quot;打开数据库失败&quot;);
+    sqlite3_close(myDb);
+    return;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;插入数据&quot;&gt;&lt;strong&gt;插入数据&lt;/strong&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;// 插入10条数据
+for (int i = 1; i &amp;lt; 10; i++) {
+    NSString *nameStr = [NSString stringWithFormat:@&quot;happyo%i&quot;, i];
+    NSInteger age = i;
+    NSString *sqlInsertData = [NSString stringWithFormat:@&quot;INSERT INTO person_info (name, age) VALUES ('%@', '%ld')&quot;,nameStr , age];
+
+    // 执行语句
+    sqlite3_exec(myDb, sqlInsertData.UTF8String, NULL, NULL, &amp;amp;errmsg);
+
+    if (errmsg) {
+        NSLog(@&quot;插入失败： %s&quot;, errmsg);
+        return;
+    }
+}
+
+NSLog(@&quot;插入成功&quot;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&quot;查询&quot;&gt;&lt;strong&gt;查询&lt;/strong&gt;&lt;/h4&gt;
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;// 查询数据
+NSString *sqlQuery = @&quot;SELECT name, age FROM person_info&quot;;
+sqlite3_stmt *stmt;
+
+NSInteger queryResult = sqlite3_prepare_v2(myDb, sqlQuery.UTF8String, -1, &amp;amp;stmt, NULL);
+if (queryResult == SQLITE_OK) {
+    while (sqlite3_step(stmt) == SQLITE_ROW) {
+        char *name = (char *)sqlite3_column_text(stmt, 0);
+        NSInteger age = sqlite3_column_int(stmt, 1);
+
+        NSLog(@&quot;name :%s , age :%ld&quot;, name, age);
+    }
+}
+
+sqlite3_finalize(stmt);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;由于原生的 SQLite 方法都是 c 写的，比较难用。所以一般在开发过程中，我们都使用第三方开源库 &lt;code class=&quot;highlighter-rouge&quot;&gt;FMDB&lt;/code&gt; 。关于&lt;code class=&quot;highlighter-rouge&quot;&gt;FMDB&lt;/code&gt;，&lt;a href=&quot;http://blog.devtang.com/blog/2012/04/22/use-fmdb/&quot;&gt;这里&lt;/a&gt;有介绍使用的。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;coredata&quot;&gt;&lt;strong&gt;CoreData&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;对于&lt;code class=&quot;highlighter-rouge&quot;&gt;CoreData&lt;/code&gt;，有很多相关的文章。推荐一个，&lt;a href=&quot;https://www.objc.io/issues/4-core-data/core-data-overview/&quot;&gt;Core Data Overview&lt;/a&gt;，中文版&lt;a href=&quot;http://objccn.io/issue-4-1/&quot;&gt;Core Data 概述&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;相关文章&quot;&gt;&lt;strong&gt;相关文章&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/2944233ebac4&quot;&gt;iOS沙盒机制介绍&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/7616cbd72845&quot;&gt;我要永远地记住你！（iOS中几种数据持久化方案）&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.appcoda.com/sqlite-database-ios-app-tutorial/&quot;&gt;SQLite 3 Functions Preview&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>happyo</name></author><summary type="html">数据持久化即数据的永久存储。在 iOS 中，是将数据保存成文件，存储到程序的沙盒中。</summary></entry><entry><title type="html">浅谈NSString copy与strong的区别</title><link href="http://localhost:4000/happyo/2016/01/12/%E6%B5%85%E8%B0%88NSString-copy%E4%B8%8Estrong%E7%9A%84%E5%8C%BA%E5%88%AB/" rel="alternate" type="text/html" title="浅谈NSString copy与strong的区别" /><published>2016-01-12T14:10:54+08:00</published><updated>2016-01-12T14:10:54+08:00</updated><id>http://localhost:4000/happyo/2016/01/12/%E6%B5%85%E8%B0%88NSString%20copy%E4%B8%8Estrong%E7%9A%84%E5%8C%BA%E5%88%AB</id><content type="html" xml:base="http://localhost:4000/happyo/2016/01/12/%E6%B5%85%E8%B0%88NSString-copy%E4%B8%8Estrong%E7%9A%84%E5%8C%BA%E5%88%AB/">&lt;blockquote&gt;
+  &lt;p&gt;最近在看面试题，刚好遇到&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;用法的问题。而我对答案不是很理解，所以晚上搜了一些相关知识，然后自己手动试了下。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;先贴下面试题及答案&quot;&gt;先贴下面试题及答案&lt;/h3&gt;
+
+&lt;h4 id=&quot;题目怎么使用copy关键字&quot;&gt;题目：怎么使用&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;关键字&lt;/h4&gt;
+
+&lt;h4 id=&quot;回答nsstringnsarraynsdictionary-等等经常使用copy关键字是因为他们有对应的可变类型nsmutablestringnsmutablearraynsmutabledictionary&quot;&gt;回答：&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString、NSArray、NSDictionary&lt;/code&gt; 等等经常使用&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;关键字，是因为他们有对应的可变类型：&lt;code class=&quot;highlighter-rouge&quot;&gt;NSMutableString、NSMutableArray、NSMutableDictionary&lt;/code&gt;&lt;/h4&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;对此不是很理解，所以就找了下&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;的解释。&lt;/p&gt;
+
+&lt;p&gt;Copy&lt;/p&gt;
+
+&lt;p&gt;copy is required when the object is mutable. Use this if you need the value of the object as it is at this moment, and you don’t want that value to reflect any changes made by other owners of the object. You will need to release the object when you are finished with it because you are retaining the copy.&lt;/p&gt;
+
+&lt;p&gt;大概意思是不想本类的属性随外面的变化而变化时使用。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;talk-is-cheapshow-me-the-code&quot;&gt;Talk is cheap,show me the code.&lt;/h3&gt;
+
+&lt;p&gt;首先先创建两个&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString&lt;/code&gt;的属性，一个为&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;，一个为&lt;code class=&quot;highlighter-rouge&quot;&gt;strong&lt;/code&gt;。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;@property (nonatomic, copy) NSString *strCopy;
+
+@property (nonatomic, strong) NSString *strStrong;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后创建一个&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString&lt;/code&gt;对象，将其赋值给这两个属性，并打印出变量值和地址。修改&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString&lt;/code&gt;，再打印出两个属性的值和地址。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;NSString *strChange = [NSString stringWithFormat:@&quot;hello&quot;];
+self.strCopy = strChange;
+self.strStrong = strChange;
+NSLog(@&quot;Before change~~~&quot;);
+NSLog(@&quot;Copy string: %@ ,%p;&quot;, self.strCopy, self.strCopy);
+NSLog(@&quot;Strong string: %@, %p;&quot;, self.strStrong, self.strStrong);
+NSLog(@&quot;Change string: %@, %p;&quot;, strChange, strChange);
+
+strChange = @&quot;world&quot;;
+NSLog(@&quot;After change~~~&quot;);
+NSLog(@&quot;Copy string: %@ ,%p;&quot;, self.strCopy, self.strCopy);
+NSLog(@&quot;Strong string: %@, %p;&quot;, self.strStrong, self.strStrong);
+NSLog(@&quot;Change string: %@, %p;&quot;, strChange, strChange);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;结果如下&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://cl.ly/2g061W2K0P04/Image%202016-01-12%20at%204.06.49%20%E4%B8%8B%E5%8D%88.png&quot; alt=&quot;result&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;可见，&lt;strong&gt;当赋值类型是不可变的&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString&lt;/code&gt;时，不管是&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;还是&lt;code class=&quot;highlighter-rouge&quot;&gt;strong&lt;/code&gt;，都是将其指针直接赋值过去。&lt;/strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString&lt;/code&gt;发生变化，其指针会发生变化，不会对属性造成影响。&lt;/p&gt;
+
+&lt;p&gt;将&lt;code class=&quot;highlighter-rouge&quot;&gt;strChange&lt;/code&gt;的类型改为&lt;code class=&quot;highlighter-rouge&quot;&gt;NSMutableString&lt;/code&gt;，然后对其修改。&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;NSMutableString *strChange = [NSMutableString stringWithFormat:@&quot;hello&quot;];
+self.strCopy = strChange;
+self.strStrong = strChange;
+NSLog(@&quot;Before change~~~&quot;);
+NSLog(@&quot;Copy string: %@ ,%p;&quot;, self.strCopy, self.strCopy);
+NSLog(@&quot;Strong string: %@, %p;&quot;, self.strStrong, self.strStrong);
+NSLog(@&quot;Change string: %@, %p;&quot;, strChange, strChange);
+
+[strChange insertString:@&quot;world&quot; atIndex:4];
+NSLog(@&quot;After change~~~&quot;);
+NSLog(@&quot;Copy string: %@ ,%p;&quot;, self.strCopy, self.strCopy);
+NSLog(@&quot;Strong string: %@, %p;&quot;, self.strStrong, self.strStrong);
+NSLog(@&quot;Change string: %@, %p;&quot;, strChange, strChange);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;结果如下：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://cl.ly/020Z312W233b/Image%202016-01-12%20at%205.08.18%20%E4%B8%8B%E5%8D%88.png&quot; alt=&quot;mutable result&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;可见，&lt;strong&gt;当赋值类型是可变的&lt;code class=&quot;highlighter-rouge&quot;&gt;NSMutableString&lt;/code&gt;时&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;会将&lt;code class=&quot;highlighter-rouge&quot;&gt;changeStr&lt;/code&gt;重新拷贝一份并将新的指针赋值给属性。而&lt;code class=&quot;highlighter-rouge&quot;&gt;strong&lt;/code&gt;则还是直接将&lt;code class=&quot;highlighter-rouge&quot;&gt;changeStr&lt;/code&gt;的指针赋值过去。&lt;/strong&gt;所以当我们对&lt;code class=&quot;highlighter-rouge&quot;&gt;changeStr&lt;/code&gt;进行改变时，&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;属性不会受到影响，&lt;code class=&quot;highlighter-rouge&quot;&gt;strong&lt;/code&gt;类型则会跟着改变。&lt;/p&gt;
+
+&lt;p&gt;结论：
+&lt;strong&gt;当属性是&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString,NSArray,NSDictionary&lt;/code&gt;这种不可变的类型时，我们一般不希望它随着外界变化而变化，所以最好使用&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;。&lt;/strong&gt;&lt;/p&gt;</content><author><name>happyo</name></author><summary type="html">最近在看面试题，刚好遇到copy用法的问题。而我对答案不是很理解，所以晚上搜了一些相关知识，然后自己手动试了下。</summary></entry></feed>

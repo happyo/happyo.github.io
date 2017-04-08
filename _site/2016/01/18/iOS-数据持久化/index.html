@@ -10,7 +10,7 @@
 
     <title>iOS 数据持久化 - Clean Blog</title>
 
-    <link rel="canonical" href="http://happyo.github.io//2016/01/18/iOS-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/">
+    <link rel="canonical" href="http://localhost:4000/2016/01/18/iOS-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -33,7 +33,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <link type="application/atom+xml" rel="alternate" href="http://happyo.github.io//feed.xml" title="Clean Blog" />
+    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Clean Blog" />
 
 </head>
 
@@ -121,57 +121,65 @@
   </li>
 </ul>
 
-<pre><code class="language-objective-c">.app
-Documents
-Library  
----Caches
----Preferences
-tmp
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="p">.</span><span class="n">app</span>
+<span class="n">Documents</span>
+<span class="n">Library</span>  
+<span class="o">---</span><span class="n">Caches</span>
+<span class="o">---</span><span class="n">Preferences</span>
+<span class="n">tmp</span>
 </code></pre>
+</div>
 
 <h2 id="目录简介及获取"><strong>目录简介及获取</strong></h2>
 <ul>
   <li><strong>沙盒根目录获取</strong>: 获取如下
-    <pre><code class="language-objective-c">NSString *homePath = NSHomeDirectory();
-NSLog(@"%@", homePath);
+    <div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSString</span> <span class="o">*</span><span class="n">homePath</span> <span class="o">=</span> <span class="n">NSHomeDirectory</span><span class="p">();</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">homePath</span><span class="p">);</span>
 </code></pre>
+    </div>
     <p><br /></p>
   </li>
   <li><strong>.app文件</strong>: 这里面存放的是应用程序的源文件，包括资源文件和可执行文件。
-    <pre><code class="language-objective-c">NSString *appPath = [[NSBundle mainBundle] bundlePath];
-NSLog(@"%@", appPath);
+    <div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSString</span> <span class="o">*</span><span class="n">appPath</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSBundle</span> <span class="nf">mainBundle</span><span class="p">]</span> <span class="nf">bundlePath</span><span class="p">];</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">appPath</span><span class="p">);</span>
 </code></pre>
+    </div>
     <p><br /></p>
   </li>
   <li><strong>Documents</strong>: 保存应用运行时生成的需要持久化的数据，<code class="highlighter-rouge">iTunes</code> 会自动备份该目录。
-    <pre><code class="language-objective-c">NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
-NSLog(@"%@", documentPath);
+    <div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSString</span> <span class="o">*</span><span class="n">documentPath</span> <span class="o">=</span> <span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSDocumentDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">).</span><span class="n">firstObject</span><span class="p">;</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">documentPath</span><span class="p">);</span>
 </code></pre>
+    </div>
     <p><br /></p>
   </li>
   <li><strong>tmp</strong>: 保存应用运行时所需的临时数据，使用完毕后再将对应的文件从该目录删除，应用没有运行时，系统也可能会自动清理该目录下的文件，<code class="highlighter-rouge">iTunes</code> 不会同步该目录，iPhone 重启时该目录下的文件会丢失。
-    <pre><code class="language-objective-c">NSString *tmpPath = NSTemporaryDirectory();
-NSLog(@"%@", tmpPath);
+    <div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSString</span> <span class="o">*</span><span class="n">tmpPath</span> <span class="o">=</span> <span class="n">NSTemporaryDirectory</span><span class="p">();</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">tmpPath</span><span class="p">);</span>
 </code></pre>
+    </div>
     <p><br /></p>
   </li>
   <li><strong>Library</strong>: 存储程序的默认设置和其他状态信息，<code class="highlighter-rouge">iTunes </code>会自动备份该目录。
-    <pre><code class="language-objective-c">NSString *libraryPath = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject;
-NSLog(@"%@", libraryPath);
+    <div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSString</span> <span class="o">*</span><span class="n">libraryPath</span> <span class="o">=</span> <span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSLibraryDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">).</span><span class="n">firstObject</span><span class="p">;</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">libraryPath</span><span class="p">);</span>
 </code></pre>
+    </div>
     <p><br /></p>
   </li>
   <li><strong>Library/Caches</strong>: 存放缓存文件，<code class="highlighter-rouge">iTunes</code>不会备份此目录，此目录下文件不会在应用退出时删除，一般存放体积比较大，不是很重要的资源
-    <pre><code class="language-objective-c">NSString *cachesPath = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
-NSLog(@"%@", cachesPath);
+    <div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSString</span> <span class="o">*</span><span class="n">cachesPath</span> <span class="o">=</span> <span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSCachesDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">).</span><span class="n">firstObject</span><span class="p">;</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">cachesPath</span><span class="p">);</span>
 </code></pre>
+    </div>
     <p><br /></p>
   </li>
   <li><strong>Library/Preferences</strong>: 保存应用的所有偏好设置，iOS 的 <code class="highlighter-rouge">Setting（设置）</code>会在该目录中查找应用的设置信息，iTunes会自动备份该目录。
-    <pre><code class="language-objective-c">NSString *preferencesPath = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject;
-preferencesPath = [preferencesPath stringByAppendingPathComponent:@"Preferences"];
-NSLog(@"%@", preferencesPath);
+    <div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSString</span> <span class="o">*</span><span class="n">preferencesPath</span> <span class="o">=</span> <span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSLibraryDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">).</span><span class="n">firstObject</span><span class="p">;</span>
+<span class="n">preferencesPath</span> <span class="o">=</span> <span class="p">[</span><span class="n">preferencesPath</span> <span class="nf">stringByAppendingPathComponent</span><span class="p">:</span><span class="s">@"Preferences"</span><span class="p">];</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">preferencesPath</span><span class="p">);</span>
 </code></pre>
+    </div>
     <p><br /></p>
   </li>
 </ul>
@@ -190,40 +198,42 @@ NSLog(@"%@", preferencesPath);
 <h2 id="plist属性列表"><strong>plist（属性列表）</strong></h2>
 <p>属性列表文件是一种 <code class="highlighter-rouge">XML</code> 文件，<code class="highlighter-rouge">Foundation</code> 框架中的一些对象可以与属性列表文件互相转换，可转换的类型如下：</p>
 
-<pre><code class="language-objective-c">NSArray;
-NSMutableArray;
-NSDictionary;
-NSMutableDictionary;
-NSData;
-NSMutableData;
-NSString;
-NSMutableString;
-NSNumber;
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSArray</span><span class="p">;</span>
+<span class="n">NSMutableArray</span><span class="p">;</span>
+<span class="n">NSDictionary</span><span class="p">;</span>
+<span class="n">NSMutableDictionary</span><span class="p">;</span>
+<span class="n">NSData</span><span class="p">;</span>
+<span class="n">NSMutableData</span><span class="p">;</span>
+<span class="n">NSString</span><span class="p">;</span>
+<span class="n">NSMutableString</span><span class="p">;</span>
+<span class="n">NSNumber</span><span class="p">;</span>
 </code></pre>
+</div>
 
 <p><br /></p>
 
 <h4 id="存储和使用">存储和使用</h4>
-<pre><code class="language-objective-c">// 获取存储文件的路径
-NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
-NSString *fileName = [documentPath stringByAppendingPathComponent:@"storage.plist"];
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">// 获取存储文件的路径
+</span><span class="n">NSString</span> <span class="o">*</span><span class="n">documentPath</span> <span class="o">=</span> <span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSDocumentDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">).</span><span class="n">firstObject</span><span class="p">;</span>
+<span class="n">NSString</span> <span class="o">*</span><span class="n">fileName</span> <span class="o">=</span> <span class="p">[</span><span class="n">documentPath</span> <span class="nf">stringByAppendingPathComponent</span><span class="p">:</span><span class="s">@"storage.plist"</span><span class="p">];</span>
 
-// 存储
-NSArray *array = @[@"hello", @"world"];
-[array writeToFile:fileName atomically:YES];
+<span class="c1">// 存储
+</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">array</span> <span class="o">=</span> <span class="p">@[</span><span class="s">@"hello"</span><span class="p">,</span> <span class="s">@"world"</span><span class="p">];</span>
+<span class="p">[</span><span class="n">array</span> <span class="nf">writeToFile</span><span class="p">:</span><span class="n">fileName</span> <span class="nf">atomically</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
 
-// 读取
-NSArray *result = [NSArray arrayWithContentsOfFile:fileName];
-NSLog(@"result :%@", result);
+<span class="c1">// 读取
+</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">result</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSArray</span> <span class="nf">arrayWithContentsOfFile</span><span class="p">:</span><span class="n">fileName</span><span class="p">];</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"result :%@"</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span>
 
-// 当存入的数组含有 null 的时候写文件会失败
-NSArray *modifyArray = @[@"hello", [NSNull null]];
-[modifyArray writeToFile:fileName atomically:YES];
+<span class="c1">// 当存入的数组含有 null 的时候写文件会失败
+</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">modifyArray</span> <span class="o">=</span> <span class="p">@[</span><span class="s">@"hello"</span><span class="p">,</span> <span class="p">[</span><span class="n">NSNull</span> <span class="nf">null</span><span class="p">]];</span>
+<span class="p">[</span><span class="n">modifyArray</span> <span class="nf">writeToFile</span><span class="p">:</span><span class="n">fileName</span> <span class="nf">atomically</span><span class="p">:</span><span class="nb">YES</span><span class="p">];</span>
 
-// 结果发现取出来的还是第一次存的数组
-NSArray *modifyResult = [NSArray arrayWithContentsOfFile:fileName];
-NSLog(@"modify result :%@", modifyResult);
+<span class="c1">// 结果发现取出来的还是第一次存的数组
+</span><span class="n">NSArray</span> <span class="o">*</span><span class="n">modifyResult</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSArray</span> <span class="nf">arrayWithContentsOfFile</span><span class="p">:</span><span class="n">fileName</span><span class="p">];</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"modify result :%@"</span><span class="p">,</span> <span class="n">modifyResult</span><span class="p">);</span>
 </code></pre>
+</div>
 
 <p><br /></p>
 
@@ -284,53 +294,54 @@ NSLog(@"name : %@, isMale :%d, age :%ld", nameStr, isMale, age);
 对一个对象进行完整归档需要满足的条件为：该对象的类必须实现<code class="highlighter-rouge">NSCoding</code>协议，而且每个成员变量应该是基本数据类型或者都是实现了<code class="highlighter-rouge">NSCoding</code>协议的某个类的实例。</p>
 
 <p>创建一个<code class="highlighter-rouge">Car</code>类，使其实现<code class="highlighter-rouge">NSCoding</code>协议</p>
-<pre><code class="language-objective-c">.h
-@interface Car : NSObject &lt;NSCoding&gt;
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">@interface</span> <span class="nc">Car</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">NSCoding</span><span class="o">&gt;</span>
 
-@property (nonatomic, copy) NSString *name;
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">copy</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">name</span><span class="p">;</span>
 
-@property (nonatomic, assign) NSInteger speed;
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">assign</span><span class="p">)</span> <span class="n">NSInteger</span> <span class="n">speed</span><span class="p">;</span>
 
-@end
+<span class="k">@end</span>
 
-.m
-@implementation Car
 
-- (void)encodeWithCoder:(NSCoder *)aCoder
-{
-    [aCoder encodeObject:self.name forKey:@"name"];
-    [aCoder encodeInteger:self.speed forKey:@"speed"];
-}
+<span class="k">@implementation</span> <span class="nc">Car</span>
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
-{
-    self.name = [aDecoder decodeObjectForKey:@"name"];
-    self.speed = [aDecoder decodeIntegerForKey:@"speed"];
+<span class="k">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nf">encodeWithCoder</span><span class="p">:(</span><span class="n">NSCoder</span> <span class="o">*</span><span class="p">)</span><span class="nv">aCoder</span>
+<span class="p">{</span>
+    <span class="p">[</span><span class="n">aCoder</span> <span class="nf">encodeObject</span><span class="p">:</span><span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"name"</span><span class="p">];</span>
+    <span class="p">[</span><span class="n">aCoder</span> <span class="nf">encodeInteger</span><span class="p">:</span><span class="n">self</span><span class="p">.</span><span class="n">speed</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"speed"</span><span class="p">];</span>
+<span class="p">}</span>
 
-    return self;
-}
+<span class="k">-</span> <span class="p">(</span><span class="n">instancetype</span><span class="p">)</span><span class="nf">initWithCoder</span><span class="p">:(</span><span class="n">NSCoder</span> <span class="o">*</span><span class="p">)</span><span class="nv">aDecoder</span>
+<span class="p">{</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="p">[</span><span class="n">aDecoder</span> <span class="nf">decodeObjectForKey</span><span class="p">:</span><span class="s">@"name"</span><span class="p">];</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">speed</span> <span class="o">=</span> <span class="p">[</span><span class="n">aDecoder</span> <span class="nf">decodeIntegerForKey</span><span class="p">:</span><span class="s">@"speed"</span><span class="p">];</span>
 
-@end
+    <span class="k">return</span> <span class="n">self</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">@end</span>
 </code></pre>
+</div>
 
 <p>对其进行归档和解档</p>
-<pre><code class="language-objective-c">// 创建对象
-Car *car = [[Car alloc] init];
-car.name = @"Aventador";
-car.speed = 300;
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">// 创建对象
+</span><span class="n">Car</span> <span class="o">*</span><span class="n">car</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Car</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>
+<span class="n">car</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">@"Aventador"</span><span class="p">;</span>
+<span class="n">car</span><span class="p">.</span><span class="n">speed</span> <span class="o">=</span> <span class="mi">300</span><span class="p">;</span>
 
-// 获得存储路径
-NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
-NSString *fileName = [documentPath stringByAppendingString:@"car.data"];
+<span class="c1">// 获得存储路径
+</span><span class="n">NSString</span> <span class="o">*</span><span class="n">documentPath</span> <span class="o">=</span> <span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSDocumentDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">).</span><span class="n">firstObject</span><span class="p">;</span>
+<span class="n">NSString</span> <span class="o">*</span><span class="n">fileName</span> <span class="o">=</span> <span class="p">[</span><span class="n">documentPath</span> <span class="nf">stringByAppendingString</span><span class="p">:</span><span class="s">@"car.data"</span><span class="p">];</span>
 
-// 归档
-[NSKeyedArchiver archiveRootObject:car toFile:fileName];
+<span class="c1">// 归档
+</span><span class="p">[</span><span class="n">NSKeyedArchiver</span> <span class="nf">archiveRootObject</span><span class="p">:</span><span class="n">car</span> <span class="nf">toFile</span><span class="p">:</span><span class="n">fileName</span><span class="p">];</span>
 
-// 解档
-Car *unarchiveCar = [NSKeyedUnarchiver unarchiveObjectWithFile:fileName];
+<span class="c1">// 解档
+</span><span class="n">Car</span> <span class="o">*</span><span class="n">unarchiveCar</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSKeyedUnarchiver</span> <span class="nf">unarchiveObjectWithFile</span><span class="p">:</span><span class="n">fileName</span><span class="p">];</span>
 
-NSLog(@"car :%@ , speed :%ld", unarchiveCar.name, unarchiveCar.speed);
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"car :%@ , speed :%ld"</span><span class="p">,</span> <span class="n">unarchiveCar</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">unarchiveCar</span><span class="p">.</span><span class="n">speed</span><span class="p">);</span>
 </code></pre>
+</div>
 
 <h4 id="注意-2"><strong>注意</strong></h4>
 <ul>
@@ -355,8 +366,9 @@ NSLog(@"car :%@ , speed :%ld", unarchiveCar.name, unarchiveCar.speed);
 <p><img src="http://cl.ly/3D1M0P373W38/Image%202016-01-19%20at%2010.52.22%20%E4%B8%8A%E5%8D%88.png" alt="addLibrary" /></p>
 
 <p>然后导入头文件</p>
-<pre><code class="language-objective-c">#import &lt;sqlite3.h&gt;
-</code></pre>
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="cp">#import &lt;sqlite3.h&gt;
+</span></code></pre>
+</div>
 
 <p>在使用<code class="highlighter-rouge">SQLite</code>之前，我们先熟悉下它提供的一些方法</p>
 
@@ -374,71 +386,75 @@ NSLog(@"car :%@ , speed :%ld", unarchiveCar.name, unarchiveCar.speed);
 </ul>
 
 <h4 id="创建表"><strong>创建表</strong></h4>
-<pre><code class="language-objective-c">// 获取文件路径名
-NSString *fileName = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject stringByAppendingString:@"person.sqlite"];
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">// 获取文件路径名
+</span><span class="n">NSString</span> <span class="o">*</span><span class="n">fileName</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSDocumentDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">).</span><span class="n">firstObject</span> <span class="nf">stringByAppendingString</span><span class="p">:</span><span class="s">@"person.sqlite"</span><span class="p">];</span>
 
-// 打开数据库
-NSInteger openResult = sqlite3_open(fileName.UTF8String, &amp;myDb);
-if (openResult == SQLITE_OK) {
-    NSLog(@"打开数据库成功");
+<span class="c1">// 打开数据库
+</span><span class="n">NSInteger</span> <span class="n">openResult</span> <span class="o">=</span> <span class="n">sqlite3_open</span><span class="p">(</span><span class="n">fileName</span><span class="p">.</span><span class="n">UTF8String</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">myDb</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">openResult</span> <span class="o">==</span> <span class="n">SQLITE_OK</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@"打开数据库成功"</span><span class="p">);</span>
 
-    // 创建表 SQL
-    NSString *sqlCreateTable = @"CREATE TABLE IF NOT EXISTS person_info (ID INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INTEGER)";
-    char *errmsg = NULL;
+    <span class="c1">// 创建表 SQL
+</span>    <span class="n">NSString</span> <span class="o">*</span><span class="n">sqlCreateTable</span> <span class="o">=</span> <span class="s">@"CREATE TABLE IF NOT EXISTS person_info (ID INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INTEGER)"</span><span class="p">;</span>
+    <span class="kt">char</span> <span class="o">*</span><span class="n">errmsg</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
 
-    // 执行语句
-    sqlite3_exec(myDb, sqlCreateTable.UTF8String, NULL, NULL, &amp;errmsg);
+    <span class="c1">// 执行语句
+</span>    <span class="n">sqlite3_exec</span><span class="p">(</span><span class="n">myDb</span><span class="p">,</span> <span class="n">sqlCreateTable</span><span class="p">.</span><span class="n">UTF8String</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">errmsg</span><span class="p">);</span>
 
-    if (errmsg) {
-        NSLog(@"建表失败： %s", errmsg);
-        return;
-    } else {
-        NSLog(@"建表成功");
-    }
+    <span class="k">if</span> <span class="p">(</span><span class="n">errmsg</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@"建表失败： %s"</span><span class="p">,</span> <span class="n">errmsg</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@"建表成功"</span><span class="p">);</span>
+    <span class="p">}</span>
 
-} else {
-    NSLog(@"打开数据库失败");
-    sqlite3_close(myDb);
-    return;
-}
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">NSLog</span><span class="p">(</span><span class="s">@"打开数据库失败"</span><span class="p">);</span>
+    <span class="n">sqlite3_close</span><span class="p">(</span><span class="n">myDb</span><span class="p">);</span>
+    <span class="k">return</span><span class="p">;</span>
+<span class="p">}</span>
 </code></pre>
+</div>
 
 <h4 id="插入数据"><strong>插入数据</strong></h4>
-<pre><code class="language-objective-c">// 插入10条数据
-for (int i = 1; i &lt; 10; i++) {
-    NSString *nameStr = [NSString stringWithFormat:@"happyo%i", i];
-    NSInteger age = i;
-    NSString *sqlInsertData = [NSString stringWithFormat:@"INSERT INTO person_info (name, age) VALUES ('%@', '%ld')",nameStr , age];
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">// 插入10条数据
+</span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">NSString</span> <span class="o">*</span><span class="n">nameStr</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSString</span> <span class="nf">stringWithFormat</span><span class="p">:</span><span class="s">@"happyo%i"</span><span class="p">,</span> <span class="n">i</span><span class="p">];</span>
+    <span class="n">NSInteger</span> <span class="n">age</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
+    <span class="n">NSString</span> <span class="o">*</span><span class="n">sqlInsertData</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSString</span> <span class="nf">stringWithFormat</span><span class="p">:</span><span class="s">@"INSERT INTO person_info (name, age) VALUES ('%@', '%ld')"</span><span class="p">,</span><span class="n">nameStr</span> <span class="p">,</span> <span class="n">age</span><span class="p">];</span>
 
-    // 执行语句
-    sqlite3_exec(myDb, sqlInsertData.UTF8String, NULL, NULL, &amp;errmsg);
+    <span class="c1">// 执行语句
+</span>    <span class="n">sqlite3_exec</span><span class="p">(</span><span class="n">myDb</span><span class="p">,</span> <span class="n">sqlInsertData</span><span class="p">.</span><span class="n">UTF8String</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">errmsg</span><span class="p">);</span>
 
-    if (errmsg) {
-        NSLog(@"插入失败： %s", errmsg);
-        return;
-    }
-}
+    <span class="k">if</span> <span class="p">(</span><span class="n">errmsg</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@"插入失败： %s"</span><span class="p">,</span> <span class="n">errmsg</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 
-NSLog(@"插入成功");
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"插入成功"</span><span class="p">);</span>
 </code></pre>
+</div>
 
 <h4 id="查询"><strong>查询</strong></h4>
-<pre><code class="language-objective-c">// 查询数据
-NSString *sqlQuery = @"SELECT name, age FROM person_info";
-sqlite3_stmt *stmt;
 
-NSInteger queryResult = sqlite3_prepare_v2(myDb, sqlQuery.UTF8String, -1, &amp;stmt, NULL);
-if (queryResult == SQLITE_OK) {
-    while (sqlite3_step(stmt) == SQLITE_ROW) {
-        char *name = (char *)sqlite3_column_text(stmt, 0);
-        NSInteger age = sqlite3_column_int(stmt, 1);
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">// 查询数据
+</span><span class="n">NSString</span> <span class="o">*</span><span class="n">sqlQuery</span> <span class="o">=</span> <span class="s">@"SELECT name, age FROM person_info"</span><span class="p">;</span>
+<span class="n">sqlite3_stmt</span> <span class="o">*</span><span class="n">stmt</span><span class="p">;</span>
 
-        NSLog(@"name :%s , age :%ld", name, age);
-    }
-}
+<span class="n">NSInteger</span> <span class="n">queryResult</span> <span class="o">=</span> <span class="n">sqlite3_prepare_v2</span><span class="p">(</span><span class="n">myDb</span><span class="p">,</span> <span class="n">sqlQuery</span><span class="p">.</span><span class="n">UTF8String</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">stmt</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<span class="k">if</span> <span class="p">(</span><span class="n">queryResult</span> <span class="o">==</span> <span class="n">SQLITE_OK</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">sqlite3_step</span><span class="p">(</span><span class="n">stmt</span><span class="p">)</span> <span class="o">==</span> <span class="n">SQLITE_ROW</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">char</span> <span class="o">*</span><span class="n">name</span> <span class="o">=</span> <span class="p">(</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span><span class="n">sqlite3_column_text</span><span class="p">(</span><span class="n">stmt</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="n">NSInteger</span> <span class="n">age</span> <span class="o">=</span> <span class="n">sqlite3_column_int</span><span class="p">(</span><span class="n">stmt</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 
-sqlite3_finalize(stmt);
+        <span class="n">NSLog</span><span class="p">(</span><span class="s">@"name :%s , age :%ld"</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">sqlite3_finalize</span><span class="p">(</span><span class="n">stmt</span><span class="p">);</span>
 </code></pre>
+</div>
 
 <p>由于原生的 SQLite 方法都是 c 写的，比较难用。所以一般在开发过程中，我们都使用第三方开源库 <code class="highlighter-rouge">FMDB</code> 。关于<code class="highlighter-rouge">FMDB</code>，<a href="http://blog.devtang.com/blog/2012/04/22/use-fmdb/">这里</a>有介绍使用的。</p>
 

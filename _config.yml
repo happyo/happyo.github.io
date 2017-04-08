@@ -4,8 +4,8 @@ header-img: img/home-bg.jpg
 email: happyojones@gmail.com
 copyright_name: Your/Project/Corporate Name
 description: "Write your site description here. It will be used as your sites meta description as well!"
-baseurl: "/happyo"
-url: "http://yourdomain.com"
+baseurl: ""
+url: "http://happyo.github.io/"
 twitter_username: SBootstrap
 github_username: happyo
 facebook_username:  StartBootstrap

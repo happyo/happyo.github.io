@@ -30,7 +30,7 @@ copy is required when the object is mutable. Use this if you need the value of t
 
 首先先创建两个`NSString`的属性，一个为`copy`，一个为`strong`。
 
-```objective-c
+```objc
 @property (nonatomic, copy) NSString *strCopy;
 
 @property (nonatomic, strong) NSString *strStrong;
@@ -38,7 +38,7 @@ copy is required when the object is mutable. Use this if you need the value of t
 
 然后创建一个`NSString`对象，将其赋值给这两个属性，并打印出变量值和地址。修改`NSString`，再打印出两个属性的值和地址。
 
-```objective-c
+```objc
 NSString *strChange = [NSString stringWithFormat:@"hello"];
 self.strCopy = strChange;
 self.strStrong = strChange;

@@ -130,27 +130,29 @@
 
 <p>首先先创建两个<code class="highlighter-rouge">NSString</code>的属性，一个为<code class="highlighter-rouge">copy</code>，一个为<code class="highlighter-rouge">strong</code>。</p>
 
-<pre><code class="language-objective-c">@property (nonatomic, copy) NSString *strCopy;
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">copy</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">strCopy</span><span class="p">;</span>
 
-@property (nonatomic, strong) NSString *strStrong;
+<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">strStrong</span><span class="p">;</span>
 </code></pre>
+</div>
 
 <p>然后创建一个<code class="highlighter-rouge">NSString</code>对象，将其赋值给这两个属性，并打印出变量值和地址。修改<code class="highlighter-rouge">NSString</code>，再打印出两个属性的值和地址。</p>
 
-<pre><code class="language-objective-c">NSString *strChange = [NSString stringWithFormat:@"hello"];
-self.strCopy = strChange;
-self.strStrong = strChange;
-NSLog(@"Before change~~~");
-NSLog(@"Copy string: %@ ,%p;", self.strCopy, self.strCopy);
-NSLog(@"Strong string: %@, %p;", self.strStrong, self.strStrong);
-NSLog(@"Change string: %@, %p;", strChange, strChange);
+<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSString</span> <span class="o">*</span><span class="n">strChange</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSString</span> <span class="nf">stringWithFormat</span><span class="p">:</span><span class="s">@"hello"</span><span class="p">];</span>
+<span class="n">self</span><span class="p">.</span><span class="n">strCopy</span> <span class="o">=</span> <span class="n">strChange</span><span class="p">;</span>
+<span class="n">self</span><span class="p">.</span><span class="n">strStrong</span> <span class="o">=</span> <span class="n">strChange</span><span class="p">;</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Before change~~~"</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Copy string: %@ ,%p;"</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strCopy</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strCopy</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Strong string: %@, %p;"</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strStrong</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strStrong</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Change string: %@, %p;"</span><span class="p">,</span> <span class="n">strChange</span><span class="p">,</span> <span class="n">strChange</span><span class="p">);</span>
 
-strChange = @"world";
-NSLog(@"After change~~~");
-NSLog(@"Copy string: %@ ,%p;", self.strCopy, self.strCopy);
-NSLog(@"Strong string: %@, %p;", self.strStrong, self.strStrong);
-NSLog(@"Change string: %@, %p;", strChange, strChange);
+<span class="n">strChange</span> <span class="o">=</span> <span class="s">@"world"</span><span class="p">;</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"After change~~~"</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Copy string: %@ ,%p;"</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strCopy</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strCopy</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Strong string: %@, %p;"</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strStrong</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strStrong</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Change string: %@, %p;"</span><span class="p">,</span> <span class="n">strChange</span><span class="p">,</span> <span class="n">strChange</span><span class="p">);</span>
 </code></pre>
+</div>
 
 <p>结果如下</p>
 
@@ -258,7 +260,7 @@ NSLog(@"Change string: %@, %p;", strChange, strChange);</code></pre></figure>
                     </li>
                     
                 </ul>
-                <p class="copyright text-muted">Copyright &copy; Your/Project/Corporate Name 2017</p>
+                <p class="copyright text-muted">Copyright &copy; Your/Project/Corporate Name 2018</p>
             </div>
         </div>
     </div>

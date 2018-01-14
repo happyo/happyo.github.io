@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
 
-    <title>Clean Blog</title>
+    <title>函数式编程 - Clean Blog</title>
 
-    <link rel="canonical" href="http://localhost:4000/">
+    <link rel="canonical" href="http://localhost:4000/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -81,71 +81,102 @@
 </nav>
 
 
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    <!-- Post Header -->
+<header class="intro-header" style="background-image: url('/img/post-bg-01.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Clean Blog</h1>
-                    <hr class="small">
-                    <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+                <div class="post-heading">
+                    <h1>函数式编程</h1>
+                    
+                    <span class="meta">Posted by happyo on January 14, 2018</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			
-<div class="post-preview">
-    <a href="/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
-        <h2 class="post-title">            函数式编程
-        </h2>
-        
-    </a>
-    <p class="post-meta">Posted by happyo on January 14, 2018</p>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+				<h1 id="定义">定义</h1>
+<blockquote>
+  <p>函数式编程（英语：functional programming）或称函数程序设计，又称泛函编程，是一种编程典范，它将电脑运算视为数学上的函数计算，并且避免使用程序状态以及易变对象。函数编程语言最重要的基础是λ演算（lambda calculus）。而且λ演算的函数可以接受函数当作输入（引数）和输出（传出值）。</p>
+</blockquote>
+
+<p>主要思想是把运算过程尽量写成一系列的函数调用，例如：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>(1 + 2) * 3 - 4
+</code></pre>
 </div>
-<hr>
 
-<div class="post-preview">
-    <a href="/2016/01/18/iOS-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/">
-        <h2 class="post-title">            iOS 数据持久化
-        </h2>
-        
-        <h3 class="post-subtitle">
-            because they lacked opposable thumbs and the brainpower to build a space program.
-        </h3>
-        
-    </a>
-    <p class="post-meta">Posted by happyo on January 18, 2016</p>
+<p>传统的过程式编程可能这样写：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var a = 1 + 2
+var b = a * 3
+var c = b - 4
+</code></pre>
 </div>
-<hr>
 
-<div class="post-preview">
-    <a href="/2016/01/12/%E6%B5%85%E8%B0%88NSString-copy%E4%B8%8Estrong%E7%9A%84%E5%8C%BA%E5%88%AB/">
-        <h2 class="post-title">            浅谈NSString copy与strong的区别
-        </h2>
-        
-        <h3 class="post-subtitle">
-            because they lacked opposable thumbs and the brainpower to build a space program.
-        </h3>
-        
-    </a>
-    <p class="post-meta">Posted by happyo on January 12, 2016</p>
+<p>函数式编程需要使用函数来表示，写成如下：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var result = subtract(multiply(add(1,2), 3), 4)
+</code></pre>
 </div>
-<hr>
+
+<h1 id="特性">特性</h1>
+
+<ol>
+  <li>
+    <p><strong>函数是“一等公民”</strong>：指的是函数和其它数据类型处于平等地位，可以把函数赋值给其他变量，也可以作为参数传入另一个函数，或者作为别的函数的返回值。</p>
+  </li>
+  <li>
+    <p><strong>变量值不可变</strong>：纯函数式编程中的“变量”不是命令式编程中的“变量”，即储存状态的单元，而是代数中的“变量”，即一个值的名称。“变量”的值是不可变的，也就是说不允许像命令式编程中那样多次给一个变量赋值。比如“x = x + 1”，这个在程序员看来是对的，但在数学家眼中这个等式为假。正因为变量不可变，所以函数式编程中不使用for，while等等控制语句，一般使用递归来替代。</p>
+  </li>
+  <li>
+    <p><strong>高阶函数（Higher-order function）</strong>：高阶函数是接受一个或多个函数作为输入或者输出一个函数的函数，通俗一点就是这个函数参数里有函数或者返回值是函数，那么这个函数就是高阶函数。常用的高阶函数有map，filter，reduce等等</p>
+  </li>
+  <li>
+    <p><strong>偏应用函数（Partially Applied Functions）</strong></p>
+  </li>
+  <li>
+    <p><strong>柯里化（Currying）</strong></p>
+  </li>
+  <li>
+    <p><strong>闭包（Closure）</strong></p>
+  </li>
+</ol>
+
+<h2 id="好处">好处</h2>
+
+<ol>
+  <li>
+    <p><strong>引用透明（Referential transparency）</strong>：指的是函数的运行不依赖于外部变量或”状态”，只依赖于输入的参数，任何时候只要参数相同，引用函数所得到的返回值总是相同的。这使得程序的单元测试很好写，然后程序只要编译通过，90%以上的概率不会出问题。</p>
+  </li>
+  <li>
+    <p><strong>没有副作用（No Side Effect）</strong>：指的是函数内部与外部互动（最典型的情况，就是修改全局变量的值），产生运算以外的其他结果。它使得函数式编程各个独立的部分的执行顺序可以随意打乱。执行顺序的自由使其得以衍生出一大堆非常有用的特性，比如无锁（lock-free）的并发操作、惰性求值（lazy evaluation），还有在编译器级别上的各种性能优化技术。</p>
+  </li>
+</ol>
 
 
-<!-- Pager -->
+                <hr>
 
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2016/01/18/iOS-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" data-toggle="tooltip" data-placement="top" title="iOS 数据持久化">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
 
-		</div>
-	</div>
-</div>
+            </div>
+        </div>
+    </div>
+</article>
 
 <hr>
 

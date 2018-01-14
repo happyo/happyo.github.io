@@ -1,4 +1,61 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-04-08T23:09:20+08:00</updated><id>http://localhost:4000/</id><title type="html">Clean Blog</title><subtitle>Write your site description here. It will be used as your sites meta description as well!</subtitle><entry><title type="html">iOS 数据持久化</title><link href="http://localhost:4000/2016/01/18/iOS-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" rel="alternate" type="text/html" title="iOS 数据持久化" /><published>2016-01-18T16:10:54+08:00</published><updated>2016-01-18T16:10:54+08:00</updated><id>http://localhost:4000/2016/01/18/iOS%20%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96</id><content type="html" xml:base="http://localhost:4000/2016/01/18/iOS-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/">&lt;blockquote&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-01-14T21:13:59+08:00</updated><id>http://localhost:4000/</id><title type="html">Clean Blog</title><subtitle>Write your site description here. It will be used as your sites meta description as well!</subtitle><entry><title type="html">函数式编程</title><link href="http://localhost:4000/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="alternate" type="text/html" title="函数式编程" /><published>2018-01-14T20:10:10+08:00</published><updated>2018-01-14T20:10:10+08:00</updated><id>http://localhost:4000/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B</id><content type="html" xml:base="http://localhost:4000/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">&lt;h1 id=&quot;定义&quot;&gt;定义&lt;/h1&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;函数式编程（英语：functional programming）或称函数程序设计，又称泛函编程，是一种编程典范，它将电脑运算视为数学上的函数计算，并且避免使用程序状态以及易变对象。函数编程语言最重要的基础是λ演算（lambda calculus）。而且λ演算的函数可以接受函数当作输入（引数）和输出（传出值）。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;主要思想是把运算过程尽量写成一系列的函数调用，例如：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;(1 + 2) * 3 - 4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;传统的过程式编程可能这样写：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var a = 1 + 2
+var b = a * 3
+var c = b - 4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;函数式编程需要使用函数来表示，写成如下：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var result = subtract(multiply(add(1,2), 3), 4)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;特性&quot;&gt;特性&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;函数是“一等公民”&lt;/strong&gt;：指的是函数和其它数据类型处于平等地位，可以把函数赋值给其他变量，也可以作为参数传入另一个函数，或者作为别的函数的返回值。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;变量值不可变&lt;/strong&gt;：纯函数式编程中的“变量”不是命令式编程中的“变量”，即储存状态的单元，而是代数中的“变量”，即一个值的名称。“变量”的值是不可变的，也就是说不允许像命令式编程中那样多次给一个变量赋值。比如“x = x + 1”，这个在程序员看来是对的，但在数学家眼中这个等式为假。正因为变量不可变，所以函数式编程中不使用for，while等等控制语句，一般使用递归来替代。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;高阶函数（Higher-order function）&lt;/strong&gt;：高阶函数是接受一个或多个函数作为输入或者输出一个函数的函数，通俗一点就是这个函数参数里有函数或者返回值是函数，那么这个函数就是高阶函数。常用的高阶函数有map，filter，reduce等等&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;偏应用函数（Partially Applied Functions）&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;柯里化（Currying）&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;闭包（Closure）&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;好处&quot;&gt;好处&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;引用透明（Referential transparency）&lt;/strong&gt;：指的是函数的运行不依赖于外部变量或”状态”，只依赖于输入的参数，任何时候只要参数相同，引用函数所得到的返回值总是相同的。这使得程序的单元测试很好写，然后程序只要编译通过，90%以上的概率不会出问题。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;strong&gt;没有副作用（No Side Effect）&lt;/strong&gt;：指的是函数内部与外部互动（最典型的情况，就是修改全局变量的值），产生运算以外的其他结果。它使得函数式编程各个独立的部分的执行顺序可以随意打乱。执行顺序的自由使其得以衍生出一大堆非常有用的特性，比如无锁（lock-free）的并发操作、惰性求值（lazy evaluation），还有在编译器级别上的各种性能优化技术。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>happyo</name></author><summary type="html">定义 函数式编程（英语：functional programming）或称函数程序设计，又称泛函编程，是一种编程典范，它将电脑运算视为数学上的函数计算，并且避免使用程序状态以及易变对象。函数编程语言最重要的基础是λ演算（lambda calculus）。而且λ演算的函数可以接受函数当作输入（引数）和输出（传出值）。</summary></entry><entry><title type="html">iOS 数据持久化</title><link href="http://localhost:4000/2016/01/18/iOS-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" rel="alternate" type="text/html" title="iOS 数据持久化" /><published>2016-01-18T16:10:54+08:00</published><updated>2016-01-18T16:10:54+08:00</updated><id>http://localhost:4000/2016/01/18/iOS%20%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96</id><content type="html" xml:base="http://localhost:4000/2016/01/18/iOS-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/">&lt;blockquote&gt;
   &lt;p&gt;数据持久化即数据的永久存储。在 iOS 中，是将数据保存成文件，存储到程序的沙盒中。&lt;/p&gt;
 &lt;/blockquote&gt;
 
@@ -390,27 +447,29 @@ NSLog(@&quot;name : %@, isMale :%d, age :%ld&quot;, nameStr, isMale, age);
 
 &lt;p&gt;首先先创建两个&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString&lt;/code&gt;的属性，一个为&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;，一个为&lt;code class=&quot;highlighter-rouge&quot;&gt;strong&lt;/code&gt;。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;@property (nonatomic, copy) NSString *strCopy;
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-@property (nonatomic, strong) NSString *strStrong;
+&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strStrong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;然后创建一个&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString&lt;/code&gt;对象，将其赋值给这两个属性，并打印出变量值和地址。修改&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString&lt;/code&gt;，再打印出两个属性的值和地址。&lt;/p&gt;
 
-&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot;&gt;NSString *strChange = [NSString stringWithFormat:@&quot;hello&quot;];
-self.strCopy = strChange;
-self.strStrong = strChange;
-NSLog(@&quot;Before change~~~&quot;);
-NSLog(@&quot;Copy string: %@ ,%p;&quot;, self.strCopy, self.strCopy);
-NSLog(@&quot;Strong string: %@, %p;&quot;, self.strStrong, self.strStrong);
-NSLog(@&quot;Change string: %@, %p;&quot;, strChange, strChange);
+&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strChange&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stringWithFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strCopy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strStrong&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;Before change~~~&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;Copy string: %@ ,%p;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;Strong string: %@, %p;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strStrong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strStrong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;Change string: %@, %p;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
-strChange = @&quot;world&quot;;
-NSLog(@&quot;After change~~~&quot;);
-NSLog(@&quot;Copy string: %@ ,%p;&quot;, self.strCopy, self.strCopy);
-NSLog(@&quot;Strong string: %@, %p;&quot;, self.strStrong, self.strStrong);
-NSLog(@&quot;Change string: %@, %p;&quot;, strChange, strChange);
+&lt;span class=&quot;n&quot;&gt;strChange&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&quot;world&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;After change~~~&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;Copy string: %@ ,%p;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;Strong string: %@, %p;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strStrong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strStrong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;Change string: %@, %p;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
 &lt;p&gt;结果如下&lt;/p&gt;
 

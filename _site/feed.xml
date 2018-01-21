@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-01-14T21:13:59+08:00</updated><id>http://localhost:4000/</id><title type="html">Clean Blog</title><subtitle>Write your site description here. It will be used as your sites meta description as well!</subtitle><entry><title type="html">函数式编程</title><link href="http://localhost:4000/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="alternate" type="text/html" title="函数式编程" /><published>2018-01-14T20:10:10+08:00</published><updated>2018-01-14T20:10:10+08:00</updated><id>http://localhost:4000/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B</id><content type="html" xml:base="http://localhost:4000/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">&lt;h1 id=&quot;定义&quot;&gt;定义&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-01-21T13:47:38+08:00</updated><id>http://localhost:4000/</id><title type="html">Clean Blog</title><subtitle>Write your site description here. It will be used as your sites meta description as well!</subtitle><entry><title type="html">函数式编程</title><link href="http://localhost:4000/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="alternate" type="text/html" title="函数式编程" /><published>2018-01-14T20:10:10+08:00</published><updated>2018-01-14T20:10:10+08:00</updated><id>http://localhost:4000/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B</id><content type="html" xml:base="http://localhost:4000/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">&lt;h1 id=&quot;定义&quot;&gt;定义&lt;/h1&gt;
 &lt;blockquote&gt;
   &lt;p&gt;函数式编程（英语：functional programming）或称函数程序设计，又称泛函编程，是一种编程典范，它将电脑运算视为数学上的函数计算，并且避免使用程序状态以及易变对象。函数编程语言最重要的基础是λ演算（lambda calculus）。而且λ演算的函数可以接受函数当作输入（引数）和输出（传出值）。&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -425,13 +425,11 @@ NSLog(@&quot;name : %@, isMale :%d, age :%ld&quot;, nameStr, isMale, age);
   &lt;p&gt;最近在看面试题，刚好遇到&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;用法的问题。而我对答案不是很理解，所以晚上搜了一些相关知识，然后自己手动试了下。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h3 id=&quot;先贴下面试题及答案&quot;&gt;先贴下面试题及答案&lt;/h3&gt;
+&lt;h1 id=&quot;先贴下面试题及答案&quot;&gt;先贴下面试题及答案&lt;/h1&gt;
 
-&lt;h4 id=&quot;题目怎么使用copy关键字&quot;&gt;题目：怎么使用&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;关键字&lt;/h4&gt;
+&lt;h2 id=&quot;题目怎么使用copy关键字&quot;&gt;题目：怎么使用&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;关键字&lt;/h2&gt;
 
-&lt;h4 id=&quot;回答nsstringnsarraynsdictionary-等等经常使用copy关键字是因为他们有对应的可变类型nsmutablestringnsmutablearraynsmutabledictionary&quot;&gt;回答：&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString、NSArray、NSDictionary&lt;/code&gt; 等等经常使用&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;关键字，是因为他们有对应的可变类型：&lt;code class=&quot;highlighter-rouge&quot;&gt;NSMutableString、NSMutableArray、NSMutableDictionary&lt;/code&gt;&lt;/h4&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;回答：&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString、NSArray、NSDictionary&lt;/code&gt; 等等经常使用&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;关键字，是因为他们有对应的可变类型：&lt;code class=&quot;highlighter-rouge&quot;&gt;NSMutableString、NSMutableArray、NSMutableDictionary&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;对此不是很理解，所以就找了下&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;的解释。&lt;/p&gt;
 
@@ -441,35 +439,29 @@ NSLog(@&quot;name : %@, isMale :%d, age :%ld&quot;, nameStr, isMale, age);
 
 &lt;p&gt;大概意思是不想本类的属性随外面的变化而变化时使用。&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;talk-is-cheapshow-me-the-code&quot;&gt;Talk is cheap,show me the code.&lt;/h3&gt;
+&lt;h1 id=&quot;talk-is-cheapshow-me-the-code&quot;&gt;Talk is cheap,show me the code.&lt;/h1&gt;
 
 &lt;p&gt;首先先创建两个&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString&lt;/code&gt;的属性，一个为&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;，一个为&lt;code class=&quot;highlighter-rouge&quot;&gt;strong&lt;/code&gt;。&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;@property (nonatomic, copy) NSString \*strCopy;
 
-&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strStrong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+@property (nonatomic, strong) NSString \*strStrong;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;然后创建一个&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString&lt;/code&gt;对象，将其赋值给这两个属性，并打印出变量值和地址。修改&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString&lt;/code&gt;，再打印出两个属性的值和地址。&lt;/p&gt;
 
-&lt;div class=&quot;language-objc highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strChange&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stringWithFormat&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;hello&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strCopy&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strStrong&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;Before change~~~&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;Copy string: %@ ,%p;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;Strong string: %@, %p;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strStrong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strStrong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;Change string: %@, %p;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;NSString *strChange = [NSString stringWithFormat:@&quot;hello&quot;];
+self.strCopy = strChange;
+self.strStrong = strChange;
+NSLog(@&quot;Before change~~~&quot;);
+NSLog(@&quot;Copy string: %@ ,%p;&quot;, self.strCopy, self.strCopy);
+NSLog(@&quot;Strong string: %@, %p;&quot;, self.strStrong, self.strStrong);
+NSLog(@&quot;Change string: %@, %p;&quot;, strChange, strChange);
 
-&lt;span class=&quot;n&quot;&gt;strChange&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;@&quot;world&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;After change~~~&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;Copy string: %@ ,%p;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;Strong string: %@, %p;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strStrong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strStrong&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;Change string: %@, %p;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strChange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+strChange = @&quot;world&quot;;
+NSLog(@&quot;After change~~~&quot;);
+NSLog(@&quot;Copy string: %@ ,%p;&quot;, self.strCopy, self.strCopy);
+NSLog(@&quot;Strong string: %@, %p;&quot;, self.strStrong, self.strStrong);
+NSLog(@&quot;Change string: %@, %p;&quot;, strChange, strChange);&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;结果如下&lt;/p&gt;
 
@@ -479,7 +471,7 @@ NSLog(@&quot;name : %@, isMale :%d, age :%ld&quot;, nameStr, isMale, age);
 
 &lt;p&gt;将&lt;code class=&quot;highlighter-rouge&quot;&gt;strChange&lt;/code&gt;的类型改为&lt;code class=&quot;highlighter-rouge&quot;&gt;NSMutableString&lt;/code&gt;，然后对其修改。&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;NSMutableString *strChange = [NSMutableString stringWithFormat:@&quot;hello&quot;];
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objective-c&quot; data-lang=&quot;objective-c&quot;&gt;NSMutableString \*strChange = [NSMutableString stringWithFormat:@&quot;hello&quot;];
 self.strCopy = strChange;
 self.strStrong = strChange;
 NSLog(@&quot;Before change~~~&quot;);
@@ -499,5 +491,5 @@ NSLog(@&quot;Change string: %@, %p;&quot;, strChange, strChange);&lt;/code&gt;&l
 
 &lt;p&gt;可见，&lt;strong&gt;当赋值类型是可变的&lt;code class=&quot;highlighter-rouge&quot;&gt;NSMutableString&lt;/code&gt;时&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;会将&lt;code class=&quot;highlighter-rouge&quot;&gt;changeStr&lt;/code&gt;重新拷贝一份并将新的指针赋值给属性。而&lt;code class=&quot;highlighter-rouge&quot;&gt;strong&lt;/code&gt;则还是直接将&lt;code class=&quot;highlighter-rouge&quot;&gt;changeStr&lt;/code&gt;的指针赋值过去。&lt;/strong&gt;所以当我们对&lt;code class=&quot;highlighter-rouge&quot;&gt;changeStr&lt;/code&gt;进行改变时，&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;属性不会受到影响，&lt;code class=&quot;highlighter-rouge&quot;&gt;strong&lt;/code&gt;类型则会跟着改变。&lt;/p&gt;
 
-&lt;p&gt;结论：
-&lt;strong&gt;当属性是&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString,NSArray,NSDictionary&lt;/code&gt;这种不可变的类型时，我们一般不希望它随着外界变化而变化，所以最好使用&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;。&lt;/strong&gt;&lt;/p&gt;</content><author><name>happyo</name></author><summary type="html">最近在看面试题，刚好遇到copy用法的问题。而我对答案不是很理解，所以晚上搜了一些相关知识，然后自己手动试了下。</summary></entry></feed>
+&lt;h1 id=&quot;结论&quot;&gt;结论&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;当属性是&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString,NSArray,NSDictionary&lt;/code&gt;这种不可变的类型时，我们一般不希望它随着外界变化而变化，所以最好使用&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;。&lt;/strong&gt;&lt;/p&gt;</content><author><name>happyo</name></author><summary type="html">最近在看面试题，刚好遇到copy用法的问题。而我对答案不是很理解，所以晚上搜了一些相关知识，然后自己手动试了下。</summary></entry></feed>

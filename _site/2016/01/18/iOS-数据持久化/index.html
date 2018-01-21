@@ -106,97 +106,90 @@
   <p>数据持久化即数据的永久存储。在 iOS 中，是将数据保存成文件，存储到程序的沙盒中。</p>
 </blockquote>
 
-<h2 id="沙盒"><strong>沙盒</strong></h2>
+<h1 id="沙盒">沙盒</h1>
 <ul>
-  <li>
-    <p><strong>每个 iOS 应用都有自己的应用沙盒，应用沙盒就是文件系统目录，与其他应用放入文件 系统隔离，iOS 系统不允许访问其他应用的应用沙盒，但在 ios8 中已经开放访问（extension）</strong></p>
-  </li>
-  <li>
-    <p><strong>extension 是 iOS8 新开放的一种对几个固定系统区域的拓展机制，它可以在一定程度上弥补 iOS 的沙盒机制对应用间的通信限制</strong></p>
-  </li>
-  <li>
-    <p><strong>应用沙盒一般包括以下几个文件目录:</strong></p>
-  </li>
+  <li>每个 iOS 应用都有自己的应用沙盒，应用沙盒就是文件系统目录，与其他应用放入文件 系统隔离，iOS 系统不允许访问其他应用的应用沙盒，但在 ios8 中已经开放访问（extension）</li>
+  <li>extension 是 iOS8 新开放的一种对几个固定系统区域的拓展机制，它可以在一定程度上弥补 iOS 的沙盒机制对应用间的通信限制</li>
+  <li>应用沙盒一般包括以下几个文件目录:</li>
 </ul>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="p">.</span><span class="n">app</span>
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="p">.</span><span class="n">app</span>
 <span class="n">Documents</span>
 <span class="n">Library</span>  
 <span class="o">---</span><span class="n">Caches</span>
 <span class="o">---</span><span class="n">Preferences</span>
-<span class="n">tmp</span>
-</code></pre>
-</div>
+<span class="n">tmp</span></code></pre></figure>
 
-<h2 id="目录简介及获取"><strong>目录简介及获取</strong></h2>
+<hr />
+
+<h1 id="目录简介及获取">目录简介及获取</h1>
 <ul>
-  <li><strong>沙盒根目录获取</strong>: 获取如下
-    <div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSString</span> <span class="o">*</span><span class="n">homePath</span> <span class="o">=</span> <span class="n">NSHomeDirectory</span><span class="p">();</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">homePath</span><span class="p">);</span>
-</code></pre>
-    </div>
-    <p><br /></p>
-  </li>
-  <li><strong>.app文件</strong>: 这里面存放的是应用程序的源文件，包括资源文件和可执行文件。
-    <div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSString</span> <span class="o">*</span><span class="n">appPath</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSBundle</span> <span class="nf">mainBundle</span><span class="p">]</span> <span class="nf">bundlePath</span><span class="p">];</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">appPath</span><span class="p">);</span>
-</code></pre>
-    </div>
-    <p><br /></p>
-  </li>
-  <li><strong>Documents</strong>: 保存应用运行时生成的需要持久化的数据，<code class="highlighter-rouge">iTunes</code> 会自动备份该目录。
-    <div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSString</span> <span class="o">*</span><span class="n">documentPath</span> <span class="o">=</span> <span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSDocumentDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">).</span><span class="n">firstObject</span><span class="p">;</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">documentPath</span><span class="p">);</span>
-</code></pre>
-    </div>
-    <p><br /></p>
-  </li>
-  <li><strong>tmp</strong>: 保存应用运行时所需的临时数据，使用完毕后再将对应的文件从该目录删除，应用没有运行时，系统也可能会自动清理该目录下的文件，<code class="highlighter-rouge">iTunes</code> 不会同步该目录，iPhone 重启时该目录下的文件会丢失。
-    <div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSString</span> <span class="o">*</span><span class="n">tmpPath</span> <span class="o">=</span> <span class="n">NSTemporaryDirectory</span><span class="p">();</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">tmpPath</span><span class="p">);</span>
-</code></pre>
-    </div>
-    <p><br /></p>
-  </li>
-  <li><strong>Library</strong>: 存储程序的默认设置和其他状态信息，<code class="highlighter-rouge">iTunes </code>会自动备份该目录。
-    <div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSString</span> <span class="o">*</span><span class="n">libraryPath</span> <span class="o">=</span> <span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSLibraryDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">).</span><span class="n">firstObject</span><span class="p">;</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">libraryPath</span><span class="p">);</span>
-</code></pre>
-    </div>
-    <p><br /></p>
-  </li>
-  <li><strong>Library/Caches</strong>: 存放缓存文件，<code class="highlighter-rouge">iTunes</code>不会备份此目录，此目录下文件不会在应用退出时删除，一般存放体积比较大，不是很重要的资源
-    <div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSString</span> <span class="o">*</span><span class="n">cachesPath</span> <span class="o">=</span> <span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSCachesDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">).</span><span class="n">firstObject</span><span class="p">;</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">cachesPath</span><span class="p">);</span>
-</code></pre>
-    </div>
-    <p><br /></p>
-  </li>
-  <li><strong>Library/Preferences</strong>: 保存应用的所有偏好设置，iOS 的 <code class="highlighter-rouge">Setting（设置）</code>会在该目录中查找应用的设置信息，iTunes会自动备份该目录。
-    <div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSString</span> <span class="o">*</span><span class="n">preferencesPath</span> <span class="o">=</span> <span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSLibraryDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">).</span><span class="n">firstObject</span><span class="p">;</span>
-<span class="n">preferencesPath</span> <span class="o">=</span> <span class="p">[</span><span class="n">preferencesPath</span> <span class="nf">stringByAppendingPathComponent</span><span class="p">:</span><span class="s">@"Preferences"</span><span class="p">];</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">preferencesPath</span><span class="p">);</span>
-</code></pre>
-    </div>
-    <p><br /></p>
-  </li>
+  <li><strong>沙盒根目录获取</strong>: 获取如下</li>
 </ul>
 
-<h2 id="了解了沙盒的基本概念后就可以进行数据持久化啦ios-的数据持久化方式一般有以下-5-种"><strong>了解了沙盒的基本概念后就可以进行数据持久化啦，iOS 的数据持久化方式一般有以下 5 种</strong></h2>
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">NSString</span> <span class="o">*</span><span class="n">homePath</span> <span class="o">=</span> <span class="n">NSHomeDirectory</span><span class="p">();</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">homePath</span><span class="p">);</span></code></pre></figure>
+
+<ul>
+  <li><strong>.app文件</strong>: 这里面存放的是应用程序的源文件，包括资源文件和可执行文件。</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">NSString</span> <span class="o">*</span><span class="n">appPath</span> <span class="o">=</span> <span class="p">[[</span><span class="n">NSBundle</span> <span class="nf">mainBundle</span><span class="p">]</span> <span class="nf">bundlePath</span><span class="p">];</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">appPath</span><span class="p">);</span></code></pre></figure>
+
+<ul>
+  <li><strong>Documents</strong>: 保存应用运行时生成的需要持久化的数据，<code class="highlighter-rouge">iTunes</code> 会自动备份该目录。</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">NSString</span> <span class="o">*</span><span class="n">documentPath</span> <span class="o">=</span> <span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSDocumentDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">).</span><span class="n">firstObject</span><span class="p">;</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">documentPath</span><span class="p">);</span></code></pre></figure>
+
+<ul>
+  <li><strong>tmp</strong>: 保存应用运行时所需的临时数据，使用完毕后再将对应的文件从该目录删除，应用没有运行时，系统也可能会自动清理该目录下的文件，<code class="highlighter-rouge">iTunes</code> 不会同步该目录，iPhone 重启时该目录下的文件会丢失。</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">NSString</span> <span class="o">*</span><span class="n">tmpPath</span> <span class="o">=</span> <span class="n">NSTemporaryDirectory</span><span class="p">();</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">tmpPath</span><span class="p">);</span></code></pre></figure>
+
+<ul>
+  <li><strong>Library</strong>: 存储程序的默认设置和其他状态信息，<code class="highlighter-rouge">iTunes </code>会自动备份该目录。</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">NSString</span> <span class="o">*</span><span class="n">libraryPath</span> <span class="o">=</span> <span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSLibraryDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">).</span><span class="n">firstObject</span><span class="p">;</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">libraryPath</span><span class="p">);</span></code></pre></figure>
+
+<ul>
+  <li><strong>Library/Caches</strong>: 存放缓存文件，<code class="highlighter-rouge">iTunes</code>不会备份此目录，此目录下文件不会在应用退出时删除，一般存放体积比较大，不是很重要的资源</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">NSString</span> <span class="o">*</span><span class="n">cachesPath</span> <span class="o">=</span> <span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSCachesDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">).</span><span class="n">firstObject</span><span class="p">;</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">cachesPath</span><span class="p">);</span></code></pre></figure>
+
+<ul>
+  <li><strong>Library/Preferences</strong>: 保存应用的所有偏好设置，iOS 的 <code class="highlighter-rouge">Setting（设置）</code>会在该目录中查找应用的设置信息，iTunes会自动备份该目录。</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">NSString</span> <span class="o">*</span><span class="n">preferencesPath</span> <span class="o">=</span> <span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSLibraryDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">).</span><span class="n">firstObject</span><span class="p">;</span>
+<span class="n">preferencesPath</span> <span class="o">=</span> <span class="p">[</span><span class="n">preferencesPath</span> <span class="nf">stringByAppendingPathComponent</span><span class="p">:</span><span class="s">@"Preferences"</span><span class="p">];</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">preferencesPath</span><span class="p">);</span></code></pre></figure>
+
+<hr />
+
+<h1 id="ios的数据持久化方式一般有以下5种">iOS的数据持久化方式一般有以下5种</h1>
 <ol>
-  <li><strong>plist（属性列表）</strong></li>
-  <li><strong>preferences (NSUserDefaults)</strong></li>
-  <li><strong>NSKeyedArchiver (归档)</strong></li>
-  <li><strong>SQLite 3</strong></li>
-  <li><strong>CoreData</strong></li>
+  <li>plist（属性列表）</li>
+  <li>preferences (NSUserDefaults)</li>
+  <li>NSKeyedArchiver (归档)</li>
+  <li>SQLite 3</li>
+  <li>CoreData</li>
 </ol>
 
-<p><br /></p>
+<hr />
 
-<h2 id="plist属性列表"><strong>plist（属性列表）</strong></h2>
+<h2 id="plist属性列表">plist（属性列表）</h2>
 <p>属性列表文件是一种 <code class="highlighter-rouge">XML</code> 文件，<code class="highlighter-rouge">Foundation</code> 框架中的一些对象可以与属性列表文件互相转换，可转换的类型如下：</p>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="n">NSArray</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">NSArray</span><span class="p">;</span>
 <span class="n">NSMutableArray</span><span class="p">;</span>
 <span class="n">NSDictionary</span><span class="p">;</span>
 <span class="n">NSMutableDictionary</span><span class="p">;</span>
@@ -204,14 +197,11 @@
 <span class="n">NSMutableData</span><span class="p">;</span>
 <span class="n">NSString</span><span class="p">;</span>
 <span class="n">NSMutableString</span><span class="p">;</span>
-<span class="n">NSNumber</span><span class="p">;</span>
-</code></pre>
-</div>
+<span class="n">NSNumber</span><span class="p">;</span></code></pre></figure>
 
-<p><br /></p>
+<h3 id="存储和使用">存储和使用</h3>
 
-<h4 id="存储和使用">存储和使用</h4>
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">// 获取存储文件的路径
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="c1">// 获取存储文件的路径
 </span><span class="n">NSString</span> <span class="o">*</span><span class="n">documentPath</span> <span class="o">=</span> <span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSDocumentDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">).</span><span class="n">firstObject</span><span class="p">;</span>
 <span class="n">NSString</span> <span class="o">*</span><span class="n">fileName</span> <span class="o">=</span> <span class="p">[</span><span class="n">documentPath</span> <span class="nf">stringByAppendingPathComponent</span><span class="p">:</span><span class="s">@"storage.plist"</span><span class="p">];</span>
 
@@ -229,70 +219,62 @@
 
 <span class="c1">// 结果发现取出来的还是第一次存的数组
 </span><span class="n">NSArray</span> <span class="o">*</span><span class="n">modifyResult</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSArray</span> <span class="nf">arrayWithContentsOfFile</span><span class="p">:</span><span class="n">fileName</span><span class="p">];</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"modify result :%@"</span><span class="p">,</span> <span class="n">modifyResult</span><span class="p">);</span>
-</code></pre>
-</div>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"modify result :%@"</span><span class="p">,</span> <span class="n">modifyResult</span><span class="p">);</span></code></pre></figure>
 
-<p><br /></p>
-
-<h4 id="运行结果"><strong>运行结果</strong></h4>
+<h3 id="运行结果">运行结果</h3>
 <p><img src="http://cl.ly/241B0p0t0g0o/Image%202016-01-18%20at%207.50.49%20%E4%B8%8B%E5%8D%88.png" alt="plistResult" /></p>
 
-<p><br /></p>
-
-<h4 id="注意"><strong>注意</strong></h4>
-
+<h3 id="注意">注意</h3>
 <ul>
-  <li><strong>只有上面提到的特定类型才能用 plist 进行存储</strong></li>
-  <li><strong><code class="highlighter-rouge">writeToFile: atomically:</code> 的<code class="highlighter-rouge">atomically</code>参数表示是否使用辅助文件。如果为 <code class="highlighter-rouge">YES</code>，则先写入到一个辅助文件，然后将辅助文件重新命名为目标文件，如果为 <code class="highlighter-rouge">NO</code>，则直接写入目标文件。</strong></li>
-  <li><strong>当需要存的对象里面包含<code class="highlighter-rouge">NULL</code>时，存文件会失败。（很多情况下是服务端返回的数据包含 <code class="highlighter-rouge">null</code>，然后转化成对象存会失败）</strong></li>
+  <li>只有上面提到的特定类型才能用 plist 进行存储</li>
+  <li><code class="highlighter-rouge">writeToFile: atomically:</code> 的<code class="highlighter-rouge">atom</code></li>
+  <li>当需要存的对象里面包含<code class="highlighter-rouge">NULL</code>时，存文件会失败。（很多情况下是服务端返回的数据包含 <code class="highlighter-rouge">null</code>，然后转化成对象存会失败）</li>
 </ul>
 
-<p><br /></p>
+<hr />
 
-<h2 id="preferences-nsuserdefaults"><strong>preferences (NSUserDefaults)</strong></h2>
+<h2 id="preferences-nsuserdefaults">preferences (NSUserDefaults)</h2>
 <p><code class="highlighter-rouge">NSUserDefaults</code>是一个单例，在整个程序中只有一个实例对象，他可以用于数据的永久保存，而且简单实用。</p>
-<pre><code class="language-objective-c">// 获取 NSUserDefaults 的单例对象
-NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
 
-// 存储
-[userDefaults setObject:@"happyo" forKey:@"name"];
-[userDefaults setBool:YES forKey:@"isMale"];
-[userDefaults setInteger:25 forKey:@"age"];
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="c1">// 获取 NSUserDefaults 的单例对象
+</span><span class="n">NSUserDefaults</span> <span class="o">*</span><span class="n">userDefaults</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSUserDefaults</span> <span class="nf">standardUserDefaults</span><span class="p">];</span>
 
-// 立即同步
-[userDefaults synchronize];
+<span class="c1">// 存储
+</span><span class="p">[</span><span class="n">userDefaults</span> <span class="nf">setObject</span><span class="p">:</span><span class="s">@"happyo"</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"name"</span><span class="p">];</span>
+<span class="p">[</span><span class="n">userDefaults</span> <span class="nf">setBool</span><span class="p">:</span><span class="nb">YES</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"isMale"</span><span class="p">];</span>
+<span class="p">[</span><span class="n">userDefaults</span> <span class="nf">setInteger</span><span class="p">:</span><span class="mi">25</span> <span class="nf">forKey</span><span class="p">:</span><span class="s">@"age"</span><span class="p">];</span>
 
-// 读取
-NSString *nameStr = [userDefaults objectForKey:@"name"];
-BOOL isMale = [userDefaults boolForKey:@"isMale"];
-NSInteger age = [userDefaults integerForKey:@"age"];
+<span class="c1">// 立即同步
+</span><span class="p">[</span><span class="n">userDefaults</span> <span class="nf">synchronize</span><span class="p">];</span>
 
-NSLog(@"name : %@, isMale :%d, age :%ld", nameStr, isMale, age);
-</code></pre>
+<span class="c1">// 读取
+</span><span class="n">NSString</span> <span class="o">*</span><span class="n">nameStr</span> <span class="o">=</span> <span class="p">[</span><span class="n">userDefaults</span> <span class="nf">objectForKey</span><span class="p">:</span><span class="s">@"name"</span><span class="p">];</span>
+<span class="n">BOOL</span> <span class="n">isMale</span> <span class="o">=</span> <span class="p">[</span><span class="n">userDefaults</span> <span class="nf">boolForKey</span><span class="p">:</span><span class="s">@"isMale"</span><span class="p">];</span>
+<span class="n">NSInteger</span> <span class="n">age</span> <span class="o">=</span> <span class="p">[</span><span class="n">userDefaults</span> <span class="nf">integerForKey</span><span class="p">:</span><span class="s">@"age"</span><span class="p">];</span>
 
-<p><br /></p>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"name : %@, isMale :%d, age :%ld"</span><span class="p">,</span> <span class="n">nameStr</span><span class="p">,</span> <span class="n">isMale</span><span class="p">,</span> <span class="n">age</span><span class="p">);</span></code></pre></figure>
 
-<h4 id="结果如下"><strong>结果如下</strong></h4>
+<h3 id="结果如下">结果如下</h3>
 
 <p><img src="http://cl.ly/273C1L3t020W/Image%202016-01-18%20at%209.18.02%20%E4%B8%8B%E5%8D%88.png" alt="preferencesResult" /></p>
 
-<h4 id="注意-1"><strong>注意</strong></h4>
+<h3 id="注意-1">注意</h3>
 
 <ul>
-  <li><strong>偏好设置是专门用来保存应用程序的配置信息的，一般不要在偏好设置中保存其他数据。</strong></li>
-  <li>**如果没有调用<code class="highlighter-rouge">synchronize</code>方法，系统会根据 I/O 情况不定时刻地保存到文件中。所以如果需要立即写入文件的就必须调用<code class="highlighter-rouge">synchronize</code>方法。 **</li>
-  <li><strong>偏好设置会将所有数据保存到同一个文件中。即 <code class="highlighter-rouge">preference</code> 目录下的一个以此应用包名来命名的 plist 文件。</strong></li>
+  <li>偏好设置是专门用来保存应用程序的配置信息的，一般不要在偏好设置中保存其他数据。</li>
+  <li>如果没有调用<code class="highlighter-rouge">synchronize</code>方法，系统会根据 I/O 情况不定时刻地保存到文件中。所以如果需要立即写入文件的就必须调用<code class="highlighter-rouge">synchronize</code>方法。</li>
+  <li>偏好设置会将所有数据保存到同一个文件中。即 <code class="highlighter-rouge">preference</code> 目录下的一个以此应用包名来命名的 plist 文件。</li>
 </ul>
 
-<p><br /></p>
+<hr />
 
-<h2 id="nskeyedarchiver-归档"><strong>NSKeyedArchiver (归档)</strong></h2>
+<h2 id="nskeyedarchiver-归档">NSKeyedArchiver (归档)</h2>
 <p>对象归档是一种序列化方式。为了便于数据传输，先将归档序列化成一个文件，然后通过返归档将数据恢复到对象中。
 对一个对象进行完整归档需要满足的条件为：该对象的类必须实现<code class="highlighter-rouge">NSCoding</code>协议，而且每个成员变量应该是基本数据类型或者都是实现了<code class="highlighter-rouge">NSCoding</code>协议的某个类的实例。</p>
 
 <p>创建一个<code class="highlighter-rouge">Car</code>类，使其实现<code class="highlighter-rouge">NSCoding</code>协议</p>
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="k">@interface</span> <span class="nc">Car</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">NSCoding</span><span class="o">&gt;</span>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="k">@interface</span> <span class="nc">Car</span> <span class="p">:</span> <span class="nc">NSObject</span> <span class="o">&lt;</span><span class="n">NSCoding</span><span class="o">&gt;</span>
 
 <span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">copy</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">name</span><span class="p">;</span>
 
@@ -317,12 +299,11 @@ NSLog(@"name : %@, isMale :%d, age :%ld", nameStr, isMale, age);
     <span class="k">return</span> <span class="n">self</span><span class="p">;</span>
 <span class="p">}</span>
 
-<span class="k">@end</span>
-</code></pre>
-</div>
+<span class="k">@end</span></code></pre></figure>
 
 <p>对其进行归档和解档</p>
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">// 创建对象
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="c1">// 创建对象
 </span><span class="n">Car</span> <span class="o">*</span><span class="n">car</span> <span class="o">=</span> <span class="p">[[</span><span class="n">Car</span> <span class="nf">alloc</span><span class="p">]</span> <span class="nf">init</span><span class="p">];</span>
 <span class="n">car</span><span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">@"Aventador"</span><span class="p">;</span>
 <span class="n">car</span><span class="p">.</span><span class="n">speed</span> <span class="o">=</span> <span class="mi">300</span><span class="p">;</span>
@@ -337,20 +318,18 @@ NSLog(@"name : %@, isMale :%d, age :%ld", nameStr, isMale, age);
 <span class="c1">// 解档
 </span><span class="n">Car</span> <span class="o">*</span><span class="n">unarchiveCar</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSKeyedUnarchiver</span> <span class="nf">unarchiveObjectWithFile</span><span class="p">:</span><span class="n">fileName</span><span class="p">];</span>
 
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"car :%@ , speed :%ld"</span><span class="p">,</span> <span class="n">unarchiveCar</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">unarchiveCar</span><span class="p">.</span><span class="n">speed</span><span class="p">);</span>
-</code></pre>
-</div>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"car :%@ , speed :%ld"</span><span class="p">,</span> <span class="n">unarchiveCar</span><span class="p">.</span><span class="n">name</span><span class="p">,</span> <span class="n">unarchiveCar</span><span class="p">.</span><span class="n">speed</span><span class="p">);</span></code></pre></figure>
 
-<h4 id="注意-2"><strong>注意</strong></h4>
+<h3 id="注意-2">注意</h3>
 <ul>
-  <li><strong>对象必须实现<code class="highlighter-rouge">NSCoding</code>协议</strong></li>
-  <li><strong>保存文件的扩展名可以任意指定</strong></li>
-  <li><strong>有继承关系时，要先调用父类的归解档方法</strong></li>
+  <li>对象必须实现<code class="highlighter-rouge">NSCoding</code>协议</li>
+  <li>保存文件的扩展名可以任意指定</li>
+  <li>有继承关系时，要先调用父类的归解档方法</li>
 </ul>
 
-<p><br /></p>
+<hr />
 
-<h2 id="sqlite-3"><strong>SQLite 3</strong></h2>
+<h2 id="sqlite-3">SQLite 3</h2>
 <p><code class="highlighter-rouge">SQLite</code>是无数据类型的数据库，就是字段不用指定类型。虽然<code class="highlighter-rouge">SQLite</code>可以忽略数据类型，但从编程的规范上讲，应该在<code class="highlighter-rouge">Create Table</code>语句中指定数据类型。因为数据类型可以告知这个字段的含义，便于别人阅读和理解。<code class="highlighter-rouge">SQLite</code>支持的常见数据类型如下：</p>
 
 <ul>
@@ -360,13 +339,12 @@ NSLog(@"name : %@, isMale :%d, age :%ld", nameStr, isMale, age);
   <li><strong>BLOB</strong>: 二进制大对象类型，能够存放任何二进制数据</li>
 </ul>
 
-<h4 id="首先添加类库"><strong>首先添加类库</strong></h4>
+<h3 id="首先添加类库">首先添加类库</h3>
 <p><img src="http://cl.ly/3D1M0P373W38/Image%202016-01-19%20at%2010.52.22%20%E4%B8%8A%E5%8D%88.png" alt="addLibrary" /></p>
 
 <p>然后导入头文件</p>
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="cp">#import &lt;sqlite3.h&gt;
-</span></code></pre>
-</div>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="cp">#import &lt;sqlite3.h&gt;</span></code></pre></figure>
 
 <p>在使用<code class="highlighter-rouge">SQLite</code>之前，我们先熟悉下它提供的一些方法</p>
 
@@ -383,8 +361,9 @@ NSLog(@"name : %@, isMale :%d, age :%ld", nameStr, isMale, age);
   <li><strong>sqlite_close</strong>: 关闭数据库连接</li>
 </ul>
 
-<h4 id="创建表"><strong>创建表</strong></h4>
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">// 获取文件路径名
+<h3 id="创建表">创建表</h3>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="c1">// 获取文件路径名
 </span><span class="n">NSString</span> <span class="o">*</span><span class="n">fileName</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSSearchPathForDirectoriesInDomains</span><span class="p">(</span><span class="n">NSDocumentDirectory</span><span class="p">,</span> <span class="n">NSUserDomainMask</span><span class="p">,</span> <span class="nb">YES</span><span class="p">).</span><span class="n">firstObject</span> <span class="nf">stringByAppendingString</span><span class="p">:</span><span class="s">@"person.sqlite"</span><span class="p">];</span>
 
 <span class="c1">// 打开数据库
@@ -410,12 +389,11 @@ NSLog(@"name : %@, isMale :%d, age :%ld", nameStr, isMale, age);
     <span class="n">NSLog</span><span class="p">(</span><span class="s">@"打开数据库失败"</span><span class="p">);</span>
     <span class="n">sqlite3_close</span><span class="p">(</span><span class="n">myDb</span><span class="p">);</span>
     <span class="k">return</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-</div>
+<span class="p">}</span></code></pre></figure>
 
-<h4 id="插入数据"><strong>插入数据</strong></h4>
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">// 插入10条数据
+<h3 id="插入数据">插入数据</h3>
+
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="c1">// 插入10条数据
 </span><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">NSString</span> <span class="o">*</span><span class="n">nameStr</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSString</span> <span class="nf">stringWithFormat</span><span class="p">:</span><span class="s">@"happyo%i"</span><span class="p">,</span> <span class="n">i</span><span class="p">];</span>
     <span class="n">NSInteger</span> <span class="n">age</span> <span class="o">=</span> <span class="n">i</span><span class="p">;</span>
@@ -430,13 +408,11 @@ NSLog(@"name : %@, isMale :%d, age :%ld", nameStr, isMale, age);
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"插入成功"</span><span class="p">);</span>
-</code></pre>
-</div>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@"插入成功"</span><span class="p">);</span></code></pre></figure>
 
-<h4 id="查询"><strong>查询</strong></h4>
+<h3 id="查询">查询</h3>
 
-<div class="language-objc highlighter-rouge"><pre class="highlight"><code><span class="c1">// 查询数据
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="c1">// 查询数据
 </span><span class="n">NSString</span> <span class="o">*</span><span class="n">sqlQuery</span> <span class="o">=</span> <span class="s">@"SELECT name, age FROM person_info"</span><span class="p">;</span>
 <span class="n">sqlite3_stmt</span> <span class="o">*</span><span class="n">stmt</span><span class="p">;</span>
 
@@ -450,20 +426,18 @@ NSLog(@"name : %@, isMale :%d, age :%ld", nameStr, isMale, age);
     <span class="p">}</span>
 <span class="p">}</span>
 
-<span class="n">sqlite3_finalize</span><span class="p">(</span><span class="n">stmt</span><span class="p">);</span>
-</code></pre>
-</div>
+<span class="n">sqlite3_finalize</span><span class="p">(</span><span class="n">stmt</span><span class="p">);</span></code></pre></figure>
 
 <p>由于原生的 SQLite 方法都是 c 写的，比较难用。所以一般在开发过程中，我们都使用第三方开源库 <code class="highlighter-rouge">FMDB</code> 。关于<code class="highlighter-rouge">FMDB</code>，<a href="http://blog.devtang.com/blog/2012/04/22/use-fmdb/">这里</a>有介绍使用的。</p>
 
-<p><br /></p>
+<hr />
 
-<h2 id="coredata"><strong>CoreData</strong></h2>
+<h2 id="coredata">CoreData</h2>
 <p>对于<code class="highlighter-rouge">CoreData</code>，有很多相关的文章。推荐一个，<a href="https://www.objc.io/issues/4-core-data/core-data-overview/">Core Data Overview</a>，中文版<a href="http://objccn.io/issue-4-1/">Core Data 概述</a>。</p>
 
-<p><br /></p>
+<hr />
 
-<h4 id="相关文章"><strong>相关文章</strong></h4>
+<h1 id="相关文章">相关文章</h1>
 <ul>
   <li><a href="http://www.jianshu.com/p/2944233ebac4">iOS沙盒机制介绍</a></li>
   <li><a href="http://www.jianshu.com/p/7616cbd72845">我要永远地记住你！（iOS中几种数据持久化方案）</a></li>

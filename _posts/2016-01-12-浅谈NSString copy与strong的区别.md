@@ -26,16 +26,16 @@ copy is required when the object is mutable. Use this if you need the value of t
 
 首先先创建两个`NSString`的属性，一个为`copy`，一个为`strong`。
 
-{% highlight Objective-C %}
-@property (nonatomic, copy) NSString \*strCopy;
+{% highlight objc %}
+@property (nonatomic, copy) NSString *strCopy;
 
-@property (nonatomic, strong) NSString \*strStrong;
+@property (nonatomic, strong) NSString *strStrong;
 
 {% endhighlight %}
 
 然后创建一个`NSString`对象，将其赋值给这两个属性，并打印出变量值和地址。修改`NSString`，再打印出两个属性的值和地址。
 
-{% highlight Objective-C %}
+{% highlight objc %}
 NSString *strChange = [NSString stringWithFormat:@"hello"];
 self.strCopy = strChange;
 self.strStrong = strChange;
@@ -59,8 +59,8 @@ NSLog(@"Change string: %@, %p;", strChange, strChange);
 
 将`strChange`的类型改为`NSMutableString`，然后对其修改。
 
-{% highlight Objective-C %}
-NSMutableString \*strChange = [NSMutableString stringWithFormat:@"hello"];
+{% highlight objc %}
+NSMutableString *strChange = [NSMutableString stringWithFormat:@"hello"];
 self.strCopy = strChange;
 self.strStrong = strChange;
 NSLog(@"Before change~~~");

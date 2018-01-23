@@ -107,7 +107,7 @@
 </blockquote>
 
 <h1 id="先贴下面试题及答案">先贴下面试题及答案</h1>
-
+<hr />
 <h2 id="题目怎么使用copy关键字">题目：怎么使用<code class="highlighter-rouge">copy</code>关键字</h2>
 
 <p>回答：<code class="highlighter-rouge">NSString、NSArray、NSDictionary</code> 等等经常使用<code class="highlighter-rouge">copy</code>关键字，是因为他们有对应的可变类型：<code class="highlighter-rouge">NSMutableString、NSMutableArray、NSMutableDictionary</code></p>
@@ -121,7 +121,7 @@
 <p>大概意思是不想本类的属性随外面的变化而变化时使用。</p>
 
 <h1 id="talk-is-cheapshow-me-the-code">Talk is cheap,show me the code.</h1>
-
+<hr />
 <p>首先先创建两个<code class="highlighter-rouge">NSString</code>的属性，一个为<code class="highlighter-rouge">copy</code>，一个为<code class="highlighter-rouge">strong</code>。</p>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">copy</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">strCopy</span><span class="p">;</span>
@@ -173,6 +173,7 @@
 <p>可见，<strong>当赋值类型是可变的<code class="highlighter-rouge">NSMutableString</code>时<code class="highlighter-rouge">copy</code>会将<code class="highlighter-rouge">changeStr</code>重新拷贝一份并将新的指针赋值给属性。而<code class="highlighter-rouge">strong</code>则还是直接将<code class="highlighter-rouge">changeStr</code>的指针赋值过去。</strong>所以当我们对<code class="highlighter-rouge">changeStr</code>进行改变时，<code class="highlighter-rouge">copy</code>属性不会受到影响，<code class="highlighter-rouge">strong</code>类型则会跟着改变。</p>
 
 <h1 id="结论">结论</h1>
+<hr />
 <p><strong>当属性是<code class="highlighter-rouge">NSString,NSArray,NSDictionary</code>这种不可变的类型时，我们一般不希望它随着外界变化而变化，所以最好使用<code class="highlighter-rouge">copy</code>。</strong></p>
 
 

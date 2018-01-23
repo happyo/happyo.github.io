@@ -107,6 +107,7 @@
 </blockquote>
 
 <h1 id="沙盒">沙盒</h1>
+<hr />
 <ul>
   <li>每个 iOS 应用都有自己的应用沙盒，应用沙盒就是文件系统目录，与其他应用放入文件 系统隔离，iOS 系统不允许访问其他应用的应用沙盒，但在 ios8 中已经开放访问（extension）</li>
   <li>extension 是 iOS8 新开放的一种对几个固定系统区域的拓展机制，它可以在一定程度上弥补 iOS 的沙盒机制对应用间的通信限制</li>
@@ -120,9 +121,8 @@
 <span class="o">---</span><span class="n">Preferences</span>
 <span class="n">tmp</span></code></pre></figure>
 
-<hr />
-
 <h1 id="目录简介及获取">目录简介及获取</h1>
+<hr />
 <ul>
   <li><strong>沙盒根目录获取</strong>: 获取如下</li>
 </ul>
@@ -173,9 +173,8 @@
 <span class="n">preferencesPath</span> <span class="o">=</span> <span class="p">[</span><span class="n">preferencesPath</span> <span class="nf">stringByAppendingPathComponent</span><span class="p">:</span><span class="s">@"Preferences"</span><span class="p">];</span>
 <span class="n">NSLog</span><span class="p">(</span><span class="s">@"%@"</span><span class="p">,</span> <span class="n">preferencesPath</span><span class="p">);</span></code></pre></figure>
 
-<hr />
-
 <h1 id="ios的数据持久化方式一般有以下5种">iOS的数据持久化方式一般有以下5种</h1>
+<hr />
 <ol>
   <li>plist（属性列表）</li>
   <li>preferences (NSUserDefaults)</li>
@@ -184,9 +183,8 @@
   <li>CoreData</li>
 </ol>
 
-<hr />
-
 <h2 id="plist属性列表">plist（属性列表）</h2>
+
 <p>属性列表文件是一种 <code class="highlighter-rouge">XML</code> 文件，<code class="highlighter-rouge">Foundation</code> 框架中的一些对象可以与属性列表文件互相转换，可转换的类型如下：</p>
 
 <figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">NSArray</span><span class="p">;</span>
@@ -266,8 +264,6 @@
   <li>偏好设置会将所有数据保存到同一个文件中。即 <code class="highlighter-rouge">preference</code> 目录下的一个以此应用包名来命名的 plist 文件。</li>
 </ul>
 
-<hr />
-
 <h2 id="nskeyedarchiver-归档">NSKeyedArchiver (归档)</h2>
 <p>对象归档是一种序列化方式。为了便于数据传输，先将归档序列化成一个文件，然后通过返归档将数据恢复到对象中。
 对一个对象进行完整归档需要满足的条件为：该对象的类必须实现<code class="highlighter-rouge">NSCoding</code>协议，而且每个成员变量应该是基本数据类型或者都是实现了<code class="highlighter-rouge">NSCoding</code>协议的某个类的实例。</p>
@@ -326,8 +322,6 @@
   <li>保存文件的扩展名可以任意指定</li>
   <li>有继承关系时，要先调用父类的归解档方法</li>
 </ul>
-
-<hr />
 
 <h2 id="sqlite-3">SQLite 3</h2>
 <p><code class="highlighter-rouge">SQLite</code>是无数据类型的数据库，就是字段不用指定类型。虽然<code class="highlighter-rouge">SQLite</code>可以忽略数据类型，但从编程的规范上讲，应该在<code class="highlighter-rouge">Create Table</code>语句中指定数据类型。因为数据类型可以告知这个字段的含义，便于别人阅读和理解。<code class="highlighter-rouge">SQLite</code>支持的常见数据类型如下：</p>
@@ -430,14 +424,12 @@
 
 <p>由于原生的 SQLite 方法都是 c 写的，比较难用。所以一般在开发过程中，我们都使用第三方开源库 <code class="highlighter-rouge">FMDB</code> 。关于<code class="highlighter-rouge">FMDB</code>，<a href="http://blog.devtang.com/blog/2012/04/22/use-fmdb/">这里</a>有介绍使用的。</p>
 
-<hr />
-
 <h2 id="coredata">CoreData</h2>
+
 <p>对于<code class="highlighter-rouge">CoreData</code>，有很多相关的文章。推荐一个，<a href="https://www.objc.io/issues/4-core-data/core-data-overview/">Core Data Overview</a>，中文版<a href="http://objccn.io/issue-4-1/">Core Data 概述</a>。</p>
 
-<hr />
-
 <h1 id="相关文章">相关文章</h1>
+<hr />
 <ul>
   <li><a href="http://www.jianshu.com/p/2944233ebac4">iOS沙盒机制介绍</a></li>
   <li><a href="http://www.jianshu.com/p/7616cbd72845">我要永远地记住你！（iOS中几种数据持久化方案）</a></li>
@@ -455,7 +447,7 @@
                     
                     
                     <li class="next">
-                        <a href="/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" data-toggle="tooltip" data-placement="top" title="函数式编程">Next Post &rarr;</a>
+                        <a href="/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E7%AE%80%E4%BB%8B/" data-toggle="tooltip" data-placement="top" title="函数式编程简介">Next Post &rarr;</a>
                     </li>
                     
                 </ul>

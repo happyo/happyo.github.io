@@ -8,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
 
-    <title>函数式编程 - Clean Blog</title>
+    <title>函数式编程简介 - Clean Blog</title>
 
-    <link rel="canonical" href="http://localhost:4000/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">
+    <link rel="canonical" href="http://localhost:4000/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E7%AE%80%E4%BB%8B/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -87,7 +87,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>函数式编程</h1>
+                    <h1>函数式编程简介</h1>
                     
                     <span class="meta">Posted by happyo on January 14, 2018</span>
                 </div>
@@ -143,6 +143,12 @@ var c = b - 4
   <li><strong>引用透明（Referential transparency）</strong>：指的是函数的运行不依赖于外部变量或”状态”，只依赖于输入的参数，任何时候只要参数相同，引用函数所得到的返回值总是相同的。这使得程序的单元测试很好写，然后程序只要编译通过，90%以上的概率不会出问题。</li>
   <li><strong>没有副作用（No Side Effect）</strong>：指的是函数内部与外部互动（最典型的情况，就是修改全局变量的值），产生运算以外的其他结果。它使得函数式编程各个独立的部分的执行顺序可以随意打乱。执行顺序的自由使其得以衍生出一大堆非常有用的特性，比如无锁（lock-free）的并发操作、惰性求值（lazy evaluation），还有在编译器级别上的各种性能优化技术。</li>
 </ol>
+
+<h1 id="相关文章">相关文章</h1>
+<hr />
+<ul>
+  <li><a href="http://www.ruanyifeng.com/blog/2012/04/functional_programming.html">函数式编程初探</a></li>
+</ul>
 
 
                 <hr>

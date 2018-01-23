@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-01-21T15:59:19+08:00</updated><id>http://localhost:4000/</id><title type="html">Clean Blog</title><subtitle>Write your site description here. It will be used as your sites meta description as well!</subtitle><entry><title type="html">函数式编程</title><link href="http://localhost:4000/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/" rel="alternate" type="text/html" title="函数式编程" /><published>2018-01-14T20:10:10+08:00</published><updated>2018-01-14T20:10:10+08:00</updated><id>http://localhost:4000/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B</id><content type="html" xml:base="http://localhost:4000/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B/">&lt;h1 id=&quot;定义&quot;&gt;定义&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-01-23T20:17:17+08:00</updated><id>http://localhost:4000/</id><title type="html">Clean Blog</title><subtitle>Write your site description here. It will be used as your sites meta description as well!</subtitle><entry><title type="html">函数式编程简介</title><link href="http://localhost:4000/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E7%AE%80%E4%BB%8B/" rel="alternate" type="text/html" title="函数式编程简介" /><published>2018-01-14T20:10:10+08:00</published><updated>2018-01-14T20:10:10+08:00</updated><id>http://localhost:4000/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E7%AE%80%E4%BB%8B</id><content type="html" xml:base="http://localhost:4000/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E7%AE%80%E4%BB%8B/">&lt;h1 id=&quot;定义&quot;&gt;定义&lt;/h1&gt;
 &lt;hr /&gt;
 &lt;p&gt;函数式编程（英语：functional programming）或称函数程序设计，又称泛函编程，是一种编程典范，它将电脑运算视为数学上的函数计算，并且避免使用程序状态以及易变对象。函数编程语言最重要的基础是λ演算（lambda calculus）。而且λ演算的函数可以接受函数当作输入（引数）和输出（传出值）。&lt;/p&gt;
 
@@ -38,11 +38,18 @@ var c = b - 4
 &lt;ol&gt;
   &lt;li&gt;&lt;strong&gt;引用透明（Referential transparency）&lt;/strong&gt;：指的是函数的运行不依赖于外部变量或”状态”，只依赖于输入的参数，任何时候只要参数相同，引用函数所得到的返回值总是相同的。这使得程序的单元测试很好写，然后程序只要编译通过，90%以上的概率不会出问题。&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;没有副作用（No Side Effect）&lt;/strong&gt;：指的是函数内部与外部互动（最典型的情况，就是修改全局变量的值），产生运算以外的其他结果。它使得函数式编程各个独立的部分的执行顺序可以随意打乱。执行顺序的自由使其得以衍生出一大堆非常有用的特性，比如无锁（lock-free）的并发操作、惰性求值（lazy evaluation），还有在编译器级别上的各种性能优化技术。&lt;/li&gt;
-&lt;/ol&gt;</content><author><name>happyo</name></author><summary type="html">定义 函数式编程（英语：functional programming）或称函数程序设计，又称泛函编程，是一种编程典范，它将电脑运算视为数学上的函数计算，并且避免使用程序状态以及易变对象。函数编程语言最重要的基础是λ演算（lambda calculus）。而且λ演算的函数可以接受函数当作输入（引数）和输出（传出值）。</summary></entry><entry><title type="html">iOS 数据持久化</title><link href="http://localhost:4000/2016/01/18/iOS-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" rel="alternate" type="text/html" title="iOS 数据持久化" /><published>2016-01-18T16:10:54+08:00</published><updated>2016-01-18T16:10:54+08:00</updated><id>http://localhost:4000/2016/01/18/iOS%20%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96</id><content type="html" xml:base="http://localhost:4000/2016/01/18/iOS-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/">&lt;blockquote&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;相关文章&quot;&gt;相关文章&lt;/h1&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2012/04/functional_programming.html&quot;&gt;函数式编程初探&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>happyo</name></author><summary type="html">定义 函数式编程（英语：functional programming）或称函数程序设计，又称泛函编程，是一种编程典范，它将电脑运算视为数学上的函数计算，并且避免使用程序状态以及易变对象。函数编程语言最重要的基础是λ演算（lambda calculus）。而且λ演算的函数可以接受函数当作输入（引数）和输出（传出值）。</summary></entry><entry><title type="html">iOS 数据持久化</title><link href="http://localhost:4000/2016/01/18/iOS-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" rel="alternate" type="text/html" title="iOS 数据持久化" /><published>2016-01-18T16:10:54+08:00</published><updated>2016-01-18T16:10:54+08:00</updated><id>http://localhost:4000/2016/01/18/iOS%20%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96</id><content type="html" xml:base="http://localhost:4000/2016/01/18/iOS-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/">&lt;blockquote&gt;
   &lt;p&gt;数据持久化即数据的永久存储。在 iOS 中，是将数据保存成文件，存储到程序的沙盒中。&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;h1 id=&quot;沙盒&quot;&gt;沙盒&lt;/h1&gt;
+&lt;hr /&gt;
 &lt;ul&gt;
   &lt;li&gt;每个 iOS 应用都有自己的应用沙盒，应用沙盒就是文件系统目录，与其他应用放入文件 系统隔离，iOS 系统不允许访问其他应用的应用沙盒，但在 ios8 中已经开放访问（extension）&lt;/li&gt;
   &lt;li&gt;extension 是 iOS8 新开放的一种对几个固定系统区域的拓展机制，它可以在一定程度上弥补 iOS 的沙盒机制对应用间的通信限制&lt;/li&gt;
@@ -56,9 +63,8 @@ var c = b - 4
 &lt;span class=&quot;o&quot;&gt;---&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Preferences&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;tmp&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;hr /&gt;
-
 &lt;h1 id=&quot;目录简介及获取&quot;&gt;目录简介及获取&lt;/h1&gt;
+&lt;hr /&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;strong&gt;沙盒根目录获取&lt;/strong&gt;: 获取如下&lt;/li&gt;
 &lt;/ul&gt;
@@ -109,9 +115,8 @@ var c = b - 4
 &lt;span class=&quot;n&quot;&gt;preferencesPath&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;preferencesPath&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;stringByAppendingPathComponent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;Preferences&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;NSLog&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;@&quot;%@&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;preferencesPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;hr /&gt;
-
 &lt;h1 id=&quot;ios的数据持久化方式一般有以下5种&quot;&gt;iOS的数据持久化方式一般有以下5种&lt;/h1&gt;
+&lt;hr /&gt;
 &lt;ol&gt;
   &lt;li&gt;plist（属性列表）&lt;/li&gt;
   &lt;li&gt;preferences (NSUserDefaults)&lt;/li&gt;
@@ -120,9 +125,8 @@ var c = b - 4
   &lt;li&gt;CoreData&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;hr /&gt;
-
 &lt;h2 id=&quot;plist属性列表&quot;&gt;plist（属性列表）&lt;/h2&gt;
+
 &lt;p&gt;属性列表文件是一种 &lt;code class=&quot;highlighter-rouge&quot;&gt;XML&lt;/code&gt; 文件，&lt;code class=&quot;highlighter-rouge&quot;&gt;Foundation&lt;/code&gt; 框架中的一些对象可以与属性列表文件互相转换，可转换的类型如下：&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;n&quot;&gt;NSArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -202,8 +206,6 @@ var c = b - 4
   &lt;li&gt;偏好设置会将所有数据保存到同一个文件中。即 &lt;code class=&quot;highlighter-rouge&quot;&gt;preference&lt;/code&gt; 目录下的一个以此应用包名来命名的 plist 文件。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;hr /&gt;
-
 &lt;h2 id=&quot;nskeyedarchiver-归档&quot;&gt;NSKeyedArchiver (归档)&lt;/h2&gt;
 &lt;p&gt;对象归档是一种序列化方式。为了便于数据传输，先将归档序列化成一个文件，然后通过返归档将数据恢复到对象中。
 对一个对象进行完整归档需要满足的条件为：该对象的类必须实现&lt;code class=&quot;highlighter-rouge&quot;&gt;NSCoding&lt;/code&gt;协议，而且每个成员变量应该是基本数据类型或者都是实现了&lt;code class=&quot;highlighter-rouge&quot;&gt;NSCoding&lt;/code&gt;协议的某个类的实例。&lt;/p&gt;
@@ -262,8 +264,6 @@ var c = b - 4
   &lt;li&gt;保存文件的扩展名可以任意指定&lt;/li&gt;
   &lt;li&gt;有继承关系时，要先调用父类的归解档方法&lt;/li&gt;
 &lt;/ul&gt;
-
-&lt;hr /&gt;
 
 &lt;h2 id=&quot;sqlite-3&quot;&gt;SQLite 3&lt;/h2&gt;
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SQLite&lt;/code&gt;是无数据类型的数据库，就是字段不用指定类型。虽然&lt;code class=&quot;highlighter-rouge&quot;&gt;SQLite&lt;/code&gt;可以忽略数据类型，但从编程的规范上讲，应该在&lt;code class=&quot;highlighter-rouge&quot;&gt;Create Table&lt;/code&gt;语句中指定数据类型。因为数据类型可以告知这个字段的含义，便于别人阅读和理解。&lt;code class=&quot;highlighter-rouge&quot;&gt;SQLite&lt;/code&gt;支持的常见数据类型如下：&lt;/p&gt;
@@ -366,14 +366,12 @@ var c = b - 4
 
 &lt;p&gt;由于原生的 SQLite 方法都是 c 写的，比较难用。所以一般在开发过程中，我们都使用第三方开源库 &lt;code class=&quot;highlighter-rouge&quot;&gt;FMDB&lt;/code&gt; 。关于&lt;code class=&quot;highlighter-rouge&quot;&gt;FMDB&lt;/code&gt;，&lt;a href=&quot;http://blog.devtang.com/blog/2012/04/22/use-fmdb/&quot;&gt;这里&lt;/a&gt;有介绍使用的。&lt;/p&gt;
 
-&lt;hr /&gt;
-
 &lt;h2 id=&quot;coredata&quot;&gt;CoreData&lt;/h2&gt;
+
 &lt;p&gt;对于&lt;code class=&quot;highlighter-rouge&quot;&gt;CoreData&lt;/code&gt;，有很多相关的文章。推荐一个，&lt;a href=&quot;https://www.objc.io/issues/4-core-data/core-data-overview/&quot;&gt;Core Data Overview&lt;/a&gt;，中文版&lt;a href=&quot;http://objccn.io/issue-4-1/&quot;&gt;Core Data 概述&lt;/a&gt;。&lt;/p&gt;
 
-&lt;hr /&gt;
-
 &lt;h1 id=&quot;相关文章&quot;&gt;相关文章&lt;/h1&gt;
+&lt;hr /&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/2944233ebac4&quot;&gt;iOS沙盒机制介绍&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://www.jianshu.com/p/7616cbd72845&quot;&gt;我要永远地记住你！（iOS中几种数据持久化方案）&lt;/a&gt;&lt;/li&gt;
@@ -383,7 +381,7 @@ var c = b - 4
 &lt;/blockquote&gt;
 
 &lt;h1 id=&quot;先贴下面试题及答案&quot;&gt;先贴下面试题及答案&lt;/h1&gt;
-
+&lt;hr /&gt;
 &lt;h2 id=&quot;题目怎么使用copy关键字&quot;&gt;题目：怎么使用&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;关键字&lt;/h2&gt;
 
 &lt;p&gt;回答：&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString、NSArray、NSDictionary&lt;/code&gt; 等等经常使用&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;关键字，是因为他们有对应的可变类型：&lt;code class=&quot;highlighter-rouge&quot;&gt;NSMutableString、NSMutableArray、NSMutableDictionary&lt;/code&gt;&lt;/p&gt;
@@ -397,7 +395,7 @@ var c = b - 4
 &lt;p&gt;大概意思是不想本类的属性随外面的变化而变化时使用。&lt;/p&gt;
 
 &lt;h1 id=&quot;talk-is-cheapshow-me-the-code&quot;&gt;Talk is cheap,show me the code.&lt;/h1&gt;
-
+&lt;hr /&gt;
 &lt;p&gt;首先先创建两个&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString&lt;/code&gt;的属性，一个为&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;，一个为&lt;code class=&quot;highlighter-rouge&quot;&gt;strong&lt;/code&gt;。&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-objc&quot; data-lang=&quot;objc&quot;&gt;&lt;span class=&quot;k&quot;&gt;@property&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nonatomic&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NSString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strCopy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -449,4 +447,5 @@ var c = b - 4
 &lt;p&gt;可见，&lt;strong&gt;当赋值类型是可变的&lt;code class=&quot;highlighter-rouge&quot;&gt;NSMutableString&lt;/code&gt;时&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;会将&lt;code class=&quot;highlighter-rouge&quot;&gt;changeStr&lt;/code&gt;重新拷贝一份并将新的指针赋值给属性。而&lt;code class=&quot;highlighter-rouge&quot;&gt;strong&lt;/code&gt;则还是直接将&lt;code class=&quot;highlighter-rouge&quot;&gt;changeStr&lt;/code&gt;的指针赋值过去。&lt;/strong&gt;所以当我们对&lt;code class=&quot;highlighter-rouge&quot;&gt;changeStr&lt;/code&gt;进行改变时，&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;属性不会受到影响，&lt;code class=&quot;highlighter-rouge&quot;&gt;strong&lt;/code&gt;类型则会跟着改变。&lt;/p&gt;
 
 &lt;h1 id=&quot;结论&quot;&gt;结论&lt;/h1&gt;
+&lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt;当属性是&lt;code class=&quot;highlighter-rouge&quot;&gt;NSString,NSArray,NSDictionary&lt;/code&gt;这种不可变的类型时，我们一般不希望它随着外界变化而变化，所以最好使用&lt;code class=&quot;highlighter-rouge&quot;&gt;copy&lt;/code&gt;。&lt;/strong&gt;&lt;/p&gt;</content><author><name>happyo</name></author><summary type="html">最近在看面试题，刚好遇到copy用法的问题。而我对答案不是很理解，所以晚上搜了一些相关知识，然后自己手动试了下。</summary></entry></feed>

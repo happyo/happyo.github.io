@@ -9,7 +9,7 @@ header-img: "img/post-bg-01.jpg"
 >最近在看面试题，刚好遇到`copy`用法的问题。而我对答案不是很理解，所以晚上搜了一些相关知识，然后自己手动试了下。
 
 # 先贴下面试题及答案
-
+---
 ## 题目：怎么使用`copy`关键字
 
 回答：`NSString、NSArray、NSDictionary` 等等经常使用`copy`关键字，是因为他们有对应的可变类型：`NSMutableString、NSMutableArray、NSMutableDictionary`
@@ -23,7 +23,7 @@ copy is required when the object is mutable. Use this if you need the value of t
 大概意思是不想本类的属性随外面的变化而变化时使用。
 
 # Talk is cheap,show me the code.
-
+---
 首先先创建两个`NSString`的属性，一个为`copy`，一个为`strong`。
 
 {% highlight objc %}
@@ -82,4 +82,5 @@ NSLog(@"Change string: %@, %p;", strChange, strChange);
 可见，**当赋值类型是可变的`NSMutableString`时`copy`会将`changeStr`重新拷贝一份并将新的指针赋值给属性。而`strong`则还是直接将`changeStr`的指针赋值过去。**所以当我们对`changeStr`进行改变时，`copy`属性不会受到影响，`strong`类型则会跟着改变。
 
 # 结论
+---
 **当属性是`NSString,NSArray,NSDictionary`这种不可变的类型时，我们一般不希望它随着外界变化而变化，所以最好使用`copy`。**

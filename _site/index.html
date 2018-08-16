@@ -1,221 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+      <title>hikari - Fluid, responsive blog theme for Jekyll</title>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta http-equiv="content-language" content="en-gb" />
+      <meta name="description" content="Fluid, responsive blog theme for Jekyll">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <link href="//fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700|Lora:400,700,400italic" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" type="text/css" href="/hikari-for-jekyll/css/main.css" />
+      <link href="atom.xml" type="application/atom+xml" rel="alternate" title="Site ATOM Feed">
+  </head>
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-
-    <title>Clean Blog</title>
-
-    <link rel="canonical" href="http://localhost:4000/">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/clean-blog.css">
-
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <body>
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
 
-    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Clean Blog" />
-
-</head>
-
-
-<body>
-
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Clean Blog</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                
-				
-                <li>
-                    <a href="/about/">About</a>
-                </li>
-				
-                
-				
-                <li>
-                    <a href="/contact/">Contact</a>
-                </li>
-				
-                
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+    <div class="off-canvas">
+      <figure class="avatar">
+        <img src="/hikari-for-jekyll/assets/img/avatar.jpg" alt="Picture" title="That's me, John Doge.">
+      </figure>
+      <div class="bio">
+          <h1>Hi, I'm John Doge.</h1>
+          <p>I'm a dog. I develop things. This is my blog so why don't you close this damn side panel (cursed by most UX Designers but I don't care, I do whatever I want) and start reading my awesome stuff?</p>
+      </div>
+      <nav>
+        <h6>Follow me on</h6>
+        <ul>
+          
+          <li><a target="_blank" href="https://twitter.com/mx3m">Twitter</a></li>
+          
+          
+          <li><a target="_blank" href="https://github.com/m3xm">Github</a></li>
+          
+          
+          <li><a target="_blank" href="https://dribbble.com/m3xm">Dribbble</a></li>
+          
+          
+          <li><a target="_blank" href="https://instagram.com/m3xm">Instagram</a></li>
+          
+        </ul>
+      </nav>
     </div>
-    <!-- /.container -->
-</nav>
 
 
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>Clean Blog</h1>
-                    <hr class="small">
-                    <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
-                </div>
-            </div>
+    <div class="site-wrapper">
+
+      <header>
+        <div class="h-wrap">
+          <h1 class="title"><a href="/hikari-for-jekyll/" title="Back to Homepage">hikari</a></h1>
+          <a class="menu-icon" title="Open Bio"><span class="lines"></span></a>
         </div>
-    </div>
-</header>
+      </header>
 
-<!-- Main Content -->
-<div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			
-<div class="post-preview">
-    <a href="/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E7%AE%80%E4%BB%8B/">
-        <h2 class="post-title">            函数式编程简介
-        </h2>
-        
-    </a>
-    <p class="post-meta">Posted by happyo on January 14, 2018</p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2016/01/18/iOS-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/">
-        <h2 class="post-title">            iOS 数据持久化
-        </h2>
-        
-    </a>
-    <p class="post-meta">Posted by happyo on January 18, 2016</p>
-</div>
-<hr>
-
-<div class="post-preview">
-    <a href="/2016/01/12/%E6%B5%85%E8%B0%88NSString-copy%E4%B8%8Estrong%E7%9A%84%E5%8C%BA%E5%88%AB/">
-        <h2 class="post-title">            浅谈NSString copy与strong的区别
-        </h2>
-        
-    </a>
-    <p class="post-meta">Posted by happyo on January 12, 2016</p>
-</div>
-<hr>
-
-
-<!-- Pager -->
-
-
-		</div>
-	</div>
-</div>
-
-<hr>
-
-
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    <li>
-                        <a href="/feed.xml">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="https://twitter.com/SBootstrap">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li>
-                        <a href="https://www.facebook.com/StartBootstrap">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li>
-                        <a href="https://github.com/happyo">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li>
-                        <a href="mailto:happyojones@gmail.com">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                </ul>
-                <p class="copyright text-muted">Copyright &copy; Your/Project/Corporate Name 2018</p>
-            </div>
+      <main>
+        <div id="home">
+  <ul class="posts">
+    
+    <li itemscope itemtype="http://schema.org/BlogPosting">
+      <a href="/hikari-for-jekyll/2018/01/14/%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E7%AE%80%E4%BB%8B/" itemprop="url">
+        <div class="p-wrap">
+          <article class="inner">
+            <time datetime="2018-01-14T20:10:10+08:00"
+                itemprop="datePublished">
+              14 Jan 2018
+            </time>
+            <p itemprop="name headline">函数式编程简介</p>
+          </article>
         </div>
+      </a>
+    </li>
+    
+    <li itemscope itemtype="http://schema.org/BlogPosting">
+      <a href="/hikari-for-jekyll/2016/01/18/iOS-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" itemprop="url">
+        <div class="p-wrap">
+          <article class="inner">
+            <time datetime="2016-01-18T16:10:54+08:00"
+                itemprop="datePublished">
+              18 Jan 2016
+            </time>
+            <p itemprop="name headline">iOS 数据持久化</p>
+          </article>
+        </div>
+      </a>
+    </li>
+    
+    <li itemscope itemtype="http://schema.org/BlogPosting">
+      <a href="/hikari-for-jekyll/2016/01/12/%E6%B5%85%E8%B0%88NSString-copy%E4%B8%8Estrong%E7%9A%84%E5%8C%BA%E5%88%AB/" itemprop="url">
+        <div class="p-wrap">
+          <article class="inner">
+            <time datetime="2016-01-12T14:10:54+08:00"
+                itemprop="datePublished">
+              12 Jan 2016
+            </time>
+            <p itemprop="name headline">浅谈NSString copy与strong的区别</p>
+          </article>
+        </div>
+      </a>
+    </li>
+    
+  </ul>
+</div>
+
+
+      </main>
+
+      <footer>
+        <small>Powered by Jekyll - Theme: <a href="https://github.com/m3xm/hikari-for-Jekyll">hikari</a> - &copy; John Doge</small>
+      </footer>
+
     </div>
-</footer>
-
-<!-- jQuery -->
-<script src="/js/jquery.min.js "></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="/js/bootstrap.min.js "></script>
-
-<!-- Custom Theme JavaScript -->
-<script src="/js/clean-blog.min.js "></script>
-
-
     
 
+    <script src="/hikari-for-jekyll/js/main.js"></script>
+    
+    
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-</body>
+        ga('create', 'UA-47727049-1', 'm3xm.github.io');
+        ga('send', 'pageview');
+      </script>
+    
 
+  </body>
 </html>

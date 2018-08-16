@@ -1,118 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+      <title>hikari - Fluid, responsive blog theme for Jekyll</title>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <meta http-equiv="content-language" content="en-gb" />
+      <meta name="description" content="Fluid, responsive blog theme for Jekyll">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <link href="//fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700|Lora:400,700,400italic" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" type="text/css" href="/hikari-for-jekyll/css/main.css" />
+      <link href="atom.xml" type="application/atom+xml" rel="alternate" title="Site ATOM Feed">
+  </head>
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Write your site description here. It will be used as your sites meta description as well!">
-
-    <title>浅谈NSString copy与strong的区别 - Clean Blog</title>
-
-    <link rel="canonical" href="http://localhost:4000/2016/01/12/%E6%B5%85%E8%B0%88NSString-copy%E4%B8%8Estrong%E7%9A%84%E5%8C%BA%E5%88%AB/">
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/clean-blog.css">
-
-    <!-- Pygments Github CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
-
-    <!-- Custom Fonts -->
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href='//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <body>
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
 
-    <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Clean Blog" />
-
-</head>
-
-
-<body>
-
-    <!-- Navigation -->
-<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Clean Blog</a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                
-				
-                <li>
-                    <a href="/about/">About</a>
-                </li>
-				
-                
-				
-                <li>
-                    <a href="/contact/">Contact</a>
-                </li>
-				
-                
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+    <div class="off-canvas">
+      <figure class="avatar">
+        <img src="/hikari-for-jekyll/assets/img/avatar.jpg" alt="Picture" title="That's me, John Doge.">
+      </figure>
+      <div class="bio">
+          <h1>Hi, I'm John Doge.</h1>
+          <p>I'm a dog. I develop things. This is my blog so why don't you close this damn side panel (cursed by most UX Designers but I don't care, I do whatever I want) and start reading my awesome stuff?</p>
+      </div>
+      <nav>
+        <h6>Follow me on</h6>
+        <ul>
+          
+          <li><a target="_blank" href="https://twitter.com/mx3m">Twitter</a></li>
+          
+          
+          <li><a target="_blank" href="https://github.com/m3xm">Github</a></li>
+          
+          
+          <li><a target="_blank" href="https://dribbble.com/m3xm">Dribbble</a></li>
+          
+          
+          <li><a target="_blank" href="https://instagram.com/m3xm">Instagram</a></li>
+          
+        </ul>
+      </nav>
     </div>
-    <!-- /.container -->
-</nav>
 
 
-    <!-- Post Header -->
-<header class="intro-header" style="background-image: url('/img/post-bg-01.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1>浅谈NSString copy与strong的区别</h1>
-                    
-                    <span class="meta">Posted by happyo on January 12, 2016</span>
-                </div>
-            </div>
+    <div class="site-wrapper">
+
+      <header>
+        <div class="h-wrap">
+          <h1 class="title"><a href="/hikari-for-jekyll/" title="Back to Homepage">hikari</a></h1>
+          <a class="menu-icon" title="Open Bio"><span class="lines"></span></a>
         </div>
+      </header>
+
+      <main>
+        <section class="single-wrap">
+  <article class="single-content" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="feat">
+      <h5 class="page-date">
+        <time datetime="2016-01-12T14:10:54+08:00" itemprop="datePublished">
+          12 January 2016
+        </time>
+      </h5>
     </div>
-</header>
-
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-
-				<blockquote>
-  <p>最近在看面试题，刚好遇到<code class="highlighter-rouge">copy</code>用法的问题。而我对答案不是很理解，所以晚上搜了一些相关知识，然后自己手动试了下。</p>
+    <h1 class="page-title" itemprop="name headline">浅谈NSString copy与strong的区别</h1>
+    <div itemprop="articleBody">
+      <blockquote>
+  <p>最近在看面试题，刚好遇到<code>copy</code>用法的问题。而我对答案不是很理解，所以晚上搜了一些相关知识，然后自己手动试了下。</p>
 </blockquote>
 
 <h1 id="先贴下面试题及答案">先贴下面试题及答案</h1>
 <hr />
-<h2 id="题目怎么使用copy关键字">题目：怎么使用<code class="highlighter-rouge">copy</code>关键字</h2>
+<h2 id="题目怎么使用copy关键字">题目：怎么使用<code>copy</code>关键字</h2>
 
-<p>回答：<code class="highlighter-rouge">NSString、NSArray、NSDictionary</code> 等等经常使用<code class="highlighter-rouge">copy</code>关键字，是因为他们有对应的可变类型：<code class="highlighter-rouge">NSMutableString、NSMutableArray、NSMutableDictionary</code></p>
+<p>回答：<code>NSString、NSArray、NSDictionary</code> 等等经常使用<code>copy</code>关键字，是因为他们有对应的可变类型：<code>NSMutableString、NSMutableArray、NSMutableDictionary</code></p>
 
-<p>对此不是很理解，所以就找了下<code class="highlighter-rouge">copy</code>的解释。</p>
+<p>对此不是很理解，所以就找了下<code>copy</code>的解释。</p>
 
 <p>Copy</p>
 
@@ -122,154 +89,97 @@
 
 <h1 id="talk-is-cheapshow-me-the-code">Talk is cheap,show me the code.</h1>
 <hr />
-<p>首先先创建两个<code class="highlighter-rouge">NSString</code>的属性，一个为<code class="highlighter-rouge">copy</code>，一个为<code class="highlighter-rouge">strong</code>。</p>
+<p>首先先创建两个<code>NSString</code>的属性，一个为<code>copy</code>，一个为<code>strong</code>。</p>
 
-<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">copy</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">strCopy</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span></span><span class="k">@property</span> <span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span> <span class="k">copy</span><span class="p">)</span> <span class="bp">NSString</span> <span class="o">*</span><span class="n">strCopy</span><span class="p">;</span>
 
-<span class="k">@property</span> <span class="p">(</span><span class="n">nonatomic</span><span class="p">,</span> <span class="n">strong</span><span class="p">)</span> <span class="n">NSString</span> <span class="o">*</span><span class="n">strStrong</span><span class="p">;</span></code></pre></figure>
+<span class="k">@property</span> <span class="p">(</span><span class="k">nonatomic</span><span class="p">,</span> <span class="k">strong</span><span class="p">)</span> <span class="bp">NSString</span> <span class="o">*</span><span class="n">strStrong</span><span class="p">;</span></code></pre></figure>
 
-<p>然后创建一个<code class="highlighter-rouge">NSString</code>对象，将其赋值给这两个属性，并打印出变量值和地址。修改<code class="highlighter-rouge">NSString</code>，再打印出两个属性的值和地址。</p>
+<p>然后创建一个<code>NSString</code>对象，将其赋值给这两个属性，并打印出变量值和地址。修改<code>NSString</code>，再打印出两个属性的值和地址。</p>
 
-<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">NSString</span> <span class="o">*</span><span class="n">strChange</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSString</span> <span class="nf">stringWithFormat</span><span class="p">:</span><span class="s">@"hello"</span><span class="p">];</span>
-<span class="n">self</span><span class="p">.</span><span class="n">strCopy</span> <span class="o">=</span> <span class="n">strChange</span><span class="p">;</span>
-<span class="n">self</span><span class="p">.</span><span class="n">strStrong</span> <span class="o">=</span> <span class="n">strChange</span><span class="p">;</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Before change~~~"</span><span class="p">);</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Copy string: %@ ,%p;"</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strCopy</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strCopy</span><span class="p">);</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Strong string: %@, %p;"</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strStrong</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strStrong</span><span class="p">);</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Change string: %@, %p;"</span><span class="p">,</span> <span class="n">strChange</span><span class="p">,</span> <span class="n">strChange</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span></span><span class="bp">NSString</span> <span class="o">*</span><span class="n">strChange</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSString</span> <span class="nl">stringWithFormat</span><span class="p">:</span><span class="s">@&quot;hello&quot;</span><span class="p">];</span>
+<span class="nb">self</span><span class="p">.</span><span class="n">strCopy</span> <span class="o">=</span> <span class="n">strChange</span><span class="p">;</span>
+<span class="nb">self</span><span class="p">.</span><span class="n">strStrong</span> <span class="o">=</span> <span class="n">strChange</span><span class="p">;</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Before change~~~&quot;</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Copy string: %@ ,%p;&quot;</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="n">strCopy</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="n">strCopy</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Strong string: %@, %p;&quot;</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="n">strStrong</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="n">strStrong</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Change string: %@, %p;&quot;</span><span class="p">,</span> <span class="n">strChange</span><span class="p">,</span> <span class="n">strChange</span><span class="p">);</span>
 
-<span class="n">strChange</span> <span class="o">=</span> <span class="s">@"world"</span><span class="p">;</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"After change~~~"</span><span class="p">);</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Copy string: %@ ,%p;"</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strCopy</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strCopy</span><span class="p">);</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Strong string: %@, %p;"</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strStrong</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strStrong</span><span class="p">);</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Change string: %@, %p;"</span><span class="p">,</span> <span class="n">strChange</span><span class="p">,</span> <span class="n">strChange</span><span class="p">);</span></code></pre></figure>
+<span class="n">strChange</span> <span class="o">=</span> <span class="s">@&quot;world&quot;</span><span class="p">;</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;After change~~~&quot;</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Copy string: %@ ,%p;&quot;</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="n">strCopy</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="n">strCopy</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Strong string: %@, %p;&quot;</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="n">strStrong</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="n">strStrong</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Change string: %@, %p;&quot;</span><span class="p">,</span> <span class="n">strChange</span><span class="p">,</span> <span class="n">strChange</span><span class="p">);</span></code></pre></figure>
 
 <p>结果如下</p>
 
 <p><img src="http://cl.ly/2g061W2K0P04/Image%202016-01-12%20at%204.06.49%20%E4%B8%8B%E5%8D%88.png" alt="result" /></p>
 
-<p>可见，<strong>当赋值类型是不可变的<code class="highlighter-rouge">NSString</code>时，不管是<code class="highlighter-rouge">copy</code>还是<code class="highlighter-rouge">strong</code>，都是将其指针直接赋值过去。</strong><code class="highlighter-rouge">NSString</code>发生变化，其指针会发生变化，不会对属性造成影响。</p>
+<p>可见，<strong>当赋值类型是不可变的<code>NSString</code>时，不管是<code>copy</code>还是<code>strong</code>，都是将其指针直接赋值过去。</strong><code>NSString</code>发生变化，其指针会发生变化，不会对属性造成影响。</p>
 
-<p>将<code class="highlighter-rouge">strChange</code>的类型改为<code class="highlighter-rouge">NSMutableString</code>，然后对其修改。</p>
+<p>将<code>strChange</code>的类型改为<code>NSMutableString</code>，然后对其修改。</p>
 
-<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span class="n">NSMutableString</span> <span class="o">*</span><span class="n">strChange</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSMutableString</span> <span class="nf">stringWithFormat</span><span class="p">:</span><span class="s">@"hello"</span><span class="p">];</span>
-<span class="n">self</span><span class="p">.</span><span class="n">strCopy</span> <span class="o">=</span> <span class="n">strChange</span><span class="p">;</span>
-<span class="n">self</span><span class="p">.</span><span class="n">strStrong</span> <span class="o">=</span> <span class="n">strChange</span><span class="p">;</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Before change~~~"</span><span class="p">);</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Copy string: %@ ,%p;"</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strCopy</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strCopy</span><span class="p">);</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Strong string: %@, %p;"</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strStrong</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strStrong</span><span class="p">);</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Change string: %@, %p;"</span><span class="p">,</span> <span class="n">strChange</span><span class="p">,</span> <span class="n">strChange</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-objc" data-lang="objc"><span></span><span class="bp">NSMutableString</span> <span class="o">*</span><span class="n">strChange</span> <span class="o">=</span> <span class="p">[</span><span class="bp">NSMutableString</span> <span class="nl">stringWithFormat</span><span class="p">:</span><span class="s">@&quot;hello&quot;</span><span class="p">];</span>
+<span class="nb">self</span><span class="p">.</span><span class="n">strCopy</span> <span class="o">=</span> <span class="n">strChange</span><span class="p">;</span>
+<span class="nb">self</span><span class="p">.</span><span class="n">strStrong</span> <span class="o">=</span> <span class="n">strChange</span><span class="p">;</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Before change~~~&quot;</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Copy string: %@ ,%p;&quot;</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="n">strCopy</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="n">strCopy</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Strong string: %@, %p;&quot;</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="n">strStrong</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="n">strStrong</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Change string: %@, %p;&quot;</span><span class="p">,</span> <span class="n">strChange</span><span class="p">,</span> <span class="n">strChange</span><span class="p">);</span>
 
-<span class="p">[</span><span class="n">strChange</span> <span class="nf">insertString</span><span class="p">:</span><span class="s">@"world"</span> <span class="nf">atIndex</span><span class="p">:</span><span class="mi">4</span><span class="p">];</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"After change~~~"</span><span class="p">);</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Copy string: %@ ,%p;"</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strCopy</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strCopy</span><span class="p">);</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Strong string: %@, %p;"</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strStrong</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">strStrong</span><span class="p">);</span>
-<span class="n">NSLog</span><span class="p">(</span><span class="s">@"Change string: %@, %p;"</span><span class="p">,</span> <span class="n">strChange</span><span class="p">,</span> <span class="n">strChange</span><span class="p">);</span></code></pre></figure>
+<span class="p">[</span><span class="n">strChange</span> <span class="nl">insertString</span><span class="p">:</span><span class="s">@&quot;world&quot;</span> <span class="nl">atIndex</span><span class="p">:</span><span class="mi">4</span><span class="p">];</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;After change~~~&quot;</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Copy string: %@ ,%p;&quot;</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="n">strCopy</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="n">strCopy</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Strong string: %@, %p;&quot;</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="n">strStrong</span><span class="p">,</span> <span class="nb">self</span><span class="p">.</span><span class="n">strStrong</span><span class="p">);</span>
+<span class="n">NSLog</span><span class="p">(</span><span class="s">@&quot;Change string: %@, %p;&quot;</span><span class="p">,</span> <span class="n">strChange</span><span class="p">,</span> <span class="n">strChange</span><span class="p">);</span></code></pre></figure>
 
 <p>结果如下：</p>
 
 <p><img src="http://cl.ly/020Z312W233b/Image%202016-01-12%20at%205.08.18%20%E4%B8%8B%E5%8D%88.png" alt="mutable result" /></p>
 
-<p>可见，<strong>当赋值类型是可变的<code class="highlighter-rouge">NSMutableString</code>时<code class="highlighter-rouge">copy</code>会将<code class="highlighter-rouge">changeStr</code>重新拷贝一份并将新的指针赋值给属性。而<code class="highlighter-rouge">strong</code>则还是直接将<code class="highlighter-rouge">changeStr</code>的指针赋值过去。</strong>所以当我们对<code class="highlighter-rouge">changeStr</code>进行改变时，<code class="highlighter-rouge">copy</code>属性不会受到影响，<code class="highlighter-rouge">strong</code>类型则会跟着改变。</p>
+<p>可见，<strong>当赋值类型是可变的<code>NSMutableString</code>时<code>copy</code>会将<code>changeStr</code>重新拷贝一份并将新的指针赋值给属性。而<code>strong</code>则还是直接将<code>changeStr</code>的指针赋值过去。</strong>所以当我们对<code>changeStr</code>进行改变时，<code>copy</code>属性不会受到影响，<code>strong</code>类型则会跟着改变。</p>
 
 <h1 id="结论">结论</h1>
 <hr />
-<p><strong>当属性是<code class="highlighter-rouge">NSString,NSArray,NSDictionary</code>这种不可变的类型时，我们一般不希望它随着外界变化而变化，所以最好使用<code class="highlighter-rouge">copy</code>。</strong></p>
+<p><strong>当属性是<code>NSString,NSArray,NSDictionary</code>这种不可变的类型时，我们一般不希望它随着外界变化而变化，所以最好使用<code>copy</code>。</strong></p>
 
-
-                <hr>
-
-                <ul class="pager">
-                    
-                    
-                    <li class="next">
-                        <a href="/2016/01/18/iOS-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" data-toggle="tooltip" data-placement="top" title="iOS 数据持久化">Next Post &rarr;</a>
-                    </li>
-                    
-                </ul>
-
-            </div>
-        </div>
     </div>
-</article>
-
-<hr>
-
-
-    <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <ul class="list-inline text-center">
-                    <li>
-                        <a href="/feed.xml">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="https://twitter.com/SBootstrap">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li>
-                        <a href="https://www.facebook.com/StartBootstrap">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li>
-                        <a href="https://github.com/happyo">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                    
-                    <li>
-                        <a href="mailto:happyojones@gmail.com">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
-                            </span>
-                        </a>
-                    </li>
-                    
-                </ul>
-                <p class="copyright text-muted">Copyright &copy; Your/Project/Corporate Name 2018</p>
-            </div>
-        </div>
+    <div class="feat share">
+      <a href="http://twitter.com/share" class="popup">
+        <span class="icon-twitter"></span>
+      </a>
     </div>
-</footer>
+    
+      <a rel="next" href="/hikari-for-jekyll/2016/01/18/iOS-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/" id="next">
+        <span class="nav-title nav-title-next">newer</span> &rarr;
+      </a>
+    
+    
+  </article>
+</section>
 
-<!-- jQuery -->
-<script src="/js/jquery.min.js "></script>
+      </main>
 
-<!-- Bootstrap Core JavaScript -->
-<script src="/js/bootstrap.min.js "></script>
+      <footer>
+        <small>Powered by Jekyll - Theme: <a href="https://github.com/m3xm/hikari-for-Jekyll">hikari</a> - &copy; John Doge</small>
+      </footer>
 
-<!-- Custom Theme JavaScript -->
-<script src="/js/clean-blog.min.js "></script>
-
-
+    </div>
     
 
+    <script src="/hikari-for-jekyll/js/main.js"></script>
+    
+    
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-</body>
+        ga('create', 'UA-47727049-1', 'm3xm.github.io');
+        ga('send', 'pageview');
+      </script>
+    
 
+  </body>
 </html>

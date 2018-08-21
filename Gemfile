@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'jekyll', '~> 3.8.3'
 gem 'pygments.rb'
+gem 'ffi', '1.9.21'
+gem 'jekyll', '~> 3.8.3'

@@ -58,7 +58,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  ffi (= 1.9.21)
   jekyll (~> 3.8.3)
   pygments.rb
 

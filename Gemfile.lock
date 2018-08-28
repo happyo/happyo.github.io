@@ -1,3 +1,9 @@
+PATH
+  remote: .
+  specs:
+    testtheme (0.1.0)
+      jekyll (~> 3.8)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -37,12 +43,10 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
     mercenary (0.3.6)
-    multi_json (1.13.1)
     pathutil (0.16.1)
       forwardable-extended (~> 2.6)
     public_suffix (3.0.3)
-    pygments.rb (1.2.1)
-      multi_json (>= 1.0.0)
+    rake (12.3.1)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
@@ -58,8 +62,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll (~> 3.8.3)
-  pygments.rb
+  bundler (~> 1.16)
+  ffi (= 1.9.21)
+  rake (~> 12.0)
+  testtheme!
 
 BUNDLED WITH
    1.16.3

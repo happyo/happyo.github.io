@@ -1,21 +1,16 @@
 ---
 layout: default
-title: Homepage
+title: 薛定谔的水货
 ---
 
-<div id="home">
-  <ul class="posts">
-    {% for post in site.posts %}
-    <li itemscope itemtype="http://schema.org/BlogPosting">
-      <a href="{{ site.baseurl }}{{ post.url }}" itemprop="url">
-        <div class="p-wrap">
-          <article class="inner">
-            <p itemprop="name headline">{{ post.title }}</p>
-          </article>
-        </div>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
+<div>
+     <ul>
+        {% for post in site.posts %}
+        <li>
+            <a href="{{ site.baseurl }}{{ post.url }}">
+                <article>{{ post.title }}</article>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
 </div>
-

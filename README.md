@@ -1,83 +1,52 @@
-# hikari
+# testtheme
 
-Hikari is an open-source [Jekyll](http://jekyllrb.com) theme perfect for dev-savvy bloggers who wants to get started with Jekyll in a very minimal way. 
+Welcome to your new Jekyll theme! In this directory, you'll find the files you need to be able to package up your theme into a gem. Put your layouts in `_layouts`, your includes in `_includes`, your sass files in `_sass` and any other assets in `assets`.
 
-- SCSS!
-- Responsive
-- Lightweight (no JS library has been abused here)
+To experiment with this code, add some sample content and run `bundle exec jekyll serve` – this directory is setup just like a Jekyll site!
 
-![preview](https://dl.dropboxusercontent.com/u/7539881/Hikari/hikari-screenshot.png)
-
-![preview](https://dl.dropboxusercontent.com/u/7539881/Hikari/hikari-screenshot-2.png)
-
-![preview](https://dl.dropboxusercontent.com/u/7539881/Hikari/hikari-screenshot-3.png)
-
-[View demo](http://m3xm.github.io/hikari-for-Jekyll)
+TODO: Delete this and the text above, and describe your gem
 
 
-### How to install
+## Installation
 
-1. Clone this repo
-2. Customize \_config.yml and replace all dummy posts by yours
-3. Change your profile picture in `~/assets/img/avatar.jpg`
-3. Publish (I recommend [GitHub Pages](https://help.github.com/articles/using-jekyll-with-pages), it's free)
+Add this line to your Jekyll site's `Gemfile`:
 
+```ruby
+gem "testtheme"
+```
 
-### Development
+And add this line to your Jekyll site's `_config.yml`:
 
-- `master` for development and pull requests.
-- `gh-pages` for the demo page; don't bother.
+```yaml
+theme: testtheme
+```
 
+And then execute:
 
-#### Running locally
+    $ bundle
 
-1. Clone this repo
-2. Install required dependencies with [Bundler](http://bundler.io/)
+Or install it yourself as:
 
-        bundle install
-3. Run the site with Jekyll
+    $ gem install testtheme
 
-        bundle exec jekyll serve --watch
-4. Visit the site at [http://localhost:4000](http://localhost:4000)
+## Usage
 
+TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
 
-### Author
+## Contributing
 
-**Mathieu Mayer-Mazzoli**
-- <http://m3xm.github.io>
-- <http://twitter.com/mx3m>
-- <http://www.dribbble.com/m3xm>
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/hello. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
+## Development
 
-### Main Contributors
+To set up your environment to develop this theme, run `bundle install`.
 
-**Ross Allen**
-- <https://github.com/ssorallen>
+Your theme is setup just like a normal Jekyll site! To test your theme, run `bundle exec jekyll serve` and open your browser at `http://localhost:4000`. This starts a Jekyll server using your theme. Add pages, documents, data, etc. like normal to test your theme's contents. As you make modifications to your theme and to your content, your site will regenerate and you should see the changes in the browser after a refresh, just like normal.
 
-**Julien Rousseau**
-- <https://github.com/evarouss>
+When your theme is released, only the files in `_layouts`, `_includes`, `_sass` and `assets` tracked with Git will be bundled.
+To add a custom directory to your theme-gem, please edit the regexp in `testtheme.gemspec` accordingly.
 
+## License
 
-### License
+The theme is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
-The MIT License (MIT)
-
-Copyright (c) 2015 Mathieu Mayer-Mazzoli
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.

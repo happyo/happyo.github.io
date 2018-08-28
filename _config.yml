@@ -1,35 +1,5 @@
-# Title of your blog; shows in the header
-name: "薛定谔的水货"
-
-# Description of your content (will only be used on Google Search)
-description: "Haskell, iOS blog"
-
-# Your name. Will show in your footer + sidebar
-author: "happyo"
-
 baseurl: ""
 url: ""
-
-# A short presentation of yourself. Will show in the sidebar, under your name. Best usage would be between 30 to 50 words.
-author-bio: ""
-
-# Social Accounts (mine, as placeholders)
-
-twitter: happyo
-github: happyo
-instagram: happyo
-
-# Google Analytics (you may want to changes these with yours or even delete :)
-
-#ga_domain: 
-#ga_tracking_id: 
-
-# Other (refer to http://jekyllrb.com/docs/home/ for further details on the below)
-
-markdown: kramdown
-permalink: pretty
-highlighter: pygments
-
 
 # SCSS
 

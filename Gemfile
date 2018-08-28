@@ -1,4 +1,5 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
-gem 'pygments.rb'
-gem 'jekyll', '~> 3.8.3'
+source "https://rubygems.org"
+gem 'ffi', '1.9.21'
+gemspec

@@ -3,6 +3,6 @@ url: ""
 
 # SCSS
 
-sass:
-  sass_dir: _scss
-  style: :compressed
+# sass:
+  # sass_dir: _scss
+  # style: :compressed

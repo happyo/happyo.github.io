@@ -2,4 +2,11 @@
 layout: default
 ---
 
+<div class="feat">
+    <h5 class="page-date">
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date_to_long_string }}
+        </time>
+    </h5>
+</div>
 {{ content }}

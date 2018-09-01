@@ -3,13 +3,21 @@ layout: default
 title: 薛定谔的水货
 ---
 
-<div>
+<div style="padding-left: 150px;padding-right: 150px" id="home-list">
      <ul>
         {% for post in site.posts %}
-        <li>
-            <a href="{{ site.baseurl }}{{ post.url }}">
-                <article>{{ post.title }}</article>
-            </a>
+        <li style="list-style-type:none;">
+            
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="150" width="100%">
+                    
+                    <a href="{{ site.baseurl }}{{ post.url }}">
+                            <rect x="59" y="36" width="36" height="36" class="home-post-icon"/>
+                            <polyline points="95,86 95,72 900,72"
+                            style="fill:rgba(0,0,0,0);stroke:#B1A7A7;stroke-width:1"/>
+                            <text x="110" y="50" style="font-size: 36px;">{{ post.title }}</text>
+                    </a>
+                </svg>
+                
         </li>
         {% endfor %}
     </ul>

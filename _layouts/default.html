@@ -19,8 +19,35 @@
                 <h1 class="home-blog-title">薛定谔的<img class="home-water" src="{{ site.baseurl }}/assets/home/water.png"  alt="水滴"/>货</h1>  
             </div>
         </header>
+
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+            <polygon points="125,151 272,151"
+            style="fill:#725B21;stroke:#725B21;stroke-width:1" />
+            <polygon points="148,129 148,222"
+            style="fill:#725B21;stroke:#725B21;stroke-width:1" />
+        </svg>
+
         <div>
+            
             {{ content }}
         </div>
+
+        <script type="text/javascript">
+            function ran_col() { //function name
+                var icons = document.getElementsByClassName('home-post-icon');
+                var lisLen = icons.length;
+        
+                for(var i = 0;i < lisLen;i++){
+                    var color = '#'; // hexadecimal starting symbol
+                    var letters = ['9F8661','5D5596','9AB0A2']; //Set your colors here
+                    color += letters[Math.floor(Math.random() * letters.length)];
+                    icons[i].style.fill = color;
+                    icons[i].style.stroke = color;
+                } 
+            }
+        </script>
+
+        <button type="button" onclick="ran_col()">点击这里</button>
+
     </body>
 </html>

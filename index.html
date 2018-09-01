@@ -3,22 +3,68 @@ layout: default
 title: 薛定谔的水货
 ---
 
-<div style="padding-left: 150px;padding-right: 150px" id="home-list">
-     <ul>
-        {% for post in site.posts %}
-        <li style="list-style-type:none;">
-            
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="150" width="100%">
-                    
-                    <a href="{{ site.baseurl }}{{ post.url }}">
-                            <rect x="59" y="36" width="36" height="36" class="home-post-icon"/>
-                            <polyline points="95,86 95,72 900,72"
-                            style="fill:rgba(0,0,0,0);stroke:#B1A7A7;stroke-width:1"/>
-                            <text x="110" y="50" style="font-size: 36px;">{{ post.title }}</text>
-                    </a>
-                </svg>
-                
-        </li>
-        {% endfor %}
-    </ul>
+<header class="home-header" style="background-image: url('{{ site.baseurl }}/assets/home/header_background.png');height: 800px;">
+    <div>
+        <h1 class="home-title">P E R S O N A L   B L O G</h1>
+    </div>
+    <div>
+        <h1 class="home-blog-title">薛定谔的<img class="home-water" src="{{ site.baseurl }}/assets/home/water.png"  alt="水滴"/>货</h1>  
+    </div>
+</header>
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
+    <polygon points="125,151 272,151"
+    style="fill:#725B21;stroke:#725B21;stroke-width:1" />
+    <polygon points="148,129 148,222"
+    style="fill:#725B21;stroke:#725B21;stroke-width:1" />
+</svg>
+
+<div>
+    <div style="padding-left: 150px;padding-right: 150px" id="home-list">
+        <ul>
+           {% for post in site.posts %}
+           <li style="list-style-type:none;">
+               
+                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="150" width="100%">
+                       
+                       <a href="{{ site.baseurl }}{{ post.url }}">
+                               <rect x="59" y="36" width="36" height="36" class="home-post-icon"/>
+                               <polyline points="95,86 95,72 900,72"
+                               style="fill:rgba(0,0,0,0);stroke:#B1A7A7;stroke-width:1"/>
+                               <text x="110" y="50" style="font-size: 36px;">{{ post.title }}</text>
+                       </a>
+                   </svg>
+                   
+           </li>
+           {% endfor %}
+       </ul>
+   </div>
+    
 </div>
+
+<script type="text/javascript">
+    function ran_col() { //function name
+        var icons = document.getElementsByClassName('home-post-icon');
+        var lisLen = icons.length;
+
+        for(var i = 0;i < lisLen;i++){
+            var letters = ["rgba(159, 134, 97, 0.6)"
+                            , "rgba(93, 85, 150, 46)"
+                            , "rgba(154, 176, 162, 0.69)"
+                            , "rgba(169, 198, 127, 0.4)"
+                            , "rgba(190, 151, 220, 0.42)"
+                            , "rgba(216, 147, 153, 0.44)"
+                            , "rgba(191, 121, 149, 0.53)"
+                            , "rgba(178, 121, 121, 0.47)"
+                            , "rgba(198, 194, 142, 0.52)"
+                            , "rgba(138, 195, 190, 0.44)"]; //Set your colors here
+            var color = letters[Math.floor(Math.random() * letters.length)];
+            icons[i].style.fill = color;
+        } 
+    }
+   
+    window.onload=function(){
+        ran_col();
+    }
+</script>
+

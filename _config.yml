@@ -1,6 +1,11 @@
 baseurl: ""
 url: ""
 
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 # SCSS
 
 # sass:

@@ -26,6 +26,10 @@
     font-size: 24px;
   }
 
+  div {
+    font-size: 24px;
+  }
+
   p {
     font-size: 24px;
     font-family: PingFangSC-Regular, sans-serif;
@@ -34,49 +38,49 @@
   h1 {
     color: #614321;
     font-family: PingFangSC-Regular, sans-serif;
-    font-size: 3em; 
+    font-size: 3*24px; 
   }
   
   h2 {
     color: #614321;
     font-family: PingFangSC-Regular, sans-serif;
-    font-size: 2em; 
+    font-size: 2*24px; 
   }
   
   h3 {
     color: #614321;
     font-family: PingFangSC-Regular, sans-serif;
-    font-size: 1.5em; 
+    font-size: 1.5*24px; 
   }
   
   h4 {
     color: #614321;
     font-family: PingFangSC-Regular, sans-serif;
-    font-size: 1.125em; 
+    font-size: 1.125*24px; 
   }
   
   h5 {
     color: #614321;
     font-family: PingFangSC-Regular, sans-serif;
-    font-size: .875em; 
+    font-size: .875*24px; 
   }
   
   h6 {
     color: #614321;
     font-family: PingFangSC-Regular, sans-serif;
-    font-size: .75em; 
+    font-size: .75*24px; 
   }
 
   ol {
-    font-size: 1em;
+    font-size: 24px;
   }
 
   ul {
-    font-size: 1em;
+    font-size: 24px;
   }
   
   li {
-    font-size: 1em;
+    font-size: 24px;
     line-height: 150%;
   }
 }

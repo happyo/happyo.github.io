@@ -29,20 +29,44 @@
 
 .home-post-icon {
     fill:#B1A7A7;
-    // height: 36px;
+    height: 36px;
     width: 36px;
     float: left;
-    padding: 36px 0;
+    position: relative;
+    top: 20px;
+    // padding: 36px 0;
 }
 
 .home-post-title {
     font-size: 36px;
     color: black;
-    vertical-align: middle;
+    position: relative;
+    left: 15px;
+    top: 0px;
+}
+
+.home-post-vertical-line {
+    float: left;
+    width: 1px;
+    height: 14px;
+    background-color: #B1A7A7;
+    position: relative;
+    top: 55px;
+    left: -1px;
+}
+
+.home-post-horizontal-line {
+    float: left;
+    width: 800px;
+    height: 1px;
+    background-color: #B1A7A7;
+    position: relative;
+    top: 5px;
+    left: 36px;
 }
 
 .home-post-list {
-    height: 100px;
+    height: 150px;
 }
 
 .home-link {

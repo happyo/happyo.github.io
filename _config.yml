@@ -2,11 +2,11 @@ baseurl: ""
 url: ""
 
 markdown: kramdown
+highlighter: rouge
 
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-# SCSS
 
 # sass:
 #   sass_dir: _scss

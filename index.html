@@ -8,7 +8,7 @@ title: 薛定谔的水货
         <h1 class="home-title">P E R S O N A L   B L O G</h1>
     </div>
     <div>
-        <h1 class="home-blog-title">薛定谔的<img class="home-water" src="{{ site.baseurl }}/assets/home/water.png"  alt="水滴"/>货</h1>  
+        <h1 class="home-blog-title">薛定谔的<img class="home-water" src="{{ site.baseurl }}/assets/home/water.png"  alt="水"/>货</h1>  
     </div>
 </header>
 
@@ -25,15 +25,16 @@ title: 薛定谔的水货
            {% for post in site.posts %}
            <li style="list-style-type:none;">
                
-                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="150" width="100%">
+               <!-- <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="150" width="100%"> -->
                        
-                       <a href="{{ site.baseurl }}{{ post.url }}">
-                               <rect x="59" y="36" width="36" height="36" class="home-post-icon"/>
-                               <polyline points="95,86 95,72 900,72"
-                               style="fill:rgba(0,0,0,0);stroke:#B1A7A7;stroke-width:1"/>
-                               <text x="110" y="50" style="font-size: 36px;">{{ post.title }}</text>
-                       </a>
-                   </svg>
+               <a href="{{ site.baseurl }}{{ post.url }}" class="home-link">
+                   <div style="height: 36px; width: 36px" class="home-post-icon"></div>
+                   <!-- <rect x="59" y="36" width="36" height="36" class="home-post-icon"/> -->
+                   <!-- <polyline points="95,86 95,72 900,72" -->
+               <!-- style="fill:rgba(0,0,0,0);stroke:#B1A7A7;stroke-width:1"/> -->
+                   {{post.title}}
+               </a>
+               <!-- </svg> -->
                    
            </li>
            {% endfor %}
@@ -59,7 +60,7 @@ title: 薛定谔的水货
                             , "rgba(198, 194, 142, 0.52)"
                             , "rgba(138, 195, 190, 0.44)"]; //Set your colors here
             var color = letters[Math.floor(Math.random() * letters.length)];
-            icons[i].style.fill = color;
+            icons[i].style.backgroundColor = color;
         } 
     }
    

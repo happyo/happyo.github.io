@@ -23,16 +23,16 @@ title: 薛定谔的水货
     <div style="padding-left: 150px;padding-right: 150px" id="home-list">
         <ul>
            {% for post in site.posts %}
-           <li style="list-style-type:none;">
+           <li style="list-style-type:none;" class="home-post-list">
                
                <!-- <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="150" width="100%"> -->
                        
                <a href="{{ site.baseurl }}{{ post.url }}" class="home-link">
-                   <div style="height: 36px; width: 36px" class="home-post-icon"></div>
+                   <span class="home-post-icon"></span>
                    <!-- <rect x="59" y="36" width="36" height="36" class="home-post-icon"/> -->
                    <!-- <polyline points="95,86 95,72 900,72" -->
                <!-- style="fill:rgba(0,0,0,0);stroke:#B1A7A7;stroke-width:1"/> -->
-                   {{post.title}}
+                   <span class="home-post-title">{{post.title}}</span>
                </a>
                <!-- </svg> -->
                    

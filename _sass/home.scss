@@ -29,8 +29,20 @@
 
 .home-post-icon {
     fill:#B1A7A7;
-    // stroke-width:1;
-    // stroke:#B1A7A7;
+    // height: 36px;
+    width: 36px;
+    float: left;
+    padding: 36px 0;
+}
+
+.home-post-title {
+    font-size: 36px;
+    color: black;
+    vertical-align: middle;
+}
+
+.home-post-list {
+    height: 100px;
 }
 
 .home-link {

@@ -26,6 +26,9 @@ function ran_col() { //function name
     }
 }
 
-window.onload = function() {
-    ran_col();
-}
+document.addEventListener("DOMContentLoaded", ran_col);
+
+
+// window.onload = function() {
+//     ran_col();
+// };

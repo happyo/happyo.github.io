@@ -3,24 +3,22 @@ layout: default
 title: 薛定谔的水货
 ---
 
-<header class="home-header" style="background-image: url('{{ site.baseurl }}/assets/home/header_background.png');">
-    <div>
+<header class="home-header"> 
+    <div class="home-header-inner">
         <h1 class="home-title">P E R S O N A L   B L O G</h1>
-    </div>
-    <div>
         <h1 class="home-blog-title">薛定谔的<img class="home-water" src="{{ site.baseurl }}/assets/home/water.png"  alt="水"/>货</h1>  
     </div>
 </header>
-
+<div style="height: 190px;">
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="190">
     <polyline points="125,151 272,151"
-    style="fill:#725B21;stroke:#725B21;stroke-width:1" />
+              style="fill:#725B21;stroke:#725B21;stroke-width:1" />
     <polyline points="148,129 148,222"
-    style="fill:#725B21;stroke:#725B21;stroke-width:1" />
+              style="fill:#725B21;stroke:#725B21;stroke-width:1" />
 </svg>
-
+</div>
 <div>
-    <div style="padding-left: 150px;padding-right: 150px" id="home-list">
+    <div class="home-list">
         <ul>
            {% for post in site.posts %}
            <li style="list-style-type:none;" class="home-post-list">

@@ -1,9 +1,22 @@
-// body { height: 100%; padding: 0; margin: 0; }
-// .outer { height: 100%; padding: 100px 0 0; box-sizing: border-box ; position: relative; }
-// .home-header { height: 800px; background: #BBE8F2; position: absolute; top: 0 ; left: 0 ; width: 100%; }
-
 .home-header {
-    height: 800px;
+    /* display: table; */
+    height: 100vh;
+    position: relative;
+    background: url('/assets/home/header_background.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+}
+
+.home-header-inner {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .home-water {
@@ -12,63 +25,61 @@
     vertical-align: middle;
 }
 
-// .home-center {
-//     margin:auto;
-// }
+.home-list {
+    position: relative;
+    padding-left: 150px;
+    padding-right: 150px;
+}
 
 .home-title {
     color: white;
     font-size: 36px;
     text-align: center;
-    padding-top: 400px;
 }
 
 .home-blog-title {
     color: white;
     font-size: 48px;
     text-align: center;
-    vertical-align: middle;
 }
 
 .home-post-icon {
+    position: absolute;
     fill:#B1A7A7;
     height: 36px;
     width: 36px;
-    float: left;
-    position: relative;
     top: 20px;
-    // padding: 36px 0;
+    left: 20px;
 }
 
 .home-post-title {
+    position: absolute;
     font-size: 36px;
     color: black;
-    position: relative;
-    left: 15px;
+    left: 80px;
     top: 0px;
 }
 
 .home-post-vertical-line {
-    float: left;
+    position: absolute;
     width: 1px;
     height: 14px;
     background-color: #B1A7A7;
-    position: relative;
     top: 55px;
-    left: -1px;
+    left: 55px;
 }
 
 .home-post-horizontal-line {
-    float: left;
+    position: absolute;
     width: 800px;
     height: 1px;
     background-color: #B1A7A7;
-    position: relative;
-    top: 5px;
-    left: 36px;
+    top: 55px;
+    left: 55px;
 }
 
 .home-post-list {
+    position: relative;
     height: 150px;
 }
 

@@ -1,0 +1,90 @@
+.home-header {
+    /* display: table; */
+    height: 100vh;
+    position: relative;
+    background: url('/assets/home/header_background.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+}
+
+.home-header-inner {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.home-water {
+    height: 58px;
+    width: 58px;
+    vertical-align: middle;
+}
+
+.home-list {
+    position: relative;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+
+.home-title {
+    color: white;
+    font-size: 36px;
+    text-align: center;
+}
+
+.home-blog-title {
+    color: white;
+    font-size: 48px;
+    text-align: center;
+}
+
+.home-post-icon {
+    position: absolute;
+    fill:#B1A7A7;
+    height: 36px;
+    width: 36px;
+    top: 20px;
+    left: 20px;
+}
+
+.home-post-title {
+    position: absolute;
+    font-size: 36px;
+    color: black;
+    left: 80px;
+    top: 0px;
+}
+
+.home-post-vertical-line {
+    position: absolute;
+    width: 1px;
+    height: 14px;
+    background-color: #B1A7A7;
+    top: 55px;
+    left: 55px;
+}
+
+.home-post-horizontal-line {
+    position: absolute;
+    width: 800px;
+    height: 1px;
+    background-color: #B1A7A7;
+    top: 55px;
+    left: 55px;
+}
+
+.home-post-list {
+    position: relative;
+    height: 150px;
+}
+
+.home-link {
+    color: black;
+    font-size: 36px;
+    text-decoration: none;
+}

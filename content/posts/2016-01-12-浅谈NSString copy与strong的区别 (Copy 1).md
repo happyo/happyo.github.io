@@ -24,16 +24,16 @@ copy is required when the object is mutable. Use this if you need the value of t
 ---
 首先先创建两个`NSString`的属性，一个为`copy`，一个为`strong`。
 
-{% highlight objc %}
+```objc
 @property (nonatomic, copy) NSString *strCopy;
 
 @property (nonatomic, strong) NSString *strStrong;
 
-{% endhighlight %}
+```
 
 然后创建一个`NSString`对象，将其赋值给这两个属性，并打印出变量值和地址。修改`NSString`，再打印出两个属性的值和地址。
 
-{% highlight objc %}
+```objc
 NSString *strChange = [NSString stringWithFormat:@"hello"];
 self.strCopy = strChange;
 self.strStrong = strChange;
@@ -47,8 +47,7 @@ NSLog(@"After change~~~");
 NSLog(@"Copy string: %@ ,%p;", self.strCopy, self.strCopy);
 NSLog(@"Strong string: %@, %p;", self.strStrong, self.strStrong);
 NSLog(@"Change string: %@, %p;", strChange, strChange);
-{% endhighlight %}
-
+```
 结果如下
 
 ![result](http://cl.ly/2g061W2K0P04/Image%202016-01-12%20at%204.06.49%20%E4%B8%8B%E5%8D%88.png)
@@ -57,7 +56,7 @@ NSLog(@"Change string: %@, %p;", strChange, strChange);
 
 将`strChange`的类型改为`NSMutableString`，然后对其修改。
 
-{% highlight objc %}
+```objc
 NSMutableString *strChange = [NSMutableString stringWithFormat:@"hello"];
 self.strCopy = strChange;
 self.strStrong = strChange;
@@ -71,7 +70,7 @@ NSLog(@"After change~~~");
 NSLog(@"Copy string: %@ ,%p;", self.strCopy, self.strCopy);
 NSLog(@"Strong string: %@, %p;", self.strStrong, self.strStrong);
 NSLog(@"Change string: %@, %p;", strChange, strChange);
-{% endhighlight %}
+```
 
 结果如下：
 

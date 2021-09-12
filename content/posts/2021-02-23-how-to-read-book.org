@@ -1,5 +1,5 @@
-#+TITLE: Read Book
-#+LAYOUT: post
+#+title: Read Book
+#+draft: true
 * 第一章 阅读的活力与艺术
 ** 主动的阅读
 + 读书是一件多少主动的事

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+        
+        
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/css/post.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    
+    
+    <title>薛定谔的水货 | 函数式编程简介</title>
+</head>
+<body><header class="home-header">
+    <div class="home-header-inner">
+        <h1 class="home-title">P E R S O N A L   B L O G</h1>
+        <h1 class="home-blog-title">薛定谔的<img class="home-water" src="home/water.png"  alt="水"/>货</h1>
+    </div>
+</header>
+<div id="content">
+<div class="feat">
+  <h5 class="page-date">
+    
+
+<i data-feather="calendar"></i>
+<time datetime="2018-01-14">Jan 14, 2018</time>
+    </h5>
+</div>
+
+
+
+
+
+
+
+
+<div class="inner">
+    <p>函数式编程（functional programming）是一种编程范式，它将电脑运算视为数学上的函数计算，并且避免使用程序状态以及易变对象。函数编程语言最重要的基础是λ演算（lambda calculus）。</p>
+<p>函数式编程有一下几个概念</p>
+<h4 id="函数是一等公民first-class">函数是“一等公民”（first-class）</h4>
+<p>First-class function 指的是函数可以存储在变量或者其他数据结构中；可以被当作参数传入其他函数；可以被当作函数的返回值。在面向对象编程中，对象（object）就是“一等公民”，可以把函数式编程中的函数类比成面向对象编程中的对象。</p>
+<h4 id="纯函数pure-functions">纯函数（pure functions）</h4>
+<p>纯函数没有“副作用”（side effect），意思是函数不会影响到外界的状态，例如修改变量等等。这就带来了一些特有的好处：</p>
+<ul>
+<li>在代码中，如果一个纯函数不再使用了，那么可以直接删除掉，完全不会影响到其他逻辑。</li>
+<li>在调用纯函数时，如果参数不变，那么返回结果也不会变。</li>
+<li>因为在两个纯函数之间没有数据依赖，所以纯函数是天然线程安全的（thread-safe），并且可以并行计算。</li>
+<li>如果整个语言都没有“副作用”，那么就可以使用任意的求值策略，比如haskell中的惰性求值（lazy evaluation）。</li>
+</ul>
+<h4 id="高阶函数higher-order-function">高阶函数（higher-order function）</h4>
+<p>高阶函数是接受一个或多个函数作为输入或者输出一个函数的函数，常见的高阶函数有map，filter，reduce等等。</p>
+<h4 id="部分函数应用partial-function-application">部分函数应用（partial function application）</h4>
+<p>当一个函数有多个参数的时候，我们可以直接赋值其中的一部分，返回的结果是一个接受剩下参数返回结果的函数，例如我们有个函数：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">addThree</span> a b c <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> b <span style="color:#f92672">+</span> c
+</code></pre></div><p>那么addThree 2，返回的就是一个接受两个数字并且返回这两个数字之和加上2的函数。</p>
+<h4 id="柯里化curring">柯里化（curring）</h4>
+<p>柯里化是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。</p>
+<p>通俗一点就是把多参函数，每次部分函数应用第一个参数，直至剩下一个参数。</p>
+<p>addThree柯里化后，表示的就是接受一个数a，然后返回一个接受两个数b，c并且返回a+b+c的函数。</p>
+<h3 id="相关文章">相关文章</h3>
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2012/04/functional_programming.html">函数式编程初探</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Functional_programming">Functional programming</a></li>
+</ul>
+
+</div>
+
+        </div>fsdfsadfoasofofff footer
+<script src="/js/home.js"></script>
+<script>
+</script>
+</body>
+</html>

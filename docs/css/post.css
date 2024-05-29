@@ -1,142 +1,110 @@
-.feat {
-    text-align: center;
-    border-bottom: 1px solid #979797;
-    margin: 0 64px 3.5em;
-  }
-
-.page-date {
-    color: #6A4E64;
-    display: inline-block;
-    position: relative;
-    top: 2.35em;
-    background: white;
-    font-size: 22px;
-    text-align: center;
-    font-weight: normal;
-    padding: 0 1em;
-    text-transform: none;
-    letter-spacing: 1px;
-}
+/* General Styles */
 * {
     box-sizing: border-box;
 }
 
-/* reset CSS */
+/* Reset CSS */
 table {	
     font-size: 100%;
 }
-/* end reset CSS */
 
 body {
-    font-family:"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    font-family: "Lucida Grande", "Lucida Sans Unicode", Lucida, Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     font-size: 18px;
+    margin: 0;
+    padding: 0;
+    background-color: #e6f2ef; /* 淡青绿色背景 */
+    color: #333333; /* 主体文字颜色 */
 }
 
 body.mobile {
     font-size: 30px;
 }
 
-P, li {
-  line-height: 1.8;
+p, li {
+    line-height: 1.8;
 }
 
-H1 {
+h1, h2, h3, h4 {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
+    color: #2d6a4f; /* 深青绿色 */
+    line-height: 1.5;
 }
 
-H2 {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
-    margin-bottom: 60px;
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
     margin-bottom: 40px;
-    padding: 5px;
-    border-bottom: 2px LightGrey solid;
-    width: 98%;
-    line-height: 150%;
-    color: #666666;
+    padding-bottom: 5px;
+    border-bottom: 2px solid lightgrey;
 }
 
-
-H3 {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
+h3 {
+    font-size: 1.75em;
     margin-top: 40px;
     margin-bottom: 30px;
-    border-bottom: 1px LightGrey solid;
-    width: 98%;
-    line-height: 150%;
-    color: #666666;
+    border-bottom: 1px solid lightgrey;
 }
 
-
-H4 {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, Helvetica, STKaiti, SimSun, serif;
+h4 {
+    font-size: 1.5em;
     margin-top: 40px;
     margin-bottom: 30px;
-    border-bottom: 1px LightGrey solid;
-    width: 98%;
-    line-height: 150%;
-    color: #666666;
+    border-bottom: 1px solid lightgrey;
 }
 
 .box {
     padding: 2% 8% 5% 8%;
-    border: 1px solid LightGrey;
+    border: 1px solid lightgrey;
 }
-
 
 li {
     margin-left: 10px;
 }
 
-
 blockquote {
-    border-left: 5px lightgrey solid;
+    border-left: 5px solid lightgrey;
     padding-left: 15px;
     margin-left: 20px;
     background: #f4f4f4;
 }
 
-
 pre {
-    font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
-    font-size: 80%;
-    background-color: #F4F4F4;
-    border: 1px solid #E0E0E0;
+    font-family: Inconsolata, Consolas, "DejaVu Sans Mono", "Droid Sans Mono", Proggy, monospace;
+    font-size: 0.875em;
+    background-color: #f4f4f4;
+    border: 1px solid #e0e0e0;
     border-radius: 4px;
     padding: 5px;   
     line-height: 1.3;
-
     display: block;
     width: 100%;
     overflow: auto;
 }
 
-
 code {
-    font-family: Inconsolata, Consolas, "DEJA VU SANS MONO", "DROID SANS MONO", Proggy, monospace;
+    font-family: Inconsolata, Consolas, "DejaVu Sans Mono", "Droid Sans Mono", Proggy, monospace;
 }
-
 
 a {
     text-decoration: none;
     cursor: crosshair;
-    border-bottom: 1px dashed orange;
-    color: #930ee4;
+    border-bottom: 1px dashed #40916c; /* 青绿色 */
+    color: #40916c; /* 青绿色 */
 }
-
 
 a:hover {
-    background-color: LightGrey;
+    background-color: lightgrey;
 }
-
 
 img {
     display: block;
     box-shadow: 0 0 10px #555;
     border-radius: 6px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 10px auto;
     -webkit-box-shadow: 0 0 10px #555;
 }
 
@@ -146,11 +114,11 @@ img.displayed {
 }
 
 hr {
-    color: LightGrey;
+    color: lightgrey;
 }
 
 p.notice {
-    color: #AA4433;
+    color: #aa4433;
     font-size: 14px;
 }
 
@@ -158,7 +126,7 @@ div.tweet p {
     font-size: 16px;
     border: 1px solid #aaa;
     border-left: 10px solid #f28500;
-    padding: 2px 0.5em 2px 0.5em;
+    padding: 2px 0.5em;
     margin-bottom: 20px;
     background-color: #fbfbfb;
 }
@@ -169,30 +137,29 @@ div.tweet i {
     font-style: normal;
     border: 1px solid #aaa;
     margin-right: 0.5em;
-    padding: 0px 2px;
+    padding: 0 2px;
 }
 
 div.outer {
-    margin: 2% 5% 2% 5%;
+    margin: 2% 5%;
 }
 
 body.mobile div.outer {
-    margin: 2% 0% 2% 0%;
+    margin: 2% 0;
 }
 
 div.inner {
-    margin: 0% 6%;
+    margin: 0 6%;
     padding: 2% 8% 4% 8%; 
-    /* border: 1px solid LightGrey; */
 }
 
 body.mobile div.inner {
     margin: 0;
-    padding: 2% 4% 4% 4%;
+    padding: 2% 4%;
 }
 
 div.ad-banner {
-    margin: 0% 14%;
+    margin: 0 14%;
 }
 
 body.mobile div.ad-banner {
@@ -203,3 +170,23 @@ body.mobile div.ad-banner {
     display: none;
 }
 
+/* Additional Styling for the Date */
+.feat {
+    text-align: center;
+    border-bottom: 1px solid #979797;
+    margin: 0 64px 3.5em;
+}
+
+.page-date {
+    color: #6a4e64;
+    display: inline-block;
+    position: relative;
+    top: 2.35em;
+    background: white;
+    font-size: 1.375em; /* 22px */
+    text-align: center;
+    font-weight: normal;
+    padding: 0 1em;
+    text-transform: none;
+    letter-spacing: 1px;
+}

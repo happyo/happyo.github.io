@@ -34,41 +34,24 @@
 .home-post-icon {
     position: absolute;
     fill:#B1A7A7;
-    height: 36px;
-    width: 36px;
+    height: 24px;
+    width: 24px;
     top: 20px;
     left: 20px;
 }
 
 .home-post-title {
     position: absolute;
-    font-size: 36px;
+    font-size: 24px;
     color: black;
     left: 80px;
     top: 0px;
 }
 
-.home-post-vertical-line {
-    position: absolute;
-    width: 1px;
-    height: 14px;
-    background-color: #B1A7A7;
-    top: 55px;
-    left: 55px;
-}
-
-.home-post-horizontal-line {
-    position: absolute;
-    width: 800px;
-    height: 1px;
-    background-color: #B1A7A7;
-    top: 55px;
-    left: 55px;
-}
-
 .home-post-list {
     position: relative;
-    height: 150px;
+    height: 80px;
+    list-style-type: none; /* 移除前面的点 */
 }
 
 .home-link {
@@ -79,4 +62,8 @@
 
 .home-footer {
     text-align: center;
+}
+/* Additional Styling */
+.home-link:hover .home-post-title {
+    color: #007bff;
 }

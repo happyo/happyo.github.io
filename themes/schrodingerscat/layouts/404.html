@@ -1,3 +1,16 @@
+<!DOCTYPE html>
 <html>
-  <head>
-<title>
+    {{ partial "head.html" . }}
+    <body>
+        {{ partial "header.html" . }}
+        <div id="content">
+            <div class="error-container">
+                <h1 class="error-title">404 - 页面未找到</h1>
+                <p class="error-message">抱歉，我们无法找到您请求的页面。</p>
+                <a href="{{ .Site.BaseURL }}" class="error-link">返回首页</a>
+            </div>
+        </div>
+        {{ partial "footer.html" . }}
+        {{ partial "script.html" . }}
+    </body>
+</html>

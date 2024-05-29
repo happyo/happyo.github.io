@@ -1,0 +1,14 @@
+#+title: SwiftUI的最佳实践系列之开篇
+#+DATE: 2024-05-29
+#+draft: true
+
+* Introduction
+This is the introduction of my post.
+
+* Quote
+#+BEGIN_QUOTE
+This is an example of a quote in Org mode.
+#+END_QUOTE
+
+* Content
+Here is the main content of my post.

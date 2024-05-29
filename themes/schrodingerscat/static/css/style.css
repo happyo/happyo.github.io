@@ -1,28 +1,16 @@
 .home-header {
-    /* display: table; */
-    height: 100vh;
-    position: relative;
-    background: url('/home/header_background.png') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    width: 100%;
+    background-color: #f8f8f8;
+    padding: 20px;
+    text-align: center;
 }
 
 .home-header-inner {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .home-water {
-    height: 58px;
-    width: 58px;
-    vertical-align: middle;
+    height: 1em;
 }
 
 .home-list {
@@ -32,13 +20,13 @@
 }
 
 .home-title {
-    color: white;
+    color: #333333;
     font-size: 36px;
     text-align: center;
 }
 
 .home-blog-title {
-    color: white;
+    color: #333333;
     font-size: 48px;
     text-align: center;
 }
@@ -87,4 +75,8 @@
     color: black;
     font-size: 36px;
     text-decoration: none;
+}
+
+.home-footer {
+    text-align: center;
 }

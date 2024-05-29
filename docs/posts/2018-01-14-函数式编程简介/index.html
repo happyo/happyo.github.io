@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
+    
 
         
         
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/css/post.css">
@@ -13,13 +14,16 @@
     
     <title>薛定谔的水货 | 函数式编程简介</title>
 </head>
-<body><header class="home-header">
+
+    <body>
+        <header class="home-header">
     <div class="home-header-inner">
-        <h1 class="home-title">P E R S O N A L   B L O G</h1>
-        <h1 class="home-blog-title">薛定谔的<img class="home-water" src="home/water.png"  alt="水"/>货</h1>
+        <h1 class="home-blog-title">薛定谔的<img class="home-water" src="/images/home/water.png" alt="水"/>货</h1>
     </div>
 </header>
-<div id="content">
+
+        <div id="content">
+            
 <div class="feat">
   <h5 class="page-date">
     
@@ -53,8 +57,8 @@
 <p>高阶函数是接受一个或多个函数作为输入或者输出一个函数的函数，常见的高阶函数有map，filter，reduce等等。</p>
 <h4 id="部分函数应用partial-function-application">部分函数应用（partial function application）</h4>
 <p>当一个函数有多个参数的时候，我们可以直接赋值其中的一部分，返回的结果是一个接受剩下参数返回结果的函数，例如我们有个函数：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">addThree</span> a b c <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> b <span style="color:#f92672">+</span> c
-</code></pre></div><p>那么addThree 2，返回的就是一个接受两个数字并且返回这两个数字之和加上2的函数。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">addThree</span> a b c <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> b <span style="color:#f92672">+</span> c
+</span></span></code></pre></div><p>那么addThree 2，返回的就是一个接受两个数字并且返回这两个数字之和加上2的函数。</p>
 <h4 id="柯里化curring">柯里化（curring）</h4>
 <p>柯里化是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。</p>
 <p>通俗一点就是把多参函数，每次部分函数应用第一个参数，直至剩下一个参数。</p>
@@ -67,9 +71,14 @@
 
 </div>
 
-        </div>fsdfsadfoasofofff footer
-<script src="/js/home.js"></script>
+        </div>
+        <footer>
+    <p>© 2024 薛定谔的水货. All rights reserved.</p>
+</footer>
+
+        <script src="/js/home.js"></script>
 <script>
 </script>
-</body>
+
+    </body>
 </html>

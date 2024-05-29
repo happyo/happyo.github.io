@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
+    
 
         
         
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/css/post.css">
@@ -13,13 +14,16 @@
     
     <title>薛定谔的水货 | Posts</title>
 </head>
-<body><header class="home-header">
+
+    <body>
+        <header class="home-header">
     <div class="home-header-inner">
-        <h1 class="home-title">P E R S O N A L   B L O G</h1>
-        <h1 class="home-blog-title">薛定谔的<img class="home-water" src="home/water.png"  alt="水"/>货</h1>
+        <h1 class="home-blog-title">薛定谔的<img class="home-water" src="/images/home/water.png" alt="水"/>货</h1>
     </div>
 </header>
-<div id="content">
+
+        <div id="content">
+            
   <h1>Posts</h1>
   
     <article>
@@ -40,8 +44,8 @@
 <p>高阶函数是接受一个或多个函数作为输入或者输出一个函数的函数，常见的高阶函数有map，filter，reduce等等。</p>
 <h4 id="部分函数应用partial-function-application">部分函数应用（partial function application）</h4>
 <p>当一个函数有多个参数的时候，我们可以直接赋值其中的一部分，返回的结果是一个接受剩下参数返回结果的函数，例如我们有个函数：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-haskell" data-lang="haskell"><span style="color:#a6e22e">addThree</span> a b c <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> b <span style="color:#f92672">+</span> c
-</code></pre></div><p>那么addThree 2，返回的就是一个接受两个数字并且返回这两个数字之和加上2的函数。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-haskell" data-lang="haskell"><span style="display:flex;"><span><span style="color:#a6e22e">addThree</span> a b c <span style="color:#f92672">=</span> a <span style="color:#f92672">+</span> b <span style="color:#f92672">+</span> c
+</span></span></code></pre></div><p>那么addThree 2，返回的就是一个接受两个数字并且返回这两个数字之和加上2的函数。</p>
 <h4 id="柯里化curring">柯里化（curring）</h4>
 <p>柯里化是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。</p>
 <p>通俗一点就是把多参函数，每次部分函数应用第一个参数，直至剩下一个参数。</p>
@@ -52,7 +56,6 @@
 <li><a href="https://en.wikipedia.org/wiki/Functional_programming">Functional programming</a></li>
 </ul>
 
-      asdfasdfasdfhhah
     </article>
   
     <article>
@@ -67,51 +70,51 @@
 <li>extension 是 iOS8 新开放的一种对几个固定系统区域的拓展机制，它可以在一定程度上弥补 iOS 的沙盒机制对应用间的通信限制</li>
 <li>应用沙盒一般包括以下几个文件目录:</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">.app
-Documents
-Library  
-<span style="color:#f92672">---</span>Caches
-<span style="color:#f92672">---</span>Preferences
-tmp
-</code></pre></div><h1 id="目录简介及获取">目录简介及获取</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span>.app
+</span></span><span style="display:flex;"><span>Documents
+</span></span><span style="display:flex;"><span>Library  
+</span></span><span style="display:flex;"><span><span style="color:#f92672">---</span>Caches
+</span></span><span style="display:flex;"><span><span style="color:#f92672">---</span>Preferences
+</span></span><span style="display:flex;"><span>tmp
+</span></span></code></pre></div><h1 id="目录简介及获取">目录简介及获取</h1>
 <hr>
 <ul>
 <li><strong>沙盒根目录获取</strong>: 获取如下</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">NSString <span style="color:#f92672">*</span>homePath <span style="color:#f92672">=</span> NSHomeDirectory();
-NSLog(<span style="color:#e6db74">@&#34;%@&#34;</span>, homePath);
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span>NSString <span style="color:#f92672">*</span>homePath <span style="color:#f92672">=</span> NSHomeDirectory();
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;%@&#34;</span>, homePath);
+</span></span></code></pre></div><ul>
 <li><strong>.app文件</strong>: 这里面存放的是应用程序的源文件，包括资源文件和可执行文件。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">NSString <span style="color:#f92672">*</span>appPath <span style="color:#f92672">=</span> [[NSBundle mainBundle] bundlePath];
-NSLog(<span style="color:#e6db74">@&#34;%@&#34;</span>, appPath);
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span>NSString <span style="color:#f92672">*</span>appPath <span style="color:#f92672">=</span> [[NSBundle mainBundle] bundlePath];
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;%@&#34;</span>, appPath);
+</span></span></code></pre></div><ul>
 <li><strong>Documents</strong>: 保存应用运行时生成的需要持久化的数据，<code>iTunes</code> 会自动备份该目录。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">NSString <span style="color:#f92672">*</span>documentPath <span style="color:#f92672">=</span> NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
-NSLog(<span style="color:#e6db74">@&#34;%@&#34;</span>, documentPath);
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span>NSString <span style="color:#f92672">*</span>documentPath <span style="color:#f92672">=</span> NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;%@&#34;</span>, documentPath);
+</span></span></code></pre></div><ul>
 <li><strong>tmp</strong>: 保存应用运行时所需的临时数据，使用完毕后再将对应的文件从该目录删除，应用没有运行时，系统也可能会自动清理该目录下的文件，<code>iTunes</code> 不会同步该目录，iPhone 重启时该目录下的文件会丢失。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">NSString <span style="color:#f92672">*</span>tmpPath <span style="color:#f92672">=</span> NSTemporaryDirectory();
-NSLog(<span style="color:#e6db74">@&#34;%@&#34;</span>, tmpPath);
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span>NSString <span style="color:#f92672">*</span>tmpPath <span style="color:#f92672">=</span> NSTemporaryDirectory();
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;%@&#34;</span>, tmpPath);
+</span></span></code></pre></div><ul>
 <li><strong>Library</strong>: 存储程序的默认设置和其他状态信息，<code>iTunes </code>会自动备份该目录。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">NSString <span style="color:#f92672">*</span>libraryPath <span style="color:#f92672">=</span> NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject;
-NSLog(<span style="color:#e6db74">@&#34;%@&#34;</span>, libraryPath);
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span>NSString <span style="color:#f92672">*</span>libraryPath <span style="color:#f92672">=</span> NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject;
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;%@&#34;</span>, libraryPath);
+</span></span></code></pre></div><ul>
 <li><strong>Library/Caches</strong>: 存放缓存文件，<code>iTunes</code>不会备份此目录，此目录下文件不会在应用退出时删除，一般存放体积比较大，不是很重要的资源</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">NSString <span style="color:#f92672">*</span>cachesPath <span style="color:#f92672">=</span> NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
-NSLog(<span style="color:#e6db74">@&#34;%@&#34;</span>, cachesPath);
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span>NSString <span style="color:#f92672">*</span>cachesPath <span style="color:#f92672">=</span> NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).firstObject;
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;%@&#34;</span>, cachesPath);
+</span></span></code></pre></div><ul>
 <li><strong>Library/Preferences</strong>: 保存应用的所有偏好设置，iOS 的 <code>Setting（设置）</code>会在该目录中查找应用的设置信息，iTunes会自动备份该目录。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">NSString <span style="color:#f92672">*</span>preferencesPath <span style="color:#f92672">=</span> NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject;
-preferencesPath <span style="color:#f92672">=</span> [preferencesPath stringByAppendingPathComponent:<span style="color:#e6db74">@&#34;Preferences&#34;</span>];
-NSLog(<span style="color:#e6db74">@&#34;%@&#34;</span>, preferencesPath);
-</code></pre></div><h1 id="ios的数据持久化方式一般有以下5种">iOS的数据持久化方式一般有以下5种</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span>NSString <span style="color:#f92672">*</span>preferencesPath <span style="color:#f92672">=</span> NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject;
+</span></span><span style="display:flex;"><span>preferencesPath <span style="color:#f92672">=</span> [preferencesPath stringByAppendingPathComponent:<span style="color:#e6db74">@&#34;Preferences&#34;</span>];
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;%@&#34;</span>, preferencesPath);
+</span></span></code></pre></div><h1 id="ios的数据持久化方式一般有以下5种">iOS的数据持久化方式一般有以下5种</h1>
 <hr>
 <ol>
 <li>plist（属性列表）</li>
@@ -122,36 +125,36 @@ NSLog(<span style="color:#e6db74">@&#34;%@&#34;</span>, preferencesPath);
 </ol>
 <h2 id="plist属性列表">plist（属性列表）</h2>
 <p>属性列表文件是一种 <code>XML</code> 文件，<code>Foundation</code> 框架中的一些对象可以与属性列表文件互相转换，可转换的类型如下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">NSArray;
-NSMutableArray;
-NSDictionary;
-NSMutableDictionary;
-NSData;
-NSMutableData;
-NSString;
-NSMutableString;
-NSNumber;
-</code></pre></div><h3 id="存储和使用">存储和使用</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">// 获取存储文件的路径
-</span><span style="color:#75715e"></span>NSString <span style="color:#f92672">*</span>documentPath <span style="color:#f92672">=</span> NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
-NSString <span style="color:#f92672">*</span>fileName <span style="color:#f92672">=</span> [documentPath stringByAppendingPathComponent:<span style="color:#e6db74">@&#34;storage.plist&#34;</span>];
-
-<span style="color:#75715e">// 存储
-</span><span style="color:#75715e"></span>NSArray <span style="color:#f92672">*</span>array <span style="color:#f92672">=</span> <span style="color:#ae81ff">@[</span><span style="color:#e6db74">@&#34;hello&#34;</span>, <span style="color:#e6db74">@&#34;world&#34;</span><span style="color:#ae81ff">]</span>;
-[array writeToFile:fileName atomically:YES];
-
-<span style="color:#75715e">// 读取
-</span><span style="color:#75715e"></span>NSArray <span style="color:#f92672">*</span>result <span style="color:#f92672">=</span> [NSArray arrayWithContentsOfFile:fileName];
-NSLog(<span style="color:#e6db74">@&#34;result :%@&#34;</span>, result);
-
-<span style="color:#75715e">// 当存入的数组含有 null 的时候写文件会失败
-</span><span style="color:#75715e"></span>NSArray <span style="color:#f92672">*</span>modifyArray <span style="color:#f92672">=</span> <span style="color:#ae81ff">@[</span><span style="color:#e6db74">@&#34;hello&#34;</span>, [NSNull null]<span style="color:#ae81ff">]</span>;
-[modifyArray writeToFile:fileName atomically:YES];
-
-<span style="color:#75715e">// 结果发现取出来的还是第一次存的数组
-</span><span style="color:#75715e"></span>NSArray <span style="color:#f92672">*</span>modifyResult <span style="color:#f92672">=</span> [NSArray arrayWithContentsOfFile:fileName];
-NSLog(<span style="color:#e6db74">@&#34;modify result :%@&#34;</span>, modifyResult);
-</code></pre></div><h3 id="运行结果">运行结果</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span>NSArray;
+</span></span><span style="display:flex;"><span>NSMutableArray;
+</span></span><span style="display:flex;"><span>NSDictionary;
+</span></span><span style="display:flex;"><span>NSMutableDictionary;
+</span></span><span style="display:flex;"><span>NSData;
+</span></span><span style="display:flex;"><span>NSMutableData;
+</span></span><span style="display:flex;"><span>NSString;
+</span></span><span style="display:flex;"><span>NSMutableString;
+</span></span><span style="display:flex;"><span>NSNumber;
+</span></span></code></pre></div><h3 id="存储和使用">存储和使用</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span><span style="color:#75715e">// 获取存储文件的路径
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>NSString <span style="color:#f92672">*</span>documentPath <span style="color:#f92672">=</span> NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+</span></span><span style="display:flex;"><span>NSString <span style="color:#f92672">*</span>fileName <span style="color:#f92672">=</span> [documentPath stringByAppendingPathComponent:<span style="color:#e6db74">@&#34;storage.plist&#34;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 存储
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>NSArray <span style="color:#f92672">*</span>array <span style="color:#f92672">=</span> <span style="color:#ae81ff">@[</span><span style="color:#e6db74">@&#34;hello&#34;</span>, <span style="color:#e6db74">@&#34;world&#34;</span><span style="color:#ae81ff">]</span>;
+</span></span><span style="display:flex;"><span>[array writeToFile:fileName atomically:YES];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 读取
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>NSArray <span style="color:#f92672">*</span>result <span style="color:#f92672">=</span> [NSArray arrayWithContentsOfFile:fileName];
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;result :%@&#34;</span>, result);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 当存入的数组含有 null 的时候写文件会失败
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>NSArray <span style="color:#f92672">*</span>modifyArray <span style="color:#f92672">=</span> <span style="color:#ae81ff">@[</span><span style="color:#e6db74">@&#34;hello&#34;</span>, [NSNull null]<span style="color:#ae81ff">]</span>;
+</span></span><span style="display:flex;"><span>[modifyArray writeToFile:fileName atomically:YES];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 结果发现取出来的还是第一次存的数组
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>NSArray <span style="color:#f92672">*</span>modifyResult <span style="color:#f92672">=</span> [NSArray arrayWithContentsOfFile:fileName];
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;modify result :%@&#34;</span>, modifyResult);
+</span></span></code></pre></div><h3 id="运行结果">运行结果</h3>
 <p><img src="http://cl.ly/241B0p0t0g0o/Image%202016-01-18%20at%207.50.49%20%E4%B8%8B%E5%8D%88.png" alt="plistResult"></p>
 <h3 id="注意">注意</h3>
 <ul>
@@ -162,25 +165,25 @@ NSLog(<span style="color:#e6db74">@&#34;modify result :%@&#34;</span>, modifyRes
 <hr>
 <h2 id="preferences-nsuserdefaults">preferences (NSUserDefaults)</h2>
 <p><code>NSUserDefaults</code>是一个单例，在整个程序中只有一个实例对象，他可以用于数据的永久保存，而且简单实用。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">
-<span style="color:#75715e">// 获取 NSUserDefaults 的单例对象
-</span><span style="color:#75715e"></span>NSUserDefaults <span style="color:#f92672">*</span>userDefaults <span style="color:#f92672">=</span> [NSUserDefaults standardUserDefaults];
-
-<span style="color:#75715e">// 存储
-</span><span style="color:#75715e"></span>[userDefaults setObject:<span style="color:#e6db74">@&#34;happyo&#34;</span> forKey:<span style="color:#e6db74">@&#34;name&#34;</span>];
-[userDefaults setBool:YES forKey:<span style="color:#e6db74">@&#34;isMale&#34;</span>];
-[userDefaults setInteger:<span style="color:#ae81ff">25</span> forKey:<span style="color:#e6db74">@&#34;age&#34;</span>];
-
-<span style="color:#75715e">// 立即同步
-</span><span style="color:#75715e"></span>[userDefaults synchronize];
-
-<span style="color:#75715e">// 读取
-</span><span style="color:#75715e"></span>NSString <span style="color:#f92672">*</span>nameStr <span style="color:#f92672">=</span> [userDefaults objectForKey:<span style="color:#e6db74">@&#34;name&#34;</span>];
-<span style="color:#66d9ef">BOOL</span> isMale <span style="color:#f92672">=</span> [userDefaults boolForKey:<span style="color:#e6db74">@&#34;isMale&#34;</span>];
-NSInteger age <span style="color:#f92672">=</span> [userDefaults integerForKey:<span style="color:#e6db74">@&#34;age&#34;</span>];
-
-NSLog(<span style="color:#e6db74">@&#34;name : %@, isMale :%d, age :%ld&#34;</span>, nameStr, isMale, age);
-</code></pre></div><h3 id="结果如下">结果如下</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 获取 NSUserDefaults 的单例对象
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>NSUserDefaults <span style="color:#f92672">*</span>userDefaults <span style="color:#f92672">=</span> [NSUserDefaults standardUserDefaults];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 存储
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>[userDefaults setObject:<span style="color:#e6db74">@&#34;happyo&#34;</span> forKey:<span style="color:#e6db74">@&#34;name&#34;</span>];
+</span></span><span style="display:flex;"><span>[userDefaults setBool:YES forKey:<span style="color:#e6db74">@&#34;isMale&#34;</span>];
+</span></span><span style="display:flex;"><span>[userDefaults setInteger:<span style="color:#ae81ff">25</span> forKey:<span style="color:#e6db74">@&#34;age&#34;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 立即同步
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>[userDefaults synchronize];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 读取
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>NSString <span style="color:#f92672">*</span>nameStr <span style="color:#f92672">=</span> [userDefaults objectForKey:<span style="color:#e6db74">@&#34;name&#34;</span>];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">BOOL</span> isMale <span style="color:#f92672">=</span> [userDefaults boolForKey:<span style="color:#e6db74">@&#34;isMale&#34;</span>];
+</span></span><span style="display:flex;"><span>NSInteger age <span style="color:#f92672">=</span> [userDefaults integerForKey:<span style="color:#e6db74">@&#34;age&#34;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;name : %@, isMale :%d, age :%ld&#34;</span>, nameStr, isMale, age);
+</span></span></code></pre></div><h3 id="结果如下">结果如下</h3>
 <p><img src="http://cl.ly/273C1L3t020W/Image%202016-01-18%20at%209.18.02%20%E4%B8%8B%E5%8D%88.png" alt="preferencesResult"></p>
 <h3 id="注意-1">注意</h3>
 <ul>
@@ -192,50 +195,50 @@ NSLog(<span style="color:#e6db74">@&#34;name : %@, isMale :%d, age :%ld&#34;</sp
 <p>对象归档是一种序列化方式。为了便于数据传输，先将归档序列化成一个文件，然后通过返归档将数据恢复到对象中。
 对一个对象进行完整归档需要满足的条件为：该对象的类必须实现<code>NSCoding</code>协议，而且每个成员变量应该是基本数据类型或者都是实现了<code>NSCoding</code>协议的某个类的实例。</p>
 <p>创建一个<code>Car</code>类，使其实现<code>NSCoding</code>协议</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">@interface</span> <span style="color:#a6e22e">Car</span> : <span style="color:#a6e22e">NSObject</span> <span style="color:#f92672">&lt;</span>NSCoding<span style="color:#f92672">&gt;</span>
-
-<span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">nonatomic</span>, <span style="color:#66d9ef">copy</span>) NSString <span style="color:#f92672">*</span>name;
-
-<span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">nonatomic</span>, <span style="color:#66d9ef">assign</span>) NSInteger speed;
-
-<span style="color:#66d9ef">@end</span>
-
-
-<span style="color:#66d9ef">@implementation</span> <span style="color:#a6e22e">Car</span>
-
-- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">encodeWithCoder:</span>(NSCoder <span style="color:#f92672">*</span>)aCoder
-{
-    [aCoder encodeObject:self.name forKey:<span style="color:#e6db74">@&#34;name&#34;</span>];
-    [aCoder encodeInteger:self.speed forKey:<span style="color:#e6db74">@&#34;speed&#34;</span>];
-}
-
-- (<span style="color:#66d9ef">instancetype</span>)<span style="color:#a6e22e">initWithCoder:</span>(NSCoder <span style="color:#f92672">*</span>)aDecoder
-{
-    self.name <span style="color:#f92672">=</span> [aDecoder decodeObjectForKey:<span style="color:#e6db74">@&#34;name&#34;</span>];
-    self.speed <span style="color:#f92672">=</span> [aDecoder decodeIntegerForKey:<span style="color:#e6db74">@&#34;speed&#34;</span>];
-
-    <span style="color:#66d9ef">return</span> self;
-}
-
-<span style="color:#66d9ef">@end</span>
-</code></pre></div><p>对其进行归档和解档</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">// 创建对象
-</span><span style="color:#75715e"></span>Car <span style="color:#f92672">*</span>car <span style="color:#f92672">=</span> [[Car alloc] init];
-car.name <span style="color:#f92672">=</span> <span style="color:#e6db74">@&#34;Aventador&#34;</span>;
-car.speed <span style="color:#f92672">=</span> <span style="color:#ae81ff">300</span>;
-
-<span style="color:#75715e">// 获得存储路径
-</span><span style="color:#75715e"></span>NSString <span style="color:#f92672">*</span>documentPath <span style="color:#f92672">=</span> NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
-NSString <span style="color:#f92672">*</span>fileName <span style="color:#f92672">=</span> [documentPath stringByAppendingString:<span style="color:#e6db74">@&#34;car.data&#34;</span>];
-
-<span style="color:#75715e">// 归档
-</span><span style="color:#75715e"></span>[NSKeyedArchiver archiveRootObject:car toFile:fileName];
-
-<span style="color:#75715e">// 解档
-</span><span style="color:#75715e"></span>Car <span style="color:#f92672">*</span>unarchiveCar <span style="color:#f92672">=</span> [NSKeyedUnarchiver unarchiveObjectWithFile:fileName];
-
-NSLog(<span style="color:#e6db74">@&#34;car :%@ , speed :%ld&#34;</span>, unarchiveCar.name, unarchiveCar.speed);
-</code></pre></div><h3 id="注意-2">注意</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span><span style="color:#66d9ef">@interface</span> <span style="color:#a6e22e">Car</span> : <span style="color:#a6e22e">NSObject</span> <span style="color:#f92672">&lt;</span>NSCoding<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">nonatomic</span>, <span style="color:#66d9ef">copy</span>) NSString <span style="color:#f92672">*</span>name;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">nonatomic</span>, <span style="color:#66d9ef">assign</span>) NSInteger speed;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@end</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@implementation</span> <span style="color:#a6e22e">Car</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>- (<span style="color:#66d9ef">void</span>)<span style="color:#a6e22e">encodeWithCoder:</span>(NSCoder <span style="color:#f92672">*</span>)aCoder
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    [aCoder encodeObject:self.name forKey:<span style="color:#e6db74">@&#34;name&#34;</span>];
+</span></span><span style="display:flex;"><span>    [aCoder encodeInteger:self.speed forKey:<span style="color:#e6db74">@&#34;speed&#34;</span>];
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>- (<span style="color:#66d9ef">instancetype</span>)<span style="color:#a6e22e">initWithCoder:</span>(NSCoder <span style="color:#f92672">*</span>)aDecoder
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    self.name <span style="color:#f92672">=</span> [aDecoder decodeObjectForKey:<span style="color:#e6db74">@&#34;name&#34;</span>];
+</span></span><span style="display:flex;"><span>    self.speed <span style="color:#f92672">=</span> [aDecoder decodeIntegerForKey:<span style="color:#e6db74">@&#34;speed&#34;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> self;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@end</span>
+</span></span></code></pre></div><p>对其进行归档和解档</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span><span style="color:#75715e">// 创建对象
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Car <span style="color:#f92672">*</span>car <span style="color:#f92672">=</span> [[Car alloc] init];
+</span></span><span style="display:flex;"><span>car.name <span style="color:#f92672">=</span> <span style="color:#e6db74">@&#34;Aventador&#34;</span>;
+</span></span><span style="display:flex;"><span>car.speed <span style="color:#f92672">=</span> <span style="color:#ae81ff">300</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 获得存储路径
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>NSString <span style="color:#f92672">*</span>documentPath <span style="color:#f92672">=</span> NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+</span></span><span style="display:flex;"><span>NSString <span style="color:#f92672">*</span>fileName <span style="color:#f92672">=</span> [documentPath stringByAppendingString:<span style="color:#e6db74">@&#34;car.data&#34;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 归档
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>[NSKeyedArchiver archiveRootObject:car toFile:fileName];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 解档
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>Car <span style="color:#f92672">*</span>unarchiveCar <span style="color:#f92672">=</span> [NSKeyedUnarchiver unarchiveObjectWithFile:fileName];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;car :%@ , speed :%ld&#34;</span>, unarchiveCar.name, unarchiveCar.speed);
+</span></span></code></pre></div><h3 id="注意-2">注意</h3>
 <ul>
 <li>对象必须实现<code>NSCoding</code>协议</li>
 <li>保存文件的扩展名可以任意指定</li>
@@ -252,8 +255,8 @@ NSLog(<span style="color:#e6db74">@&#34;car :%@ , speed :%ld&#34;</span>, unarch
 <h3 id="首先添加类库">首先添加类库</h3>
 <p><img src="http://cl.ly/3D1M0P373W38/Image%202016-01-19%20at%2010.52.22%20%E4%B8%8A%E5%8D%88.png" alt="addLibrary"></p>
 <p>然后导入头文件</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">#import &lt;sqlite3.h&gt;
-</span></code></pre></div><p>在使用<code>SQLite</code>之前，我们先熟悉下它提供的一些方法</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span><span style="color:#75715e">#import &lt;sqlite3.h&gt;
+</span></span></span></code></pre></div><p>在使用<code>SQLite</code>之前，我们先熟悉下它提供的一些方法</p>
 <ul>
 <li><strong>sqlite3_open</strong>: 这个方法用于创建并且打开一个数据库文件。它提供了两个参数，第一个是数据库文件名，第二个是数据库句柄。如果文件不存在的话，他会先创建然后再打开，否则直接打开。</li>
 <li><strong>sqlite_prepare_v2</strong>: 这个方法的作用是，获得一个 string 类型的 SQL语句（查询语句），然后将其转化成可执行的语句。即检查 SQL语句的合法性。</li>
@@ -267,67 +270,67 @@ NSLog(<span style="color:#e6db74">@&#34;car :%@ , speed :%ld&#34;</span>, unarch
 <li><strong>sqlite_close</strong>: 关闭数据库连接</li>
 </ul>
 <h3 id="创建表">创建表</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">// 获取文件路径名
-</span><span style="color:#75715e"></span>NSString <span style="color:#f92672">*</span>fileName <span style="color:#f92672">=</span> [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject stringByAppendingString:<span style="color:#e6db74">@&#34;person.sqlite&#34;</span>];
-
-<span style="color:#75715e">// 打开数据库
-</span><span style="color:#75715e"></span>NSInteger openResult <span style="color:#f92672">=</span> sqlite3_open(fileName.UTF8String, <span style="color:#f92672">&amp;</span>myDb);
-<span style="color:#66d9ef">if</span> (openResult <span style="color:#f92672">==</span> SQLITE_OK) {
-    NSLog(<span style="color:#e6db74">@&#34;打开数据库成功&#34;</span>);
-
-    <span style="color:#75715e">// 创建表 SQL
-</span><span style="color:#75715e"></span>    NSString <span style="color:#f92672">*</span>sqlCreateTable <span style="color:#f92672">=</span> <span style="color:#e6db74">@&#34;CREATE TABLE IF NOT EXISTS person_info (ID INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INTEGER)&#34;</span>;
-    <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>errmsg <span style="color:#f92672">=</span> NULL;
-
-    <span style="color:#75715e">// 执行语句
-</span><span style="color:#75715e"></span>    sqlite3_exec(myDb, sqlCreateTable.UTF8String, NULL, NULL, <span style="color:#f92672">&amp;</span>errmsg);
-
-    <span style="color:#66d9ef">if</span> (errmsg) {
-        NSLog(<span style="color:#e6db74">@&#34;建表失败： %s&#34;</span>, errmsg);
-        <span style="color:#66d9ef">return</span>;
-    } <span style="color:#66d9ef">else</span> {
-        NSLog(<span style="color:#e6db74">@&#34;建表成功&#34;</span>);
-    }
-
-} <span style="color:#66d9ef">else</span> {
-    NSLog(<span style="color:#e6db74">@&#34;打开数据库失败&#34;</span>);
-    sqlite3_close(myDb);
-    <span style="color:#66d9ef">return</span>;
-}
-</code></pre></div><h3 id="插入数据">插入数据</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">// 插入10条数据
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span>) {
-    NSString <span style="color:#f92672">*</span>nameStr <span style="color:#f92672">=</span> [NSString stringWithFormat:<span style="color:#e6db74">@&#34;happyo%i&#34;</span>, i];
-    NSInteger age <span style="color:#f92672">=</span> i;
-    NSString <span style="color:#f92672">*</span>sqlInsertData <span style="color:#f92672">=</span> [NSString stringWithFormat:<span style="color:#e6db74">@&#34;INSERT INTO person_info (name, age) VALUES (&#39;%@&#39;, &#39;%ld&#39;)&#34;</span>,nameStr , age];
-
-    <span style="color:#75715e">// 执行语句
-</span><span style="color:#75715e"></span>    sqlite3_exec(myDb, sqlInsertData.UTF8String, NULL, NULL, <span style="color:#f92672">&amp;</span>errmsg);
-
-    <span style="color:#66d9ef">if</span> (errmsg) {
-        NSLog(<span style="color:#e6db74">@&#34;插入失败： %s&#34;</span>, errmsg);
-        <span style="color:#66d9ef">return</span>;
-    }
-}
-
-NSLog(<span style="color:#e6db74">@&#34;插入成功&#34;</span>);
-</code></pre></div><h3 id="查询">查询</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#75715e">// 查询数据
-</span><span style="color:#75715e"></span>NSString <span style="color:#f92672">*</span>sqlQuery <span style="color:#f92672">=</span> <span style="color:#e6db74">@&#34;SELECT name, age FROM person_info&#34;</span>;
-sqlite3_stmt <span style="color:#f92672">*</span>stmt;
-
-NSInteger queryResult <span style="color:#f92672">=</span> sqlite3_prepare_v2(myDb, sqlQuery.UTF8String, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">&amp;</span>stmt, NULL);
-<span style="color:#66d9ef">if</span> (queryResult <span style="color:#f92672">==</span> SQLITE_OK) {
-    <span style="color:#66d9ef">while</span> (sqlite3_step(stmt) <span style="color:#f92672">==</span> SQLITE_ROW) {
-        <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>name <span style="color:#f92672">=</span> (<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>)sqlite3_column_text(stmt, <span style="color:#ae81ff">0</span>);
-        NSInteger age <span style="color:#f92672">=</span> sqlite3_column_int(stmt, <span style="color:#ae81ff">1</span>);
-
-        NSLog(<span style="color:#e6db74">@&#34;name :%s , age :%ld&#34;</span>, name, age);
-    }
-}
-
-sqlite3_finalize(stmt);
-</code></pre></div><p>由于原生的 SQLite 方法都是 c 写的，比较难用。所以一般在开发过程中，我们都使用第三方开源库 <code>FMDB</code> 。关于<code>FMDB</code>，<a href="http://blog.devtang.com/blog/2012/04/22/use-fmdb/">这里</a>有介绍使用的。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span><span style="color:#75715e">// 获取文件路径名
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>NSString <span style="color:#f92672">*</span>fileName <span style="color:#f92672">=</span> [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject stringByAppendingString:<span style="color:#e6db74">@&#34;person.sqlite&#34;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 打开数据库
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>NSInteger openResult <span style="color:#f92672">=</span> sqlite3_open(fileName.UTF8String, <span style="color:#f92672">&amp;</span>myDb);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (openResult <span style="color:#f92672">==</span> SQLITE_OK) {
+</span></span><span style="display:flex;"><span>    NSLog(<span style="color:#e6db74">@&#34;打开数据库成功&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 创建表 SQL
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    NSString <span style="color:#f92672">*</span>sqlCreateTable <span style="color:#f92672">=</span> <span style="color:#e6db74">@&#34;CREATE TABLE IF NOT EXISTS person_info (ID INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, age INTEGER)&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>errmsg <span style="color:#f92672">=</span> NULL;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 执行语句
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    sqlite3_exec(myDb, sqlCreateTable.UTF8String, NULL, NULL, <span style="color:#f92672">&amp;</span>errmsg);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (errmsg) {
+</span></span><span style="display:flex;"><span>        NSLog(<span style="color:#e6db74">@&#34;建表失败： %s&#34;</span>, errmsg);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        NSLog(<span style="color:#e6db74">@&#34;建表成功&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    NSLog(<span style="color:#e6db74">@&#34;打开数据库失败&#34;</span>);
+</span></span><span style="display:flex;"><span>    sqlite3_close(myDb);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="插入数据">插入数据</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span><span style="color:#75715e">// 插入10条数据
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span>) {
+</span></span><span style="display:flex;"><span>    NSString <span style="color:#f92672">*</span>nameStr <span style="color:#f92672">=</span> [NSString stringWithFormat:<span style="color:#e6db74">@&#34;happyo%i&#34;</span>, i];
+</span></span><span style="display:flex;"><span>    NSInteger age <span style="color:#f92672">=</span> i;
+</span></span><span style="display:flex;"><span>    NSString <span style="color:#f92672">*</span>sqlInsertData <span style="color:#f92672">=</span> [NSString stringWithFormat:<span style="color:#e6db74">@&#34;INSERT INTO person_info (name, age) VALUES (&#39;%@&#39;, &#39;%ld&#39;)&#34;</span>,nameStr , age];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 执行语句
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    sqlite3_exec(myDb, sqlInsertData.UTF8String, NULL, NULL, <span style="color:#f92672">&amp;</span>errmsg);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (errmsg) {
+</span></span><span style="display:flex;"><span>        NSLog(<span style="color:#e6db74">@&#34;插入失败： %s&#34;</span>, errmsg);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;插入成功&#34;</span>);
+</span></span></code></pre></div><h3 id="查询">查询</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span><span style="color:#75715e">// 查询数据
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>NSString <span style="color:#f92672">*</span>sqlQuery <span style="color:#f92672">=</span> <span style="color:#e6db74">@&#34;SELECT name, age FROM person_info&#34;</span>;
+</span></span><span style="display:flex;"><span>sqlite3_stmt <span style="color:#f92672">*</span>stmt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>NSInteger queryResult <span style="color:#f92672">=</span> sqlite3_prepare_v2(myDb, sqlQuery.UTF8String, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#f92672">&amp;</span>stmt, NULL);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (queryResult <span style="color:#f92672">==</span> SQLITE_OK) {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (sqlite3_step(stmt) <span style="color:#f92672">==</span> SQLITE_ROW) {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>name <span style="color:#f92672">=</span> (<span style="color:#66d9ef">char</span> <span style="color:#f92672">*</span>)sqlite3_column_text(stmt, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>        NSInteger age <span style="color:#f92672">=</span> sqlite3_column_int(stmt, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        NSLog(<span style="color:#e6db74">@&#34;name :%s , age :%ld&#34;</span>, name, age);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sqlite3_finalize(stmt);
+</span></span></code></pre></div><p>由于原生的 SQLite 方法都是 c 写的，比较难用。所以一般在开发过程中，我们都使用第三方开源库 <code>FMDB</code> 。关于<code>FMDB</code>，<a href="http://blog.devtang.com/blog/2012/04/22/use-fmdb/">这里</a>有介绍使用的。</p>
 <h2 id="coredata">CoreData</h2>
 <p>对于<code>CoreData</code>，有很多相关的文章。推荐一个，<a href="https://www.objc.io/issues/4-core-data/core-data-overview/">Core Data Overview</a>，中文版<a href="http://objccn.io/issue-4-1/">Core Data 概述</a>。</p>
 <h1 id="相关文章">相关文章</h1>
@@ -338,7 +341,6 @@ sqlite3_finalize(stmt);
 <li><a href="http://www.appcoda.com/sqlite-database-ios-app-tutorial/">SQLite 3 Functions Preview</a></li>
 </ul>
 
-      asdfasdfasdfhhah
     </article>
   
     <article>
@@ -357,647 +359,58 @@ sqlite3_finalize(stmt);
 <h1 id="talk-is-cheapshow-me-the-code">Talk is cheap,show me the code.</h1>
 <hr>
 <p>首先先创建两个<code>NSString</code>的属性，一个为<code>copy</code>，一个为<code>strong</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc"><span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">nonatomic</span>, <span style="color:#66d9ef">copy</span>) NSString <span style="color:#f92672">*</span>strCopy;
-
-<span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">nonatomic</span>, <span style="color:#66d9ef">strong</span>) NSString <span style="color:#f92672">*</span>strStrong;
-
-</code></pre></div><p>然后创建一个<code>NSString</code>对象，将其赋值给这两个属性，并打印出变量值和地址。修改<code>NSString</code>，再打印出两个属性的值和地址。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">NSString <span style="color:#f92672">*</span>strChange <span style="color:#f92672">=</span> [NSString stringWithFormat:<span style="color:#e6db74">@&#34;hello&#34;</span>];
-self.strCopy <span style="color:#f92672">=</span> strChange;
-self.strStrong <span style="color:#f92672">=</span> strChange;
-NSLog(<span style="color:#e6db74">@&#34;Before change~~~&#34;</span>);
-NSLog(<span style="color:#e6db74">@&#34;Copy string: %@ ,%p;&#34;</span>, self.strCopy, self.strCopy);
-NSLog(<span style="color:#e6db74">@&#34;Strong string: %@, %p;&#34;</span>, self.strStrong, self.strStrong);
-NSLog(<span style="color:#e6db74">@&#34;Change string: %@, %p;&#34;</span>, strChange, strChange);
-
-strChange <span style="color:#f92672">=</span> <span style="color:#e6db74">@&#34;world&#34;</span>;
-NSLog(<span style="color:#e6db74">@&#34;After change~~~&#34;</span>);
-NSLog(<span style="color:#e6db74">@&#34;Copy string: %@ ,%p;&#34;</span>, self.strCopy, self.strCopy);
-NSLog(<span style="color:#e6db74">@&#34;Strong string: %@, %p;&#34;</span>, self.strStrong, self.strStrong);
-NSLog(<span style="color:#e6db74">@&#34;Change string: %@, %p;&#34;</span>, strChange, strChange);
-</code></pre></div><p>结果如下</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span><span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">nonatomic</span>, <span style="color:#66d9ef">copy</span>) NSString <span style="color:#f92672">*</span>strCopy;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">@property</span> (<span style="color:#66d9ef">nonatomic</span>, <span style="color:#66d9ef">strong</span>) NSString <span style="color:#f92672">*</span>strStrong;
+</span></span></code></pre></div><p>然后创建一个<code>NSString</code>对象，将其赋值给这两个属性，并打印出变量值和地址。修改<code>NSString</code>，再打印出两个属性的值和地址。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span>NSString <span style="color:#f92672">*</span>strChange <span style="color:#f92672">=</span> [NSString stringWithFormat:<span style="color:#e6db74">@&#34;hello&#34;</span>];
+</span></span><span style="display:flex;"><span>self.strCopy <span style="color:#f92672">=</span> strChange;
+</span></span><span style="display:flex;"><span>self.strStrong <span style="color:#f92672">=</span> strChange;
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;Before change~~~&#34;</span>);
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;Copy string: %@ ,%p;&#34;</span>, self.strCopy, self.strCopy);
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;Strong string: %@, %p;&#34;</span>, self.strStrong, self.strStrong);
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;Change string: %@, %p;&#34;</span>, strChange, strChange);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>strChange <span style="color:#f92672">=</span> <span style="color:#e6db74">@&#34;world&#34;</span>;
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;After change~~~&#34;</span>);
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;Copy string: %@ ,%p;&#34;</span>, self.strCopy, self.strCopy);
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;Strong string: %@, %p;&#34;</span>, self.strStrong, self.strStrong);
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;Change string: %@, %p;&#34;</span>, strChange, strChange);
+</span></span></code></pre></div><p>结果如下</p>
 <p><img src="http://cl.ly/2g061W2K0P04/Image%202016-01-12%20at%204.06.49%20%E4%B8%8B%E5%8D%88.png" alt="result"></p>
 <p>可见，<strong>当赋值类型是不可变的<code>NSString</code>时，不管是<code>copy</code>还是<code>strong</code>，都是将其指针直接赋值过去。</strong><code>NSString</code>发生变化，其指针会发生变化，不会对属性造成影响。</p>
 <p>将<code>strChange</code>的类型改为<code>NSMutableString</code>，然后对其修改。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-objc" data-lang="objc">NSMutableString <span style="color:#f92672">*</span>strChange <span style="color:#f92672">=</span> [NSMutableString stringWithFormat:<span style="color:#e6db74">@&#34;hello&#34;</span>];
-self.strCopy <span style="color:#f92672">=</span> strChange;
-self.strStrong <span style="color:#f92672">=</span> strChange;
-NSLog(<span style="color:#e6db74">@&#34;Before change~~~&#34;</span>);
-NSLog(<span style="color:#e6db74">@&#34;Copy string: %@ ,%p;&#34;</span>, self.strCopy, self.strCopy);
-NSLog(<span style="color:#e6db74">@&#34;Strong string: %@, %p;&#34;</span>, self.strStrong, self.strStrong);
-NSLog(<span style="color:#e6db74">@&#34;Change string: %@, %p;&#34;</span>, strChange, strChange);
-
-[strChange insertString:<span style="color:#e6db74">@&#34;world&#34;</span> atIndex:<span style="color:#ae81ff">4</span>];
-NSLog(<span style="color:#e6db74">@&#34;After change~~~&#34;</span>);
-NSLog(<span style="color:#e6db74">@&#34;Copy string: %@ ,%p;&#34;</span>, self.strCopy, self.strCopy);
-NSLog(<span style="color:#e6db74">@&#34;Strong string: %@, %p;&#34;</span>, self.strStrong, self.strStrong);
-NSLog(<span style="color:#e6db74">@&#34;Change string: %@, %p;&#34;</span>, strChange, strChange);
-</code></pre></div><p>结果如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-objc" data-lang="objc"><span style="display:flex;"><span>NSMutableString <span style="color:#f92672">*</span>strChange <span style="color:#f92672">=</span> [NSMutableString stringWithFormat:<span style="color:#e6db74">@&#34;hello&#34;</span>];
+</span></span><span style="display:flex;"><span>self.strCopy <span style="color:#f92672">=</span> strChange;
+</span></span><span style="display:flex;"><span>self.strStrong <span style="color:#f92672">=</span> strChange;
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;Before change~~~&#34;</span>);
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;Copy string: %@ ,%p;&#34;</span>, self.strCopy, self.strCopy);
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;Strong string: %@, %p;&#34;</span>, self.strStrong, self.strStrong);
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;Change string: %@, %p;&#34;</span>, strChange, strChange);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[strChange insertString:<span style="color:#e6db74">@&#34;world&#34;</span> atIndex:<span style="color:#ae81ff">4</span>];
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;After change~~~&#34;</span>);
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;Copy string: %@ ,%p;&#34;</span>, self.strCopy, self.strCopy);
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;Strong string: %@, %p;&#34;</span>, self.strStrong, self.strStrong);
+</span></span><span style="display:flex;"><span>NSLog(<span style="color:#e6db74">@&#34;Change string: %@, %p;&#34;</span>, strChange, strChange);
+</span></span></code></pre></div><p>结果如下：</p>
 <p><img src="http://cl.ly/020Z312W233b/Image%202016-01-12%20at%205.08.18%20%E4%B8%8B%E5%8D%88.png" alt="mutable result"></p>
 <p>可见，**当赋值类型是可变的<code>NSMutableString</code>时<code>copy</code>会将<code>changeStr</code>重新拷贝一份并将新的指针赋值给属性。而<code>strong</code>则还是直接将<code>changeStr</code>的指针赋值过去。**所以当我们对<code>changeStr</code>进行改变时，<code>copy</code>属性不会受到影响，<code>strong</code>类型则会跟着改变。</p>
 <h1 id="结论">结论</h1>
 <hr>
 <p><strong>当属性是<code>NSString,NSArray,NSDictionary</code>这种不可变的类型时，我们一般不希望它随着外界变化而变化，所以最好使用<code>copy</code>。</strong></p>
 
-      asdfasdfasdfhhah
-    </article>
-  
-    <article>
-      <h2>Read Book</h2>
-      
-<div id="outline-container-headline-1" class="outline-2">
-<h2 id="headline-1">
-第一章 阅读的活力与艺术
-</h2>
-<div id="outline-text-headline-1" class="outline-text-2">
-<div id="outline-container-headline-2" class="outline-3">
-<h3 id="headline-2">
-主动的阅读
-</h3>
-<div id="outline-text-headline-2" class="outline-text-3">
-<ul>
-<li>
-<p>读书是一件多少主动的事</p>
-</li>
-<li>
-<p>越主动效果越好</p>
-</li>
-<li>
-<p>作者和听者相当于投手和捕手，只有双方密切合作时才能达到最好的效果。读者想“接住”多少意念完全看他在阅读时多么主动，以及他投入不同心思来阅读的技巧如何。</p>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-headline-3" class="outline-3">
-<h3 id="headline-3">
-阅读的目标
-</h3>
-<div id="outline-text-headline-3" class="outline-text-3">
-<ul>
-<li>
-<p>为获得资讯</p>
-</li>
-<li>
-<p>为求得理解</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-4" class="outline-2">
-<h2 id="headline-4">
-第二章 阅读的层次
-</h2>
-<div id="outline-text-headline-4" class="outline-text-2">
-<div id="outline-container-headline-5" class="outline-3">
-<h3 id="headline-5">
-基础阅读（elementary reading）
-</h3>
-<div id="outline-text-headline-5" class="outline-text-3">
-<ul>
-<li>
-<p>表示理解句子在说什么，比如“猫坐在帽子上”</p>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-headline-6" class="outline-3">
-<h3 id="headline-6">
-检视阅读（inspectional reading）
-</h3>
-<div id="outline-text-headline-6" class="outline-text-3">
-<ul>
-<li>
-<p>特点在强调时间，在规定时间内读完一本书，例如十五分钟。</p>
-</li>
-<li>
-<p>又可称为略读或预读</p>
-</li>
-<li>
-<p>需要理解“这本书在谈什么”，“这是哪一类书-小说，历史还是科学论文？”</p>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-headline-7" class="outline-3">
-<h3 id="headline-7">
-分析阅读（analytical reading）
-</h3>
-<div id="outline-text-headline-7" class="outline-text-3">
-<ul>
-<li>
-<p>在无限时间内，全盘的，完整的阅读</p>
-</li>
-<li>
-<p>要把书读成自己的，咀嚼消化一本书</p>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-headline-8" class="outline-3">
-<h3 id="headline-8">
-主题阅读（syntopicalreading）
-</h3>
-<div id="outline-text-headline-8" class="outline-text-3">
-<ul>
-<li>
-<p>或者称为比较阅读（comparative reading）</p>
-</li>
-<li>
-<p>阅读者会读很多书，而不是一本书，并列举出这些书的相关之处，提出一个所有书都谈到的主题。</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-9" class="outline-2">
-<h2 id="headline-9">
-第三章 阅读的第一个层次：基础阅读
-</h2>
-<div id="outline-text-headline-9" class="outline-text-2">
-<div id="outline-container-headline-10" class="outline-3">
-<h3 id="headline-10">
-学习阅读的阶段
-</h3>
-<div id="outline-text-headline-10" class="outline-text-3">
-<ul>
-<li>
-<p>第一阶段：阅读准备阶段，良好的视力听力，保持注意力等。</p>
-</li>
-<li>
-<p>第二阶段：看图识字等。</p>
-</li>
-<li>
-<p>第三阶段：快速建立字汇的能力，从上下文提供的线索，“揭发”不熟悉的字眼。</p>
-</li>
-<li>
-<p>第四阶段：精炼与增进前面所学的技巧。</p>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-headline-11" class="outline-3">
-<h3 id="headline-11">
-这四个阶段包含在第一个层次中
-</h3>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-12" class="outline-2">
-<h2 id="headline-12">
-第四章 阅读的第二个层次：检视阅读
-</h2>
-<div id="outline-text-headline-12" class="outline-text-2">
-<div id="outline-container-headline-13" class="outline-3">
-<h3 id="headline-13">
-检视阅读一：有系统的略读或粗读
-</h3>
-<div id="outline-text-headline-13" class="outline-text-3">
-<p>当我们不知道自己想不想读这本书，或者不知道这本书是否值得做分析阅读，亦或者我们想要发掘所有的东西，但是时间有限。</p>
-<ul>
-<li>
-<p>先看书名页，如果有序就先看序。完成这个步骤之前，你对这本书的主题已经有概念了，可以将这本书归类一下。</p>
-</li>
-<li>
-<p>研究目录页，对这本书的基本架构做概括性的理解。</p>
-</li>
-<li>
-<p>如果书中附有索引，也要检阅一下。快速评估下这本书涵盖了哪些议题范围，以及所提到的书籍种类与作者等等。如果哪一条词汇很重要，至少要看下引用到这个词目的某几页内文。</p>
-</li>
-<li>
-<p>如果是本包着书衣的新书，可以读下出版者的介绍。</p>
-</li>
-<li>
-<p>从你对一本书的目录有点模糊印象当中，开始挑几个看起来跟主题息息相关的篇章来看，如果有摘要，那么读一下。</p>
-</li>
-<li>
-<p>最后一步，把书打开，东翻翻西翻翻，念个一两段，有时候连续几页，但不要太多。就这样把全书翻过一遍，随时寻找主要论点的讯号，留意主题的基本脉动。最重要的是，不要忽略最后的两三页。</p>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-headline-14" class="outline-3">
-<h3 id="headline-14">
-检视阅读二：粗线的阅读
-</h3>
-<div id="outline-text-headline-14" class="outline-text-3">
-<p>头一次面对一本难读的书的时候，从头到尾先读完一遍，碰到不懂的地方不要停下来查询或思索。略过那些不懂的部分，很快你会读到你看得懂的地方，集中精神在这个部分。</p>
-<div id="outline-container-headline-15" class="outline-4">
-<h4 id="headline-15">
-阅读的速度:检视阅读是一种在有限时间当中，充分了解一本书的艺术。
-</h4>
-<div id="outline-text-headline-15" class="outline-text-4">
-<ul>
-<li>
-<p>不只是要能读得快，还要能用不同的速度来阅读–要知道什么时候用什么样的速度是恰当的。</p>
-</li>
-<li>
-<p>每一本书，不论是多么难读的书，在无关紧要的间隙部分就可以读快一点。而一本好书，总会包含一些比较困难，应该慢慢阅读的内容。</p>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-headline-16" class="outline-4">
-<h4 id="headline-16">
-逗留与倒退
-</h4>
-<div id="outline-text-headline-16" class="outline-text-4">
-<ul>
-<li>
-<p>阅读一行字的时候会在五六个地方发生“逗留”。</p>
-</li>
-<li>
-<p>不熟练的阅读者在看过两三行后，眼睛会“倒退”到原点。</p>
-</li>
-<li>
-<p>大拇指与食指，中指并在一起，顺着字移动，眼睛跟着，勤加练习。</p>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-headline-17" class="outline-4">
-<h4 id="headline-17">
-理解的问题
-</h4>
-<div id="outline-text-headline-17" class="outline-text-4">
-<ul>
-<li>
-<p>阅读速度加快并不能加快理解力。</p>
-</li>
-<li>
-<p>只能使我们保持阅读的专注。</p>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-headline-18" class="outline-4">
-<h4 id="headline-18">
-检视阅读的摘要
-</h4>
-<div id="outline-text-headline-18" class="outline-text-4">
-<p>以下简短的几句话是本章的摘要。阅读的速度并非只有单一的一种，重点在如何读出不同的速度感，知道在阅读某种读物时该用什么样的速度。超快的速读法是引人怀疑的一种成就，那只是表现你在阅读一种根本不值得读的读物。更好的秘方是：在阅读一本书的时候，慢不该慢到不值得，快不该快到有损于满足与理解。不论怎么说，阅读的速度，不论是快还是慢，只不过是阅读问题一个微小的部分而已。
-最后，在第一次阅读一本难读的书时，不要企图了解每一个字句。这是最最重要的一个规则。这也是检视阅读的基本概念。不要害怕，或是担忧自己似乎读得很肤浅。就算是最难读的书也快快地读一遍。当你再读第二次时，你就已经准备好要读这本书了。
-我们已经完整地讨论过第二层次的阅读—检视阅读。我们会在第四篇时再讨论同一个主题，我们会提到检视阅读在主题阅读中占有多么重要的角色。主题阅读是第四层次，也是最高层次的阅读。 无论如何，你应该记住，当我们在本书第二篇讨论第三层次的阅读—分析阅读时，检视阅读在那个层次中仍然有很重要的功能。检视阅读的两个步骤都可以当作是要开始做分析阅读之前的预备动作。第一阶段的检视阅读—我们称作有系统的略读或粗读—帮助阅读者分析在这个阶段一定要回答的问题。换句话说，有系统略读，就是准备要了解本书的架构。第二阶段的检视阅读—我们称之为粗浅的阅读—帮助阅读者在分析阅读中进人第二个阶段。粗浅的阅读，是阅读者想要了解全书内容的第一个必要步骤。
-在开始讨论分析阅读之前，我们要暂停一下，再想一下阅读的本质是一种活动。想要读得好，一个主动、自我要求的读者，就得采取一些行动。下一章，我们会谈。</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-19" class="outline-2">
-<h2 id="headline-19">
-第五章 如何做一个自我要求的读者
-</h2>
-<div id="outline-text-headline-19" class="outline-text-2">
-<p>如果想要从阅读中获得成长，必须要保持清醒，不要胡思乱想。</p>
-<div id="outline-container-headline-20" class="outline-3">
-<h3 id="headline-20">
-主动的阅读基础：一个阅读者要提出的四个基本问题
-</h3>
-<div id="outline-text-headline-20" class="outline-text-3">
-<p>在阅读的时候要养成问问题的习惯，除此之外，还需要知道如何精准，正确的回答问题。如此训练而来的能力，就是阅读的艺术。要保持主动阅读还要有技巧–能战胜最初觉得自己能力不足部分，进而自我提升的艺术。</p>
-<ul>
-<li>
-<p>整体来说，这本书到底在谈些什么？</p>
-</li>
-<li>
-<p>作者细部说了什么，怎么说的？</p>
-</li>
-<li>
-<p>这本书说的有道理吗？是全部有道理，还是部分有道理？</p>
-</li>
-<li>
-<p>这本书跟你有什么关系？</p>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-headline-21" class="outline-3">
-<h3 id="headline-21">
-如何让一本书真正的属于你自己
-</h3>
-<div id="outline-text-headline-21" class="outline-text-3">
-<p>你必须读出言外之意，才会有更大的收获。</p>
-<div id="outline-container-headline-22" class="outline-4">
-<h4 id="headline-22">
-要真正完全拥有一本书，把书变成你的一部分，最好的方法就是–要去写下来。
-</h4>
-</div>
-<div id="outline-container-headline-23" class="outline-4">
-<h4 id="headline-23">
-在书上做笔记是不可或缺的事
-</h4>
-<div id="outline-text-headline-23" class="outline-text-4">
-<ul>
-<li>
-<p>第一，让你保持清醒</p>
-</li>
-<li>
-<p>第二，阅读如果是主动的话就有思考，思考用语言表达出来。</p>
-</li>
-<li>
-<p>第三，将感想写下来，能帮助你记住作者的思想。</p>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-headline-24" class="outline-4">
-<h4 id="headline-24">
-做笔记的方法
-</h4>
-<div id="outline-text-headline-24" class="outline-text-4">
-<p>书本前的空白页可以将全书的大纲写出来</p>
-<ul>
-<li>
-<p>画底线–在主要的重点，或重要又有力量的句子下画线。</p>
-</li>
-<li>
-<p>在画底线处的栏外再加划一道线–把你已经画线的部分再强调一遍，或是某一段很重要，如果底线太长了，便在这一整段外加一个记号。</p>
-</li>
-<li>
-<p>在空白处做星号或其他符号–要慎用，只用来强调书中十来个最重要的声明或段落即可。还可以折个角或是夹一张书签。</p>
-</li>
-<li>
-<p>在空白处编号–做的发出一连串重要陈述时，可以做顺序编号。</p>
-</li>
-<li>
-<p>在空白处记下其他页码–强调作者在书中其他部分相同的论点或相关的要点，或是观点不同的地方。一般用 Cf 这样的记号。</p>
-</li>
-<li>
-<p>将关键字或者句子圈起来–跟画底线差不多。</p>
-</li>
-<li>
-<p>在书页的空白处做笔记–在阅读某一章节时，你可能会有问题（或答案），记下来，可以帮你回想。也可以将论点简化。</p>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-headline-25" class="outline-4">
-<h4 id="headline-25">
-三种笔记种类
-</h4>
-<div id="outline-text-headline-25" class="outline-text-4">
-<div id="outline-container-headline-26" class="outline-5">
-<h5 id="headline-26">
-结构笔记（structureal note-making）
-</h5>
-<div id="outline-text-headline-26" class="outline-text-5">
-<ul>
-<li>
-<p>检视阅读中需要回答这几个问题：第一，这是什么样的一本书？第二，整本书在谈的是什么？第三，作者是借着怎样的整体架构，来发展他的观点或陈述他对这个主题的理解。</p>
-</li>
-<li>
-<p>将上面问题的答案写下来，最好的地方时目录页，或者是书名页。</p>
-</li>
-<li>
-<p>这些笔记主要的重点是全书的架构，而不是内容–至少不是细节。</p>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-headline-27" class="outline-5">
-<h5 id="headline-27">
-概念笔记（conceptu note-making）
-</h5>
-<div id="outline-text-headline-27" class="outline-text-5">
-<ul>
-<li>
-<p>有些很长很难读的书，我们在检视阅读中很难掌握主题表达的想法。</p>
-</li>
-<li>
-<p>在分析阅读时，有关这本书准确性与意义的问题，你就需要提出答案。</p>
-</li>
-<li>
-<p>这个时候你做的笔记不再是跟结构相关，而是跟概念相关。</p>
-</li>
-<li>
-<p>这些概念是作者的观点，当你读得越深越广的时候，便也会出现自己的观点。</p>
-</li>
-<li>
-<p>空白处记下的页码不只是本书的页码，也会有其他几本书的页码。</p>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-headline-28" class="outline-5">
-<h5 id="headline-28">
-辩证笔记（dialectial note-making）
-</h5>
-<div id="outline-text-headline-28" class="outline-text-5">
-<ul>
-<li>
-<p>熟练同时读好几本相同主题书籍的专业阅读者，可以针对一场讨论情景的笔记–这场讨论是由许多作者共同参与的。</p>
-</li>
-<li>
-<p>从好几本书中摘要出来，把所有相关的陈述和疑问顺序而列。</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-29" class="outline-4">
-<h4 id="headline-29">
-培养阅读的习惯
-</h4>
-<div id="outline-text-headline-29" class="outline-text-4">
-<ul>
-<li>
-<p>所谓艺术或技巧，只属于那个能养成习惯，而且能依照规则来运作的人。</p>
-</li>
-<li>
-<p>知道一项艺术的规则，跟养成习惯是不同的。</p>
-</li>
-<li>
-<p>对着规则练习，就可以培养出习惯来。</p>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-headline-30" class="outline-4">
-<h4 id="headline-30">
-由许多规则中养成一个习惯
-</h4>
-<div id="outline-text-headline-30" class="outline-text-4">
-<ul>
-<li>
-<p>阅读和滑雪一样，需要把不同的动作连贯在一起。</p>
-</li>
-<li>
-<p>一定要忘掉分开的步骤，才能表现出整体的动作。而要忘掉单一的步骤，你必须先分别学习每一个单一的动作。</p>
-</li>
-<li>
-<p>规则的多样化，意味着要养成一个习惯的复杂度，而非表示要形成许多个不同的习惯。</p>
-</li>
-<li>
-<p>养成习惯后可以试着挑战更困难的书了。</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-31" class="outline-2">
-<h2 id="headline-31">
-第六章 一本书的分类
-</h2>
-<div id="outline-text-headline-31" class="outline-text-2">
-<div id="outline-container-headline-32" class="outline-3">
-<h3 id="headline-32">
-书籍分类的重要性
-</h3>
-<div id="outline-text-headline-32" class="outline-text-3">
-<ul>
-<li>
-<p>你一定要知道自己在读的是哪一类书，而且越早知道越好。</p>
-</li>
-<li>
-<p>一本论说性的书的主要目的是在传达知识。</p>
-</li>
-<li>
-<p>分析阅读的第一个规则非常适合来阅读非小说，论说性的书。</p>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-headline-33" class="outline-3">
-<h3 id="headline-33">
-从一本书的书名中你能学到什么
-</h3>
-<div id="outline-text-headline-33" class="outline-text-3">
-<ul>
-<li>
-<p>阅读书名很重要，但还不够，除非你能在心中有一个分类的标准。</p>
-</li>
-<li>
-<p>主要的分类法，一种是虚构的小说类，另一种是传达知识，说明性的论说类。在论说性的书籍中，我们可以更进一步的将历史从哲学中分类出来。</p>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-headline-34" class="outline-3">
-<h3 id="headline-34">
-实用性 VS 理论性作品
-</h3>
-<div id="outline-text-headline-34" class="outline-text-3">
-<ul>
-<li>
-<p>知识与行动之间的区别</p>
-</li>
-<li>
-<p>纯科学与应用科学的区别</p>
-</li>
-<li>
-<p>理论性的作品是在教你这是什么，实用性的作品是在教你如何去做你想要做的事，或你认为应该做的事。</p>
-</li>
-<li>
-<p>这本书是实用的书。任何一本书告诉你该要做什么，或如何去做，都是实用的书。</p>
-</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-headline-35" class="outline-3">
-<h3 id="headline-35">
-理论性作品的分类
-</h3>
-<div id="outline-text-headline-35" class="outline-text-3">
-<div id="outline-container-headline-36" class="outline-4">
-<h4 id="headline-36">
-传统的分法，理论性的作品会被分类为历史，科学和哲学等等。
-</h4>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="outline-container-headline-37" class="outline-2">
-<h2 id="headline-37">
-第七章 透视一本书
-</h2>
-</div>
-<div id="outline-container-headline-38" class="outline-2">
-<h2 id="headline-38">
-第八章 找出与作者共通的词义
-</h2>
-</div>
-<div id="outline-container-headline-39" class="outline-2">
-<h2 id="headline-39">
-第九章 判断作者的主旨
-</h2>
-</div>
-<div id="outline-container-headline-40" class="outline-2">
-<h2 id="headline-40">
-第十章 公正的评断一本书
-</h2>
-</div>
-<div id="outline-container-headline-41" class="outline-2">
-<h2 id="headline-41">
-第十一章 赞同或反对作者
-</h2>
-</div>
-<div id="outline-container-headline-42" class="outline-2">
-<h2 id="headline-42">
-第十二章 辅助阅读
-</h2>
-</div>
-<div id="outline-container-headline-43" class="outline-2">
-<h2 id="headline-43">
-第十三章 如何阅读实用型的书
-</h2>
-</div>
-<div id="outline-container-headline-44" class="outline-2">
-<h2 id="headline-44">
-第十四章 如何阅读想象文学
-</h2>
-</div>
-<div id="outline-container-headline-45" class="outline-2">
-<h2 id="headline-45">
-第十五章 阅读故事，戏剧与诗的一些建议
-</h2>
-</div>
-<div id="outline-container-headline-46" class="outline-2">
-<h2 id="headline-46">
-第十六章 如何阅读历史书
-</h2>
-</div>
-<div id="outline-container-headline-47" class="outline-2">
-<h2 id="headline-47">
-第十七章 如何阅读科学与数学
-</h2>
-</div>
-<div id="outline-container-headline-48" class="outline-2">
-<h2 id="headline-48">
-第十八章 如何阅读哲学书
-</h2>
-</div>
-<div id="outline-container-headline-49" class="outline-2">
-<h2 id="headline-49">
-第十九章 如何阅读社会科学
-</h2>
-</div>
-<div id="outline-container-headline-50" class="outline-2">
-<h2 id="headline-50">
-第二十章 阅读的第四个层次：主题阅读
-</h2>
-</div>
-<div id="outline-container-headline-51" class="outline-2">
-<h2 id="headline-51">
-第二十一章 阅读与心智的成长
-</h2>
-</div>
-
-      asdfasdfasdfhhah
     </article>
   
 
-        </div>fsdfsadfoasofofff footer
-<script src="/js/home.js"></script>
+        </div>
+        <footer>
+    <p>© 2024 薛定谔的水货. All rights reserved.</p>
+</footer>
+
+        <script src="/js/home.js"></script>
 <script>
 </script>
-</body>
+
+    </body>
 </html>

@@ -2,71 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>薛定谔的水货</title>
-    <link>http://happyo.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on 薛定谔的水货</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 Jan 2018 20:10:10 +0800</lastBuildDate><atom:link href="http://happyo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 14 Jan 2018 20:10:10 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>函数式编程简介</title>
-      <link>http://happyo.github.io/posts/2018-01-14-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E7%AE%80%E4%BB%8B/</link>
+      <link>http://localhost:1313/posts/2018-01-14-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E7%AE%80%E4%BB%8B/</link>
       <pubDate>Sun, 14 Jan 2018 20:10:10 +0800</pubDate>
-      
-      <guid>http://happyo.github.io/posts/2018-01-14-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E7%AE%80%E4%BB%8B/</guid>
-      <description>函数式编程（functional programming）是一种编程范式，它将电脑运算视为数学上的函数计算，并且避免使用程序状态以及易变对象。函数编程语言最重要的基础是λ演算（lambda calculus）。
-函数式编程有一下几个概念
-函数是“一等公民”（first-class） First-class function 指的是函数可以存储在变量或者其他数据结构中；可以被当作参数传入其他函数；可以被当作函数的返回值。在面向对象编程中，对象（object）就是“一等公民”，可以把函数式编程中的函数类比成面向对象编程中的对象。
-纯函数（pure functions） 纯函数没有“副作用”（side effect），意思是函数不会影响到外界的状态，例如修改变量等等。这就带来了一些特有的好处：
- 在代码中，如果一个纯函数不再使用了，那么可以直接删除掉，完全不会影响到其他逻辑。 在调用纯函数时，如果参数不变，那么返回结果也不会变。 因为在两个纯函数之间没有数据依赖，所以纯函数是天然线程安全的（thread-safe），并且可以并行计算。 如果整个语言都没有“副作用”，那么就可以使用任意的求值策略，比如haskell中的惰性求值（lazy evaluation）。  高阶函数（higher-order function） 高阶函数是接受一个或多个函数作为输入或者输出一个函数的函数，常见的高阶函数有map，filter，reduce等等。
-部分函数应用（partial function application） 当一个函数有多个参数的时候，我们可以直接赋值其中的一部分，返回的结果是一个接受剩下参数返回结果的函数，例如我们有个函数：
-addThree a b c = a + b + c 那么addThree 2，返回的就是一个接受两个数字并且返回这两个数字之和加上2的函数。
-柯里化（curring） 柯里化是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。
-通俗一点就是把多参函数，每次部分函数应用第一个参数，直至剩下一个参数。
-addThree柯里化后，表示的就是接受一个数a，然后返回一个接受两个数b，c并且返回a+b+c的函数。
-相关文章  函数式编程初探 Functional programming  </description>
+      <guid>http://localhost:1313/posts/2018-01-14-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E7%AE%80%E4%BB%8B/</guid>
+      <description>函数式编程（functional programming）是一种编程范式，它将电脑运算视为数学上的函数计算，并且避免使用程序状态以及易变对象。函数编程语言最重要的基础是λ演算（lambda calculus）。&#xA;函数式编程有一下几个概念&#xA;函数是“一等公民”（first-class） First-class function 指的是函数可以存储在变量或者其他数据结构中；可以被当作参数传入其他函数；可以被当作函数的返回值。在面向对象编程中，对象（object）就是“一等公民”，可以把函数式编程中的函数类比成面向对象编程中的对象。&#xA;纯函数（pure functions） 纯函数没有“副作用”（side effect），意思是函数不会影响到外界的状态，例如修改变量等等。这就带来了一些特有的好处：&#xA;在代码中，如果一个纯函数不再使用了，那么可以直接删除掉，完全不会影响到其他逻辑。 在调用纯函数时，如果参数不变，那么返回结果也不会变。 因为在两个纯函数之间没有数据依赖，所以纯函数是天然线程安全的（thread-safe），并且可以并行计算。 如果整个语言都没有“副作用”，那么就可以使用任意的求值策略，比如haskell中的惰性求值（lazy evaluation）。 高阶函数（higher-order function） 高阶函数是接受一个或多个函数作为输入或者输出一个函数的函数，常见的高阶函数有map，filter，reduce等等。&#xA;部分函数应用（partial function application） 当一个函数有多个参数的时候，我们可以直接赋值其中的一部分，返回的结果是一个接受剩下参数返回结果的函数，例如我们有个函数：&#xA;addThree a b c = a + b + c 那么addThree 2，返回的就是一个接受两个数字并且返回这两个数字之和加上2的函数。&#xA;柯里化（curring） 柯里化是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。&#xA;通俗一点就是把多参函数，每次部分函数应用第一个参数，直至剩下一个参数。&#xA;addThree柯里化后，表示的就是接受一个数a，然后返回一个接受两个数b，c并且返回a+b+c的函数。&#xA;相关文章 函数式编程初探 Functional programming </description>
     </item>
-    
     <item>
       <title>iOS 数据持久化</title>
-      <link>http://happyo.github.io/posts/2016-01-12-ios-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/</link>
+      <link>http://localhost:1313/posts/2016-01-12-ios-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/</link>
       <pubDate>Mon, 18 Jan 2016 16:10:54 +0800</pubDate>
-      
-      <guid>http://happyo.github.io/posts/2016-01-12-ios-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/</guid>
-      <description>数据持久化即数据的永久存储。在 iOS 中，是将数据保存成文件，存储到程序的沙盒中。
- 沙盒   每个 iOS 应用都有自己的应用沙盒，应用沙盒就是文件系统目录，与其他应用放入文件 系统隔离，iOS 系统不允许访问其他应用的应用沙盒，但在 ios8 中已经开放访问（extension） extension 是 iOS8 新开放的一种对几个固定系统区域的拓展机制，它可以在一定程度上弥补 iOS 的沙盒机制对应用间的通信限制 应用沙盒一般包括以下几个文件目录:  .app Documents Library ---Caches ---Preferences tmp 目录简介及获取   沙盒根目录获取: 获取如下  NSString *homePath = NSHomeDirectory(); NSLog(@&amp;#34;%@&amp;#34;, homePath);  .app文件: 这里面存放的是应用程序的源文件，包括资源文件和可执行文件。  NSString *appPath = [[NSBundle mainBundle] bundlePath]; NSLog(@&amp;#34;%@&amp;#34;, appPath);  Documents: 保存应用运行时生成的需要持久化的数据，iTunes 会自动备份该目录。  NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject; NSLog(@&amp;#34;%@&amp;#34;, documentPath);  tmp: 保存应用运行时所需的临时数据，使用完毕后再将对应的文件从该目录删除，应用没有运行时，系统也可能会自动清理该目录下的文件，iTunes 不会同步该目录，iPhone 重启时该目录下的文件会丢失。  NSString *tmpPath = NSTemporaryDirectory(); NSLog(@&amp;#34;%@&amp;#34;, tmpPath);  Library: 存储程序的默认设置和其他状态信息，iTunes 会自动备份该目录。  NSString *libraryPath = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).</description>
+      <guid>http://localhost:1313/posts/2016-01-12-ios-%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/</guid>
+      <description>数据持久化即数据的永久存储。在 iOS 中，是将数据保存成文件，存储到程序的沙盒中。&#xA;沙盒 每个 iOS 应用都有自己的应用沙盒，应用沙盒就是文件系统目录，与其他应用放入文件 系统隔离，iOS 系统不允许访问其他应用的应用沙盒，但在 ios8 中已经开放访问（extension） extension 是 iOS8 新开放的一种对几个固定系统区域的拓展机制，它可以在一定程度上弥补 iOS 的沙盒机制对应用间的通信限制 应用沙盒一般包括以下几个文件目录: .app Documents Library ---Caches ---Preferences tmp 目录简介及获取 沙盒根目录获取: 获取如下 NSString *homePath = NSHomeDirectory(); NSLog(@&amp;#34;%@&amp;#34;, homePath); .app文件: 这里面存放的是应用程序的源文件，包括资源文件和可执行文件。 NSString *appPath = [[NSBundle mainBundle] bundlePath]; NSLog(@&amp;#34;%@&amp;#34;, appPath); Documents: 保存应用运行时生成的需要持久化的数据，iTunes 会自动备份该目录。 NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject; NSLog(@&amp;#34;%@&amp;#34;, documentPath); tmp: 保存应用运行时所需的临时数据，使用完毕后再将对应的文件从该目录删除，应用没有运行时，系统也可能会自动清理该目录下的文件，iTunes 不会同步该目录，iPhone 重启时该目录下的文件会丢失。 NSString *tmpPath = NSTemporaryDirectory(); NSLog(@&amp;#34;%@&amp;#34;, tmpPath); Library: 存储程序的默认设置和其他状态信息，iTunes 会自动备份该目录。 NSString *libraryPath = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).</description>
     </item>
-    
     <item>
       <title>浅谈NSString copy与strong的区别</title>
-      <link>http://happyo.github.io/posts/2016-01-12-%E6%B5%85%E8%B0%88nsstring-copy%E4%B8%8Estrong%E7%9A%84%E5%8C%BA%E5%88%AB-copy-1/</link>
+      <link>http://localhost:1313/posts/2016-01-12-%E6%B5%85%E8%B0%88nsstring-copy%E4%B8%8Estrong%E7%9A%84%E5%8C%BA%E5%88%AB-copy-1/</link>
       <pubDate>Tue, 12 Jan 2016 14:10:54 +0800</pubDate>
-      
-      <guid>http://happyo.github.io/posts/2016-01-12-%E6%B5%85%E8%B0%88nsstring-copy%E4%B8%8Estrong%E7%9A%84%E5%8C%BA%E5%88%AB-copy-1/</guid>
-      <description>最近在看面试题，刚好遇到copy用法的问题。而我对答案不是很理解，所以晚上搜了一些相关知识，然后自己手动试了下。
- 先贴下面试题及答案  题目：怎么使用copy关键字 回答：NSString、NSArray、NSDictionary 等等经常使用copy关键字，是因为他们有对应的可变类型：NSMutableString、NSMutableArray、NSMutableDictionary
-对此不是很理解，所以就找了下copy的解释。
-Copy
-copy is required when the object is mutable. Use this if you need the value of the object as it is at this moment, and you don&amp;rsquo;t want that value to reflect any changes made by other owners of the object. You will need to release the object when you are finished with it because you are retaining the copy.</description>
+      <guid>http://localhost:1313/posts/2016-01-12-%E6%B5%85%E8%B0%88nsstring-copy%E4%B8%8Estrong%E7%9A%84%E5%8C%BA%E5%88%AB-copy-1/</guid>
+      <description>最近在看面试题，刚好遇到copy用法的问题。而我对答案不是很理解，所以晚上搜了一些相关知识，然后自己手动试了下。&#xA;先贴下面试题及答案 题目：怎么使用copy关键字 回答：NSString、NSArray、NSDictionary 等等经常使用copy关键字，是因为他们有对应的可变类型：NSMutableString、NSMutableArray、NSMutableDictionary&#xA;对此不是很理解，所以就找了下copy的解释。&#xA;Copy&#xA;copy is required when the object is mutable. Use this if you need the value of the object as it is at this moment, and you don&amp;rsquo;t want that value to reflect any changes made by other owners of the object. You will need to release the object when you are finished with it because you are retaining the copy.&#xA;大概意思是不想本类的属性随外面的变化而变化时使用。&#xA;Talk is cheap,show me the code.</description>
     </item>
-    
-    <item>
-      <title>Read Book</title>
-      <link>http://happyo.github.io/posts/2021-02-23-how-to-read-book/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://happyo.github.io/posts/2021-02-23-how-to-read-book/</guid>
-      <description>第一章 阅读的活力与艺术  主动的阅读    读书是一件多少主动的事
-  越主动效果越好
-  作者和听者相当于投手和捕手，只有双方密切合作时才能达到最好的效果。读者想“接住”多少意念完全看他在阅读时多么主动，以及他投入不同心思来阅读的技巧如何。
-    阅读的目标    为获得资讯
-  为求得理解
-      第二章 阅读的层次  基础阅读（elementary reading）    表示理解句子在说什么，比如“猫坐在帽子上”
-    检视阅读（inspectional reading）    特点在强调时间，在规定时间内读完一本书，例如十五分钟。
-  又可称为略读或预读
-  需要理解“这本书在谈什么”，“这是哪一类书-小说，历史还是科学论文？”
-    分析阅读（analytical reading）    在无限时间内，全盘的，完整的阅读
-  要把书读成自己的，咀嚼消化一本书</description>
-    </item>
-    
   </channel>
 </rss>

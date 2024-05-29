@@ -1,12 +1,45 @@
+/* Ensure the body and html take up the full viewport height */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* The content area should take up remaining space */
+#content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6f2ef; /* 背景色使用淡青绿色 */
+    color: #333333; /* 主体文字颜色 */
+}
+
+/* Header Styles */
 .home-header {
-    background-color: #f8f8f8;
+    background-color: #f0f5f3; /* 浅青绿色背景色 */
     padding: 20px;
     text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 
 .home-header-inner {
     max-width: 800px;
     margin: 0 auto;
+}
+
+.home-blog-title {
+    color: #2d6a4f; /* 标题颜色使用深青绿色 */
+    font-size: 48px;
+    text-align: center;
 }
 
 .home-water {
@@ -18,17 +51,15 @@
     padding-left: 150px;
     padding-right: 150px;
 }
-
-.home-title {
-    color: #333333;
-    font-size: 36px;
-    text-align: center;
+.home-post-list:hover {
+    background-color: #f0f5f3; /* 浅青绿色悬停背景色 */
 }
 
-.home-blog-title {
-    color: #333333;
-    font-size: 48px;
+.home-title {
+    color: #2d6a4f; /* 列表标题颜色使用深青绿色 */
+    font-size: 36px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .home-post-icon {
@@ -36,7 +67,7 @@
     fill:#B1A7A7;
     height: 24px;
     width: 24px;
-    top: 20px;
+    top: 30px;
     left: 20px;
 }
 
@@ -45,13 +76,19 @@
     font-size: 24px;
     color: black;
     left: 80px;
-    top: 0px;
+    top: 20px;
 }
 
 .home-post-list {
     position: relative;
     height: 80px;
     list-style-type: none; /* 移除前面的点 */
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
 }
 
 .home-link {
@@ -60,10 +97,11 @@
     text-decoration: none;
 }
 
+/* Footer Styles */
 .home-footer {
     text-align: center;
-}
-/* Additional Styling */
-.home-link:hover .home-post-title {
-    color: #007bff;
+    padding: 20px;
+    background-color: #f0f5f3; /* 浅青绿色背景色 */
+    border-top: 1px solid #e0e0e0;
+    margin-top: 20px;
 }

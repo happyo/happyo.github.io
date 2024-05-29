@@ -30,6 +30,19 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.home-button {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+}
+
+.home-button i {
+    margin: 0; /* 确保图标居中 */
+}
+
+.home-button:hover {
+    background-color: #e6f2ef; /* 悬停时的深青绿色 */
+}
 
 .home-header-inner {
     max-width: 800px;
@@ -45,6 +58,7 @@ body {
 .home-water {
     height: 1em;
 }
+
 
 .home-list {
     position: relative;

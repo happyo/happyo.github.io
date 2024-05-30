@@ -6,15 +6,8 @@
     <description>Recent content in Posts on 薛定谔的水货</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 29 May 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jan 2018 20:10:10 +0800</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>SwiftUI的最佳实践系列之开篇</title>
-      <link>http://localhost:1313/posts/2024-05-29-best-practice-of-swiftui/</link>
-      <pubDate>Wed, 29 May 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2024-05-29-best-practice-of-swiftui/</guid>
-      <description>Introduction This is the introduction of my post.&#xA;Quote This is an example of a quote in Org mode.&#xA;Content Here is the main content of my post.</description>
-    </item>
     <item>
       <title>函数式编程简介</title>
       <link>http://localhost:1313/posts/2018-01-14-%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B%E7%AE%80%E4%BB%8B/</link>
@@ -35,13 +28,6 @@
       <pubDate>Tue, 12 Jan 2016 14:10:54 +0800</pubDate>
       <guid>http://localhost:1313/posts/2016-01-12-%E6%B5%85%E8%B0%88nsstring-copy%E4%B8%8Estrong%E7%9A%84%E5%8C%BA%E5%88%AB-copy-1/</guid>
       <description>最近在看面试题，刚好遇到copy用法的问题。而我对答案不是很理解，所以晚上搜了一些相关知识，然后自己手动试了下。&#xA;先贴下面试题及答案 题目：怎么使用copy关键字 回答：NSString、NSArray、NSDictionary 等等经常使用copy关键字，是因为他们有对应的可变类型：NSMutableString、NSMutableArray、NSMutableDictionary&#xA;对此不是很理解，所以就找了下copy的解释。&#xA;Copy&#xA;copy is required when the object is mutable. Use this if you need the value of the object as it is at this moment, and you don&amp;rsquo;t want that value to reflect any changes made by other owners of the object. You will need to release the object when you are finished with it because you are retaining the copy.&#xA;大概意思是不想本类的属性随外面的变化而变化时使用。&#xA;Talk is cheap,show me the code.</description>
-    </item>
-    <item>
-      <title>Read Book</title>
-      <link>http://localhost:1313/posts/2021-02-23-how-to-read-book/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/2021-02-23-how-to-read-book/</guid>
-      <description>第一章 阅读的活力与艺术 主动的阅读 读书是一件多少主动的事 越主动效果越好 作者和听者相当于投手和捕手，只有双方密切合作时才能达到最好的效果。读者想“接住”多少意念完全看他在阅读时多么主动，以及他投入不同心思来阅读的技巧如何。 阅读的目标 为获得资讯 为求得理解 第二章 阅读的层次 基础阅读（elementary reading） 表示理解句子在说什么，比如“猫坐在帽子上” 检视阅读（inspectional reading） 特点在强调时间，在规定时间内读完一本书，例如十五分钟。 又可称为略读或预读 需要理解“这本书在谈什么”，“这是哪一类书-小说，历史还是科学论文？” 分析阅读（analytical reading） 在无限时间内，全盘的，完整的阅读 要把书读成自己的，咀嚼消化一本书 主题阅读（syntopicalreading） 或者称为比较阅读（comparative reading） 阅读者会读很多书，而不是一本书，并列举出这些书的相关之处，提出一个所有书都谈到的主题。 第三章 阅读的第一个层次：基础阅读 学习阅读的阶段 第一阶段：阅读准备阶段，良好的视力听力，保持注意力等。 第二阶段：看图识字等。 第三阶段：快速建立字汇的能力，从上下文提供的线索，“揭发”不熟悉的字眼。 第四阶段：精炼与增进前面所学的技巧。 这四个阶段包含在第一个层次中 第四章 阅读的第二个层次：检视阅读 检视阅读一：有系统的略读或粗读 当我们不知道自己想不想读这本书，或者不知道这本书是否值得做分析阅读，亦或者我们想要发掘所有的东西，但是时间有限。&#xA;先看书名页，如果有序就先看序。完成这个步骤之前，你对这本书的主题已经有概念了，可以将这本书归类一下。 研究目录页，对这本书的基本架构做概括性的理解。 如果书中附有索引，也要检阅一下。快速评估下这本书涵盖了哪些议题范围，以及所提到的书籍种类与作者等等。如果哪一条词汇很重要，至少要看下引用到这个词目的某几页内文。 如果是本包着书衣的新书，可以读下出版者的介绍。 从你对一本书的目录有点模糊印象当中，开始挑几个看起来跟主题息息相关的篇章来看，如果有摘要，那么读一下。 最后一步，把书打开，东翻翻西翻翻，念个一两段，有时候连续几页，但不要太多。就这样把全书翻过一遍，随时寻找主要论点的讯号，留意主题的基本脉动。最重要的是，不要忽略最后的两三页。 检视阅读二：粗线的阅读 头一次面对一本难读的书的时候，从头到尾先读完一遍，碰到不懂的地方不要停下来查询或思索。略过那些不懂的部分，很快你会读到你看得懂的地方，集中精神在这个部分。&#xA;阅读的速度:检视阅读是一种在有限时间当中，充分了解一本书的艺术。 不只是要能读得快，还要能用不同的速度来阅读–要知道什么时候用什么样的速度是恰当的。 每一本书，不论是多么难读的书，在无关紧要的间隙部分就可以读快一点。而一本好书，总会包含一些比较困难，应该慢慢阅读的内容。 逗留与倒退 阅读一行字的时候会在五六个地方发生“逗留”。 不熟练的阅读者在看过两三行后，眼睛会“倒退”到原点。 大拇指与食指，中指并在一起，顺着字移动，眼睛跟着，勤加练习。 理解的问题 阅读速度加快并不能加快理解力。 只能使我们保持阅读的专注。 检视阅读的摘要 以下简短的几句话是本章的摘要。阅读的速度并非只有单一的一种，重点在如何读出不同的速度感，知道在阅读某种读物时该用什么样的速度。超快的速读法是引人怀疑的一种成就，那只是表现你在阅读一种根本不值得读的读物。更好的秘方是：在阅读一本书的时候，慢不该慢到不值得，快不该快到有损于满足与理解。不论怎么说，阅读的速度，不论是快还是慢，只不过是阅读问题一个微小的部分而已。 最后，在第一次阅读一本难读的书时，不要企图了解每一个字句。这是最最重要的一个规则。这也是检视阅读的基本概念。不要害怕，或是担忧自己似乎读得很肤浅。就算是最难读的书也快快地读一遍。当你再读第二次时，你就已经准备好要读这本书了。 我们已经完整地讨论过第二层次的阅读—检视阅读。我们会在第四篇时再讨论同一个主题，我们会提到检视阅读在主题阅读中占有多么重要的角色。主题阅读是第四层次，也是最高层次的阅读。 无论如何，你应该记住，当我们在本书第二篇讨论第三层次的阅读—分析阅读时，检视阅读在那个层次中仍然有很重要的功能。检视阅读的两个步骤都可以当作是要开始做分析阅读之前的预备动作。第一阶段的检视阅读—我们称作有系统的略读或粗读—帮助阅读者分析在这个阶段一定要回答的问题。换句话说，有系统略读，就是准备要了解本书的架构。第二阶段的检视阅读—我们称之为粗浅的阅读—帮助阅读者在分析阅读中进人第二个阶段。粗浅的阅读，是阅读者想要了解全书内容的第一个必要步骤。 在开始讨论分析阅读之前，我们要暂停一下，再想一下阅读的本质是一种活动。想要读得好，一个主动、自我要求的读者，就得采取一些行动。下一章，我们会谈。&#xA;第五章 如何做一个自我要求的读者 如果想要从阅读中获得成长，必须要保持清醒，不要胡思乱想。&#xA;主动的阅读基础：一个阅读者要提出的四个基本问题 在阅读的时候要养成问问题的习惯，除此之外，还需要知道如何精准，正确的回答问题。如此训练而来的能力，就是阅读的艺术。要保持主动阅读还要有技巧–能战胜最初觉得自己能力不足部分，进而自我提升的艺术。&#xA;整体来说，这本书到底在谈些什么？ 作者细部说了什么，怎么说的？ 这本书说的有道理吗？是全部有道理，还是部分有道理？ 这本书跟你有什么关系？ 如何让一本书真正的属于你自己 你必须读出言外之意，才会有更大的收获。</description>
     </item>
   </channel>
 </rss>
